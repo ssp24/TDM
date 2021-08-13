@@ -4,3 +4,4 @@ voila
 matplotlib
 jupyterlab
 requests
+bs4
