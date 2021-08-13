@@ -2,3 +2,5 @@ pandas
 ipywidgets
 voila
 matplotlib
+jupyterlab
+requests
