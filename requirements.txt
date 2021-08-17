@@ -5,6 +5,5 @@ matplotlib
 jupyterlab
 requests
 bs4
-unicodedata
 lxml
 
