@@ -46,8 +46,9 @@ meta = st.selectbox(
 display(meta)
 
 
+#Übernahme der Parameter bei Click auf Bestätigen: 
 if st.button('Bestätigen'):
-     st.write('Katalog:', auswahl)
+     st.write('Katalog:', auswahl, ":", selected_url)
      st.write('Metadatenformat:', meta)
      if auswahl == "DNB":
         selected_url = "https://services.dnb.de/sru/dnb"
@@ -57,33 +58,8 @@ if st.button('Bestätigen'):
         selected_url = "https://services.dnb.de/sru/authorities"
      else:
         selected_url = "ERROR: Keine URL gewählt"  
-     st.write(selected_url)
 else:
      st.write('Bitte wählen Sie Katalog und Metadatenformat')
 
 
-#Funktion zum Setzen der SRU-Parameter: 
-
-
-   
-   #with output1:
-       # global A
-       # value = "https://services.dnb.de/sru/dnb"
-       # clear_output()
-       # result = auswahl.value
-        #if auswahl.value == "DNB":
-       #     selected_url = "https://services.dnb.de/sru/dnb"
-       # elif auswahl.value == "DMA":
-       #     selected_url = "https://services.dnb.de/sru/dnb.dma"
-      #  elif auswahl.value == "GND":
-       #     selected_url = "https://services.dnb.de/sru/authorities"
-       # else:
-        #    selected_url = "ERROR: Keine URL gewählt"
-      #  print("Auswahl Katalog-URL für", result, ":", selected_url)
-       # print("Auswahl Metadatenformat:", meta.value)
-    
-      #  A = selected_url
-       # return A
-    
-#button.on_click(on_button_clicked)
 
