@@ -48,8 +48,6 @@ display(meta)
 
 #Übernahme der Parameter bei Click auf Bestätigen: 
 if st.button('Bestätigen'):
-     st.write('Katalog:', auswahl, ':', selected_url)
-     st.write('Metadatenformat:', meta)
      if auswahl == "DNB":
         selected_url = "https://services.dnb.de/sru/dnb"
      elif auswahl == "DMA":
@@ -58,6 +56,8 @@ if st.button('Bestätigen'):
         selected_url = "https://services.dnb.de/sru/authorities"
      else:
         selected_url = "ERROR: Keine URL gewählt"  
+     st.write('Katalog:', auswahl, ':', selected_url)
+     st.write('Metadatenformat:', meta)
 else:
      st.write('Bitte wählen Sie Katalog und Metadatenformat')
 
