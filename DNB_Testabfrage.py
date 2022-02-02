@@ -32,7 +32,7 @@ st.text("DNB = Titeldaten der Deutschen Nationalbibliothek "
 
 
 ## Erstes Widget:
-auswahl = widgets.Dropdown(
+auswahl = st.selectbox(
             options=['DNB', 'DMA', 'GND'],
             value='DNB',
             description='Katalog:',
