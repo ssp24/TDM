@@ -48,7 +48,7 @@ display(meta)
 
 #Übernahme der Parameter bei Click auf Bestätigen: 
 if st.button('Bestätigen'):
-     st.write('Katalog:', auswahl, ":", selected_url)
+     st.write('Katalog:', auswahl, ':', selected_url)
      st.write('Metadatenformat:', meta)
      if auswahl == "DNB":
         selected_url = "https://services.dnb.de/sru/dnb"
