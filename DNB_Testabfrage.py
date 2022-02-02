@@ -27,7 +27,7 @@ st.markdown("**Bitte beachten Sie**: Dieses Tutorial dient als Einstieg. Aus Per
 st.text("Bitte wählen Sie zunächst den gewünschten Katalog:")
 
 st.text("DNB = Titeldaten der Deutschen Nationalbibliothek \n "
-        "DMA = Deutsches Musikarchiv \nline "
+"DMA = Deutsches Musikarchiv \n "
         "GND = Gemeinsame Normdatei ")
 
 
