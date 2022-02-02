@@ -48,8 +48,8 @@ display(meta)
 
 if st.button('Bestätigen'):
      st.write('Ausgewählt:', auswahl, meta)
- else:
-     st.write('Bitte wählen Sie zunächst Katalog und Metadatenformat')
+else:
+    st.write('Bitte wählen Sie zunächst Katalog und Metadatenformat')
 
 
 
