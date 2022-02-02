@@ -46,5 +46,38 @@ meta = st.selectbox(
 display(meta)
 
 
+if st.button('Bestätigen'):
+     st.write('Ausgewählt:', auswahl, meta)
+ else:
+     st.write('Bitte wählen Sie zunächst Katalog und Metadatenformat')
 
+
+
+#button = widgets.Button(description="Bestätigen")
+#output1 = widgets.Output()
+
+#display(button, output1)
+
+#def on_button_clicked(b):
+    
+   #with output1:
+       # global A
+       # value = "https://services.dnb.de/sru/dnb"
+       # clear_output()
+       # result = auswahl.value
+        #if auswahl.value == "DNB":
+       #     selected_url = "https://services.dnb.de/sru/dnb"
+       # elif auswahl.value == "DMA":
+       #     selected_url = "https://services.dnb.de/sru/dnb.dma"
+      #  elif auswahl.value == "GND":
+       #     selected_url = "https://services.dnb.de/sru/authorities"
+       # else:
+        #    selected_url = "ERROR: Keine URL gewählt"
+      #  print("Auswahl Katalog-URL für", result, ":", selected_url)
+       # print("Auswahl Metadatenformat:", meta.value)
+    
+      #  A = selected_url
+       # return A
+    
+#button.on_click(on_button_clicked)
 
