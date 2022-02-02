@@ -33,12 +33,9 @@ st.text("DNB = Titeldaten der Deutschen Nationalbibliothek "
 
 ## Erstes Widget:
 auswahl = st.selectbox(
-            options=['DNB', 'DMA', 'GND'],
-            value='DNB',
-            description='Katalog:',
-            style={'description_width': 'initial'},
-        )
-
+            'Katalog:', 
+            ('DNB', 'DMA', 'GND'))
+            
 display(auswahl)
 
 default = "https://services.dnb.de/sru/dnb"
