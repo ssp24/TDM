@@ -47,20 +47,25 @@ display(meta)
 
 
 if st.button('Bestätigen'):
-     st.write('Katalog:', auswahl)
-     st.write('Metadatenformat:', meta)
+     st.text('Katalog:', auswahl)
+     st.text('Metadatenformat:', meta)
+     if auswahl == "DNB":
+        selected_url = "https://services.dnb.de/sru/dnb"
+     elif auswahl == "DMA":
+        selected_url = "https://services.dnb.de/sru/dnb.dma"
+     elif auswahl == "GND":
+        selected_url = "https://services.dnb.de/sru/authorities"
+     else:
+        selected_url = "ERROR: Keine URL gewählt"  
+     st.text(selected_url)
 else:
-    st.write('Bitte wählen Sie Katalog und Metadatenformat')
+     st.text('Bitte wählen Sie Katalog und Metadatenformat')
 
 
+#Funktion zum Setzen der SRU-Parameter: 
 
-#button = widgets.Button(description="Bestätigen")
-#output1 = widgets.Output()
 
-#display(button, output1)
-
-#def on_button_clicked(b):
-    
+   
    #with output1:
        # global A
        # value = "https://services.dnb.de/sru/dnb"
