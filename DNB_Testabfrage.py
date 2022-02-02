@@ -2,7 +2,6 @@
 
 ## Bibliotheken:
 import streamlit as st
-import ipywidgets as widgets
 import requests
 from IPython.display import display, clear_output
 from bs4 import BeautifulSoup
@@ -25,17 +24,27 @@ st.markdown("**Bitte beachten Sie**: Dieses Tutorial dient als Einstieg. Aus Per
 
 
 st.subheader("Bitte wählen Sie zunächst den gewünschten Katalog:")
-
 st.text(" DNB = Titeldaten der Deutschen Nationalbibliothek \n "
 "DMA = Deutsches Musikarchiv \n "
         "GND = Gemeinsame Normdatei ")
 
-
-## Erstes Widget:
+##Erstes Dropdown:
 auswahl = st.selectbox(
             'Katalog:', 
             ('DNB', 'DMA', 'GND'))
             
 display(auswahl)
-
 default = "https://services.dnb.de/sru/dnb"
+
+#Zweites Dropdown:
+st.subheader("Bitte wählen Sie das Metadatenformat für die Ausgabe:")
+
+meta = st.selectbox(
+        'Metadatenformat:',
+        ('MARC21-xml', 'MARC21-xml'), ('DNB Casual (oai_dc)', 'oai_dc'), ('RDF (RDFxml)', 'RDFxml')
+
+display(meta)
+
+
+
+
