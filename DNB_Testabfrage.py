@@ -47,7 +47,7 @@ display(meta)
 
 
 #Übernahme der Parameter bei Click auf Bestätigen: 
-if st.button('Bestätigen'):
+if st.button('Bestätigen', key='push1'):
      if auswahl == "DNB":
         selected_url = "https://services.dnb.de/sru/dnb"
      elif auswahl == "DMA":
@@ -67,9 +67,10 @@ st.subheader("Bitte geben Sie nun Ihren Suchbegriff ein:")
 searchterm = st.text_input('Suchbegriff:', 'Faust')
 
 #Suche ausführen: 
-if st.button('Los!'):
+if st.button('Los!', key='push2'):
      parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : meta, 
                   'maximumRecords': '100'} 
+
      r1 = requests.get(selected_url, params = parameter)  
 
      response = BeautifulSoup(r1.content)
