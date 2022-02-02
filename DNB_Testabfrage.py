@@ -47,9 +47,10 @@ display(meta)
 
 
 if st.button('Bestätigen'):
-     st.write('Ausgewählt:', auswahl, meta)
+     st.write('Katalog:', auswahl)
+     st.write('Metadatenformat:', meta)
 else:
-    st.write('Bitte wählen Sie zunächst Katalog und Metadatenformat')
+    st.write('Bitte wählen Sie Katalog und Metadatenformat')
 
 
 
