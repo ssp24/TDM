@@ -62,7 +62,22 @@ else:
      st.write('Bitte wählen Sie Katalog und Metadatenformat')
 
 
+#Eingabe Suchbegriff: 
 st.subheader("Bitte geben Sie nun Ihren Suchbegriff ein:")
 searchterm = st.text_input('Suchbegriff:', 'Faust')
 
+
+if st.button1('Suchen!'):
+     if auswahl == "DNB":
+        selected_url = "https://services.dnb.de/sru/dnb"
+     elif auswahl == "DMA":
+        selected_url = "https://services.dnb.de/sru/dnb.dma"
+     elif auswahl == "GND":
+        selected_url = "https://services.dnb.de/sru/authorities"
+     else:
+        selected_url = "ERROR: Keine URL gewählt"  
+     st.write('Katalog:', auswahl, ':', selected_url)
+     st.write('Metadatenformat:', meta)
+else:
+     st.write('Bitte Suchbegriff eingeben')
 
