@@ -62,4 +62,7 @@ else:
      st.write('Bitte wählen Sie Katalog und Metadatenformat')
 
 
+st.subheader("Bitte geben Sie nun Ihren Suchbegriff ein:")
+searchterm = st.text_input('Suchbegriff:', 'Faust')
+
 
