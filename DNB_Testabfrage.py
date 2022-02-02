@@ -47,8 +47,8 @@ display(meta)
 
 
 if st.button('Bestätigen'):
-     st.text('Katalog:', auswahl)
-     st.text('Metadatenformat:', meta)
+     st.write('Katalog:', auswahl)
+     st.write('Metadatenformat:', meta)
      if auswahl == "DNB":
         selected_url = "https://services.dnb.de/sru/dnb"
      elif auswahl == "DMA":
@@ -57,9 +57,9 @@ if st.button('Bestätigen'):
         selected_url = "https://services.dnb.de/sru/authorities"
      else:
         selected_url = "ERROR: Keine URL gewählt"  
-     st.text(selected_url)
+     st.write(selected_url)
 else:
-     st.text('Bitte wählen Sie Katalog und Metadatenformat')
+     st.write('Bitte wählen Sie Katalog und Metadatenformat')
 
 
 #Funktion zum Setzen der SRU-Parameter: 
