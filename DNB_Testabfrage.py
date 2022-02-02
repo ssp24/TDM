@@ -41,7 +41,7 @@ st.subheader("Bitte wählen Sie das Metadatenformat für die Ausgabe:")
 
 meta = st.selectbox(
         'Metadatenformat:',
-        ('MARC21-xml', 'DNB Casual (oai_dc)', 'RDF (RDFxml)))
+        ('MARC21-xml', 'DNB Casual (oai_dc)', 'RDF (RDFxml))
 
 display(meta)
 
