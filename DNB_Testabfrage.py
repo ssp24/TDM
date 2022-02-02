@@ -66,18 +66,26 @@ else:
 st.subheader("Bitte geben Sie nun Ihren Suchbegriff ein:")
 searchterm = st.text_input('Suchbegriff:', 'Faust')
 
+#Suche ausführen: 
+if st.button('Los!'):
+     parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : meta, 
+                  'maximumRecords': '100'} 
+     r1 = requests.get(selected_url, params = parameter)  
 
-if st.button('Suchen!'):
-     if auswahl == "DNB":
-        selected_url = "https://services.dnb.de/sru/dnb"
-     elif auswahl == "DMA":
-        selected_url = "https://services.dnb.de/sru/dnb.dma"
-     elif auswahl == "GND":
-        selected_url = "https://services.dnb.de/sru/authorities"
-     else:
-        selected_url = "ERROR: Keine URL gewählt"  
-     st.write('Katalog:', auswahl, ':', selected_url)
-     st.write('Metadatenformat:', meta)
+     response = BeautifulSoup(r1.content)
+     records = response.find_all('record')
+     records_marc = response.find_all('record', {'type':'Bibliographic'})
+     gndm = response.find_all('record', {'type':'Authority'})
+     numberofrecords = response.find_all('numberofrecords')[0].text
+     vorschau = records[0]
+     print("Gefundene Treffer:", numberofrecords)
+     print(" ")
+     print("Vorschau des ersten Treffers der SRU-Antwort:")
+     print("")
+     print(vorschau.prettify())
+     print("")
+     print(" - Ende der Vorschau - ")  
+
 else:
      st.write('Bitte Suchbegriff eingeben')
 
