@@ -24,7 +24,7 @@ st.markdown("**Bitte beachten Sie**: Dieses Tutorial dient als Einstieg. Aus Per
             "Anzahl enthaltener Elemente und Informationen.")
 
 
-st.text("Bitte wählen Sie zunächst den gewünschten Katalog:")
+st.subheader("Bitte wählen Sie zunächst den gewünschten Katalog:")
 
 st.text(" DNB = Titeldaten der Deutschen Nationalbibliothek \n "
 "DMA = Deutsches Musikarchiv \n "
