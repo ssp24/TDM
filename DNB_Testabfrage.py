@@ -19,15 +19,15 @@ st.markdown("Hier können Sie die SRU-Schnittstelle der Deutschen Nationalbiblio
         "gekürzte tabellarische Darstellung Ihrer Anfrage ansehen und diese als XML- oder CSV-Datei speichern. ")
         
 st.markdown("**Bitte beachten Sie**: Dieses Tutorial dient als Einstieg. Aus Performance-Gründen werden jeweils "
-            "immer nur die **ersten 100 Treffer** Ihrer Anfrage ausgegeben. * Die Metadatenformate enthalten "
+            "immer nur die **ersten 100 Treffer** Ihrer Anfrage ausgegeben. Die Metadatenformate enthalten "
             "unterschiedliche Informationen. Die Ausgabetabellen und -dateien variieren daher entsprechend in der "
             "Anzahl enthaltener Elemente und Informationen.")
 
 
 st.text("Bitte wählen Sie zunächst den gewünschten Katalog:")
 
-st.text("DNB = Titeldaten der Deutschen Nationalbibliothek "
-        "DMA = Deutsches Musikarchiv "
+st.text("DNB = Titeldaten der Deutschen Nationalbibliothek\ "
+        "DMA = Deutsches Musikarchiv  "
         "GND = Gemeinsame Normdatei ")
 
 
