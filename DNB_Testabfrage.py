@@ -37,7 +37,6 @@ auswahl = st.selectbox(
             value='DNB',
             description='Katalog:',
             style={'description_width': 'initial'},
-            disabled=False,
         )
 
 display(auswahl)
