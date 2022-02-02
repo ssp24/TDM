@@ -1,6 +1,7 @@
 ## DNB_Testabfrage für streamlit:
 
 ## Bibliotheken:
+import streamlit as st
 import ipywidgets as widgets
 import requests
 from IPython.display import display, clear_output
@@ -9,18 +10,28 @@ from lxml import etree
 import pandas
 import unicodedata
 
+st.title("Testabfrage DNB-Daten")
 
-Testabfrage DNB-Daten
+st.text("Hier können Sie die SRU-Schnittstelle der Deutschen Nationalbibliothek über einfache Formulareingaben "
+        "abfragen. Wählen Sie dazu den Katalog, den Sie abfragen möchten und das Metadatenformat für die Ausgabe "
+        "aus. Im nächsten Schritt geben Sie Ihren Suchbegriff ein. Für die Ausführung des dahinterliegenden Codes "
+        "muss die Reihenfolge bei Eingaben und Buttonklicks eingehalten werden. Im Anschluss können Sie sich eine "
+        "gekürzte tabellarische Darstellung Ihrer Anfrage ansehen und diese als XML- oder CSV-Datei speichern. "
+        ""
+        "**Bitte beachten Sie**: * Dieses Tutorial dient als Einstieg. Aus Performance-Gründen werden jeweils "
+        "immer nur die **ersten 100 Treffer** Ihrer Anfrage ausgegeben. * Die Metadatenformate enthalten "
+        "unterschiedliche Informationen. Die Ausgabetabellen und -dateien variieren daher entsprechend in der "
+        "Anzahl enthaltener Elemente und Informationen.)"
 
-Hier können Sie die SRU-Schnittstelle der Deutschen Nationalbibliothek über einfache Formulareingaben abfragen. Wählen Sie dazu den Katalog, den Sie abfragen möchten und das Metadatenformat für die Ausgabe aus. Im nächsten Schritt geben Sie Ihren Suchbegriff ein. Für die Ausführung des dahinterliegenden Codes muss die Reihenfolge bei Eingaben und Buttonklicks eingehalten werden. Im Anschluss können Sie sich eine gekürzte tabellarische Darstellung Ihrer Anfrage ansehen und diese als XML- oder CSV-Datei speichern. **Bitte beachten Sie**: * Dieses Tutorial dient als Einstieg. Aus Performance-Gründen werden jeweils immer nur die **ersten 100 Treffer** Ihrer Anfrage ausgegeben. * Die Metadatenformate enthalten unterschiedliche Informationen. Die Ausgabetabellen und -dateien variieren daher entsprechend in der Anzahl enthaltener Elemente und Informationen.
-Bitte wählen Sie zunächst den gewünschten Katalog:
 
-    DNB = Titeldaten der Deutschen Nationalbibliothek
-    DMA = Deutsches Musikarchiv
-    GND = Gemeinsame Normdatei
+st.subheader("Bitte wählen Sie zunächst den gewünschten Katalog:")
+
+st.text("DNB = Titeldaten der Deutschen Nationalbibliothek "
+        "DMA = Deutsches Musikarchiv "
+        "GND = Gemeinsame Normdatei ")
 
 
-## Erstes Widget: 
+## Erstes Widget:
 auswahl = widgets.Dropdown(
             options=['DNB', 'DMA', 'GND'],
             value='DNB',
