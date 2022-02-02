@@ -67,7 +67,7 @@ st.subheader("Bitte geben Sie nun Ihren Suchbegriff ein:")
 searchterm = st.text_input('Suchbegriff:', 'Faust')
 
 
-if st.button1('Suchen!'):
+if st.button('Suchen!'):
      if auswahl == "DNB":
         selected_url = "https://services.dnb.de/sru/dnb"
      elif auswahl == "DMA":
