@@ -9,6 +9,10 @@ from lxml import etree
 import pandas
 import unicodedata
 
+if "button1_clicked" not in st.session_state:
+    st.session_state.button1_clicked = False
+    st.session_state.button2_clicked = False
+
 st.title("Testabfrage DNB-Daten")
 
 st.markdown("Hier können Sie die SRU-Schnittstelle der Deutschen Nationalbibliothek über einfache Formulareingaben "
@@ -347,7 +351,7 @@ st.subheader("Ausgeben und Speichern der Daten:")
                  
 st.subheader("Darstellung der Daten in tabellarischer Form:")
                  
-if st.button('Zeige Tabelle', key='show'):
+
         ##für Titeldaten:
         if auswahl == "DNB" and meta == "oai_dc":
             result = [parse_record_dc(record) for record in records]
@@ -374,7 +378,5 @@ if st.button('Zeige Tabelle', key='show'):
                         # .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
             display(df)
                  
-                 
-else: 
-    st.write("ERROR")
+
         
