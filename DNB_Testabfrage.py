@@ -821,13 +821,13 @@ if confirm:
          #                .format({'Link': make_clickable})
           #               .set_properties(**{'text-align': 'left'})
            #              .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )                   
-        display(df)
+        st.dataframe(df)
     elif auswahl == "GND" and meta == "oai_dc":
         result5 = [parse_record_gndoai(item) for item in records]
         df = pandas.DataFrame(result5)
         st.write('Bitte beachten Sie, dass sich das Format "DNB Casual (oai_dc)" nur bedingt für GND-Datensätze eignet.')
         st.write('Für eine Darstellung mit mehr Informationen wählen Sie bitte das Format "MARC21-xml".')
-        display(df)
+        st.dataframe(df)
     elif auswahl == "GND" and meta == "RDFxml":
         result6 = [parse_record_gndrdf(item) for item in records]
         df = pandas.DataFrame(result6)
@@ -835,7 +835,7 @@ if confirm:
         #                 .format({'LINK': make_clickable})
         #                 .set_properties(**{'text-align': 'left'})
         #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
-        display(df)
+        st.dataframe(df)
         
         #für DMA:
     elif auswahl == "DMA" and meta == "MARC21-xml":
@@ -845,7 +845,7 @@ if confirm:
         #                 .format({'URN': make_clickable})
         #                 .set_properties(**{'text-align': 'left'})
         #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )                   
-        display(df1)
+        st.dataframe(df)
     elif auswahl == "DMA" and meta == "oai_dc":
         result8 = [parse_record_dmadc(record) for record in records]
         df = pandas.DataFrame(result8)
@@ -853,7 +853,7 @@ if confirm:
         #                 .format({'URN': make_clickable})
         #                 .set_properties(**{'text-align': 'left'})
         #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) ) 
-        display(df)
+        st.dataframe(df)
     elif auswahl == "DMA" and meta == "RDFxml":
         result9 = [parse_record_dmardf(record) for record in records]
         df = pandas.DataFrame(result9)
@@ -861,7 +861,7 @@ if confirm:
         #              .format({'URN': make_clickable})
         #                 .set_properties(**{'text-align': 'left'})
         #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) ) 
-        display(df)
+        st.dataframe(df)
     
     else:
         st.write("Es wurde noch keine Suchanfrage gestellt.")
