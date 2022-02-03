@@ -74,12 +74,13 @@ if st.button('Los!', key='push2'):
      records = response.find_all('record')
      records_marc = response.find_all('record', {'type':'Bibliographic'})
      gndm = response.find_all('record', {'type':'Authority'})
+     numberofrecords = response.find_all('numberofrecords')
+     st.write(numberofrecords[0])
 
 else:
      st.write('Bitte wählen Sie Katalog und Metadatenformat und geben Sie einen Suchbegriff ein')
 
-numberofrecords = response.find_all('numberofrecords')
-st.write(numberofrecords)
+
 #test = numberofrecords[0].text
 #test2 = test.text
 #st.write(test)
