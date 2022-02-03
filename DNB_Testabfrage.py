@@ -814,7 +814,7 @@ if confirm:
         st.dataframe(df)
 
     #für GND:
-    elif auswahle == "GND" and meta == "MARC21-xml":
+    elif auswahl == "GND" and meta == "MARC21-xml":
         result4 = [parse_record_gndm(item) for item in gndm]
         df = pandas.DataFrame(result4)            
         #df1 = (df.style
