@@ -77,6 +77,7 @@ if st.button('Los!', key='push2'):
      gndm = response.find_all('record', {'type':'Authority'})
      results = response.find('numberofrecords')  
      numberofrecords = results.text
+     numberofrecords = int(numberofrecords)
      st.write("Gefundene Treffer:", numberofrecords)
         
      if numberofrecords >= 1: 
