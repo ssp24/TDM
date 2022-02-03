@@ -63,6 +63,7 @@ st.write('Metadatenformat:', meta)
 st.subheader("Bitte geben Sie nun Ihren Suchbegriff ein:")
 searchterm = st.text_input('Suchbegriff:', 'Faust')
 
+
 #Suche ausführen: 
 if st.button('Los!', key='push2'):
      parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : meta, 
@@ -78,7 +79,7 @@ if st.button('Los!', key='push2'):
      st.write("Gefundene Treffer:", numberofrecords.text)
      vorschau = records[0]
      st.write("Vorschau des ersten Treffers der SRU-Antwort:")
-     st.write(vorschau)
+     st.write(records)
         
      
 
