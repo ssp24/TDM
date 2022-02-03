@@ -78,12 +78,12 @@ if st.button('Los!', key='push2'):
      numberofrecords = response.find('numberofrecords')      
      st.write("Gefundene Treffer:", numberofrecords.text)
         
-     if numberofrecords == 0: 
-        st.write("Keine Treffer vorhanden")
-     else: 
+     if numberofrecords >= 1: 
         vorschau = records[0]
         st.write("Vorschau des ersten Treffers der SRU-Antwort:")
         st.code(vorschau)
+     else: 
+        st.write("Keine Treffer vorhanden")
         
      
 
