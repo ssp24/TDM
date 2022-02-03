@@ -75,7 +75,7 @@ if st.button('Los!', key='push2'):
      records_marc = response.find_all('record', {'type':'Bibliographic'})
      gndm = response.find_all('record', {'type':'Authority'})
      numberofrecords = response.find_all('numberofrecords')
-     test = numberofrecords[0]
+     test = numberofrecords[0].text
      test2 = test.text
      st.write(test)
      st.write(test2)
