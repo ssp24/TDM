@@ -113,7 +113,7 @@ def make_clickable(val):
     if val == "N/A": 
         link = "N/A"
     else: 
-        link = '<a target="_blank" href="{}">{}</a>'.format(val,val)
+        link = '<a href="{}">{}</a>'.format(val,val)
     return link 
 
 
@@ -820,8 +820,8 @@ if confirm:
         df = pandas.DataFrame(result2)
         df1 = (df.style
             .format({'URN': make_clickable})
-            .set_properties(**{'text-align': 'left'})
-            .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
+            #.set_properties(**{'text-align': 'left'})
+            #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
         st.dataframe(df1)
     elif auswahl == "DNB" and dataform == "RDFxml":
         result3 = [parse_record_rdf(item) for item in records]
