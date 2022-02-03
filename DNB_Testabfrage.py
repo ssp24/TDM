@@ -50,6 +50,14 @@ meta = st.selectbox(
 display(meta)
 
 
+if meta == "DNB Casual (oai_dc)":
+    meta == "oai_dc"
+elif meta == "RDF (RDFxml)":
+    meta == "RDFxml"
+else:
+    meta == "MARC21-xml"
+
+
 #Übernahme der Parameter bei Click auf Bestätigen: 
 if auswahl == "DNB":
         selected_url = "https://services.dnb.de/sru/dnb"
@@ -80,6 +88,8 @@ if confirm:
      records_marc = response.find_all('record', {'type':'Bibliographic'})
      gndm = response.find_all('record', {'type':'Authority'})
      results = response.find('numberofrecords')  
+     
+    
      numberofrecords = results.text
      numberofrecords = int(numberofrecords)
      st.write("Gefundene Treffer:", numberofrecords)
