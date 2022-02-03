@@ -875,19 +875,20 @@ if confirm:
     else:
         st.write("Es wurde noch keine Suchanfrage gestellt.")
         
+    
+    ## Download CSV: 
+    def convert_df(df): 
+        return df.to_csv().encode('utf-8')
 
+    st.download_button(
+        label="Download CSV",
+        data=convert_df(df),
+        file_name='Tabelle.csv',
+        mime='text/csv',
+    )
+        
         
 
         
-## Download CSV: 
-def convert_df(df): 
-    return df.to_csv().encode('utf-8')
 
-st.download_button(
-    label="Download CSV",
-    data=convert_df(df),
-    file_name='Tabelle.csv',
-    mime='text/csv',
-)
-        
         
