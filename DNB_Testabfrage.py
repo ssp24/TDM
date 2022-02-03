@@ -48,11 +48,11 @@ meta = st.selectbox(
 
 
 if meta == "DNB Casual (oai_dc)":
-    data == "oai_dc"
+    data = "oai_dc"
 elif meta == "RDF (RDFxml)":
-    data == "RDFxml"
+    data = "RDFxml"
 elif meta == "MARC21-xml":
-    data == "MARC21-xml"
+    data = "MARC21-xml"
 else: 
     data = ""
 
