@@ -107,6 +107,15 @@ else:
 ## TEIL 2 -------------------------------------------------------------------------------------------
 
 
+#Funktion für Links: 
+def make_clickable(val):
+    if val == "N/A": 
+        link = "N/A"
+    else: 
+        link = '<a target="_blank" href="{}">{}</a>'.format(val,val)
+    return link 
+
+
 #Funktion für Titeldaten in OAI-DC
 def parse_record_dc(record):
     
@@ -808,11 +817,11 @@ if confirm:
     elif auswahl == "DNB" and dataform == "MARC21-xml":
         result2 = [parse_record_marc(item) for item in records_marc]
         df = pandas.DataFrame(result2)
-                #df1 = (df.style
-                             #.format({'URN': make_clickable})
-                            # .set_properties(**{'text-align': 'left'})
-                             #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
-        st.dataframe(df)
+        df1 = (df.style
+            .format({'URN': make_clickable})
+            .set_properties(**{'text-align': 'left'})
+            .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
+        st.dataframe(df1)
     elif auswahl == "DNB" and dataform == "RDFxml":
         result3 = [parse_record_rdf(item) for item in records]
         df = pandas.DataFrame(result3)
