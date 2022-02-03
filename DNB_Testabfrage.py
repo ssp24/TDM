@@ -338,8 +338,441 @@ def parse_record_rdf(record):
     return meta_dict
                  
                  
-                 
-                 
+#Funktion für GND in MARC21:
+
+def parse_record_gndm(record):
+    
+    ns = {"xmlns":"http://www.loc.gov/MARC21/slim"}
+    xml = etree.fromstring(unicodedata.normalize("NFC", str(record)))
+    
+    
+    #Art
+    gndtype = xml.findall("xmlns:datafield[@tag = '075']/xmlns:subfield[@code = 'b']", namespaces=ns)
+    gndtype = gndtype[0].text
+    
+    if gndtype == "p": 
+        gndtype = "Person"
+    elif gndtype == "b":
+        gndtype = "Organisation"
+    elif gndtype == "u": 
+        gndtype = "Werk"
+    elif gndtype == "f": 
+        gndtype = "Veranstaltung"
+    elif gndtype == "g": 
+        gndtype = "Geografikum" 
+    elif gndtype == "n": 
+        gndtype = "Person"
+    elif gndtype == "s": 
+        gndtype = "Sachbegriff"
+        
+        
+    #Name
+    main1 = xml.findall("xmlns:datafield[@tag = '100']/xmlns:subfield[@code = 'a']", namespaces=ns)
+    main2 = xml.findall("xmlns:datafield[@tag = '110']/xmlns:subfield[@code = 'a']", namespaces=ns)
+    main3 = xml.findall("xmlns:datafield[@tag = '111']/xmlns:subfield[@code = 'a']", namespaces=ns)
+    main4 = xml.findall("xmlns:datafield[@tag = '130']/xmlns:subfield[@code = 'a']", namespaces=ns)
+    main5 = xml.findall("xmlns:datafield[@tag = '150']/xmlns:subfield[@code = 'a']", namespaces=ns)
+    main6 = xml.findall("xmlns:datafield[@tag = '151']/xmlns:subfield[@code = 'a']", namespaces=ns)
+    
+    
+    if main1: 
+        main = main1[0].text
+    elif main2:     
+        main = main2[0].text
+    elif main3: 
+        main = main3[0].text
+    elif main4:
+        main = main4[0].text
+    elif main5:
+        main = main5[0].text
+    elif main6:
+        main = main6[0].text
+    else:
+        main = "N/A"
+        
+    
+    #title (bei Werken)
+    title1 = xml.findall("xmlns:datafield[@tag = '100']/xmlns:subfield[@code = 't']", namespaces=ns)
+    
+    if title1: 
+        title = title1[0].text
+    else:
+        title = 'N/A'
+    
+    
+    
+    #idn
+    idn = xml.findall("xmlns:controlfield[@tag = '001']", namespaces=ns)
+    try:
+        idn = idn[0].text
+    except:
+        idn = 'N/A' 
+    
+    
+    #Link
+    link1 = xml.findall("xmlns:datafield[@tag = '024']/xmlns:subfield[@code = '0']", namespaces=ns)
+    try:
+        link1 = link1[0].text
+    except:
+        link1 = 'N/A' 
+        
+        
+    
+    dicty = {"IDN":idn, "TYPE":gndtype, "NAME":main, "TITLE":title, "LINK":link1}
+    return dicty
+
+
+
+#Funktion für GND in OAI-DC:
+
+def parse_record_gndoai(record):
+    
+    ns = {"dc": "http://purl.org/dc/elements/1.1/", 
+          "xsi": "http://www.w3.org/2001/XMLSchema-instance"}
+    xml = etree.fromstring(unicodedata.normalize("NFC", str(record)))
+    
+    
+    #idn
+    idn = xml.xpath(".//dc:identifier[@xsi:type='dnb:IDN']", namespaces=ns) #--> Adressiert das Element direkt   
+    try:
+        idn = idn[0].text
+    except:
+        idn = 'fail'
+    
+    
+    #title
+    title = xml.xpath(".//dc:title", namespaces=ns)  
+    try:
+        title = title[0].text
+    except:
+        title = 'N/A'   
+    
+    
+    #creator
+    creator = xml.xpath(".//dc:creator", namespaces=ns)  
+    try:
+        creator = creator[0].text
+    except:
+        creator = 'N/A'        
+        
+    
+    dicty = {"IDN":idn, "NAME":creator, "TITLE":title}
+    return dicty
+
+
+#GND in RDF
+
+def parse_record_gndrdf(record):
+    
+    ns = {"xlmns":"http://www.loc.gov/zing/srw/", 
+          "agrelon":"https://d-nb.info/standards/elementset/agrelon#",
+          "bflc":"http://id.loc.gov/ontologies/bflc/",
+          "rdau":"http://rdaregistry.info/Elements/u/",
+          "dc":"http://purl.org/dc/elements/1.1/",
+          "rdau":"http://rdaregistry.info/Elements/u",
+          "bibo":"http://purl.org/ontology/bibo/",
+          "dbp":"http://dbpedia.org/property/",  
+          "dcmitype":"http://purl.org/dc/dcmitype/", 
+          "dcterms":"http://purl.org/dc/terms/", 
+          "dnb_intern":"http://dnb.de/", 
+          "dnbt":"https://d-nb.info/standards/elementset/dnb#", 
+          "ebu":"http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#", 
+          "editeur":"https://ns.editeur.org/thema/", 
+          "foaf":"http://xmlns.com/foaf/0.1/", 
+          "gbv":"http://purl.org/ontology/gbv/", 
+          "geo":"http://www.opengis.net/ont/geosparql#", 
+          "gndo":"https://d-nb.info/standards/elementset/gnd#", 
+          "isbd":"http://iflastandards.info/ns/isbd/elements/", 
+          "lib":"http://purl.org/library/", 
+          "madsrdf":"http://www.loc.gov/mads/rdf/v1#", 
+          "marcrole":"http://id.loc.gov/vocabulary/relators/",
+          "mo":"http://purl.org/ontology/mo/", 
+          "owl":"http://www.w3.org/2002/07/owl#", 
+          "rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+          "rdfs":"http://www.w3.org/2000/01/rdf-schema#", 
+          "schema":"http://schema.org/", 
+          "sf":"http://www.opengis.net/ont/sf#", 
+          "skos":"http://www.w3.org/2004/02/skos/core#", 
+          "umbel":"http://umbel.org/umbel#", 
+          "v":"http://www.w3.org/2006/vcard/ns#", 
+          "vivo":"http://vivoweb.org/ontology/core#", 
+          "wdrs":"http://www.w3.org/2007/05/powder-s#", 
+          "xsd":"http://www.w3.org/2001/XMLSchema#"}
+    
+    xml = etree.fromstring(unicodedata.normalize("NFC", str(record)))
+     
+    #idn
+    idn = xml.findall(".//gndo:gndidentifier", namespaces=ns)
+    try:
+        idn = idn[0].text
+    except:
+        idn = 'N/A' 
+         
+    #link
+    link = record.find_all('rdf:description')
+    try: 
+        link = link[0]
+        link = link.get('rdf:about')
+    except:
+        link = 'N/A' 
+        
+    #name
+    name = record.find_all('gndo:preferrednamefortheperson')
+    name2 = record.find_all('gndo:preferrednameforthecorporatebody') 
+    name3 = record.find_all('gndo:preferrednameforthework') 
+    name4 = record.find_all('gndo:preferrednamefortheconferenceorevent')
+    name5 = record.find_all('gndo:preferrednameforthesubjectheading')
+    
+    if name:
+        name = name[0].text
+    elif name2:
+        name = name2[0].text
+    elif name3:
+        name = name3[0].text
+    elif name4: 
+        name = name4[0].text
+    elif name5: 
+        name = name5[0].text
+    else:
+        name = "N/A"
+        
+    #time
+    time = record.find_all('gndo:periodofactivity')
+    time2 = record.find_all('gndo:dateofpublication')
+    time3 = record.find_all('gndo:dateofconferenceorevent')
+    time4 = record.find_all('gndo:dateofbirth')
+    
+    if time:
+        time = time[0].text
+    elif time2:
+        time = time2[0].text
+    elif time3:
+        time = time3[0].text
+    elif time4:
+        time = time4[0].text + "-"
+    else:
+        time = "N/A"      
+    
+    #type
+    gndtype = record.find_all('rdf:type')
+    try: 
+        gndtype = gndtype[0]
+        gndtype = gndtype.get('rdf:resource')
+    except:
+        link = 'N/A' 
+         
+    meta_dict = {"IDN":idn, "NAME":name, "TIME":time, "LINK":link}
+    return meta_dict
+
+
+#Function für DMA in MARC21
+def parse_record_dmamarc(item):
+
+    ns = {"marc":"http://www.loc.gov/MARC21/slim"}
+    xml = etree.fromstring(unicodedata.normalize("NFC", str(item)))
+    
+    #idn
+    idn = xml.findall("marc:controlfield[@tag = '001']", namespaces=ns)
+    try:
+        idn = idn[0].text
+    except:
+        idn = 'N/A' 
+        
+    #creator
+    creator1 = xml.findall("marc:datafield[@tag = '100']/marc:subfield[@code = 'a']", namespaces=ns)
+    #creator2 = xml.findall("marc:datafield[@tag = '110']/marc:subfield[@code = 'a']", namespaces=ns)
+    subfield = xml.findall("marc:datafield[@tag = '245']/marc:subfield[@code = 'c']", namespaces=ns)
+    if creator1:
+        creator = creator1[0].text
+    elif subfield:
+        creator = subfield[0].text
+    else:
+        creator = "N/A"
+    
+    #Titel $a
+    title = xml.findall("marc:datafield[@tag = '245']/marc:subfield[@code = 'a']", namespaces=ns)
+    title2 = xml.findall("marc:datafield[@tag = '245']/marc:subfield[@code = 'b']", namespaces=ns)
+    
+    if title and not title2:
+        titletext = title[0].text
+    elif title and title2:     
+        titletext = title[0].text + ": " + title2[0].text
+    else:
+        titletext = "N/A"
+    
+    #Umfang/Format
+    art = xml.findall("marc:datafield[@tag = '300']/marc:subfield[@code = 'a']", namespaces=ns)
+    try:
+        art = art[0].text
+    except:    
+        art = 'N/A'
+     
+    #date
+    date = xml.findall("marc:datafield[@tag = '264']/marc:subfield[@code = 'c']", namespaces=ns)
+    try:
+        date = date[0].text
+    except:    
+        date = 'N/A'
+    
+    #publisher
+    publ = xml.findall("marc:datafield[@tag = '264']/marc:subfield[@code = 'b']", namespaces=ns)
+    try:
+        publ = publ[0].text
+    except:    
+        publ = 'N/A'
+          
+    #ISBN
+    isbn_new = xml.findall("marc:datafield[@tag = '020']/marc:subfield[@code = 'a']", namespaces=ns)
+    isbn_old = xml.findall("marc:datafield[@tag = '024']/marc:subfield[@code = 'a']", namespaces=ns)
+    if isbn_new:
+        isbn = isbn_new[0].text
+    elif isbn_old: 
+        isbn = isbn_old[0].text
+    else:    
+        isbn = 'N/A'
+    
+    meta_dict = {"IDN":idn, "CREATOR":creator, "TITLE":titletext, "DATE":date, "PUBLISHER":publ, "ISBN":isbn}  
+    return meta_dict
+
+
+
+#Funktion für DMA in OAI-DC
+def parse_record_dmadc(record):
+    
+    ns = {"dc": "http://purl.org/dc/elements/1.1/", 
+          "xsi": "http://www.w3.org/2001/XMLSchema-instance"}
+    xml = etree.fromstring(unicodedata.normalize("NFC", str(record)))
+    
+    #idn
+    idn = xml.xpath(".//dc:identifier[@xsi:type='dnb:IDN']", namespaces=ns) #--> Adressiert das Element direkt   
+    try:
+        idn = idn[0].text
+    except:
+        idn = 'fail'
+    
+    #creator:
+    creator = xml.xpath('.//dc:creator', namespaces=ns)
+    try:
+        creator = creator[0].text
+    except:
+        creator = "N/A"
+    
+    #titel
+    titel = xml.xpath('.//dc:title', namespaces=ns)
+    try:
+        titel = titel[0].text
+    except:
+        titel = "N/A"
+        
+    #date
+    date = xml.xpath('.//dc:date', namespaces=ns)
+    try:
+        date = date[0].text
+    except:
+        date = "N/A"
+    
+    #publisher
+    publ = xml.xpath('.//dc:publisher', namespaces=ns)
+    try:
+        publ = publ[0].text
+    except:
+        publ = "N/A"
+    
+    #format
+    form = xml.xpath('.//dc:format', namespaces=ns)
+    try:
+        form = form[0].text
+    except:
+        form = "N/A"
+                
+        
+    meta_dict = {"IDN":idn, "CREATOR":creator, "TITLE":titel, "DATE":date, "PUBLISHER":publ, "FORMAT":form}
+    return meta_dict
+
+
+#DMA in RDF: 
+
+def parse_record_dmardf(record):
+    
+    ns = {"xlmns":"http://www.loc.gov/zing/srw/", 
+          "agrelon":"https://d-nb.info/standards/elementset/agrelon#",
+          "bflc":"http://id.loc.gov/ontologies/bflc/",
+          "rdau":"http://rdaregistry.info/Elements/u/",
+          "dc":"http://purl.org/dc/elements/1.1/",
+          "rdau":"http://rdaregistry.info/Elements/u",
+          "bibo":"http://purl.org/ontology/bibo/",
+          "dbp":"http://dbpedia.org/property/",  
+          "dcmitype":"http://purl.org/dc/dcmitype/", 
+          "dcterms":"http://purl.org/dc/terms/", 
+          "dnb_intern":"http://dnb.de/", 
+          "dnbt":"https://d-nb.info/standards/elementset/dnb#", 
+          "ebu":"http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#", 
+          "editeur":"https://ns.editeur.org/thema/", 
+          "foaf":"http://xmlns.com/foaf/0.1/", 
+          "gbv":"http://purl.org/ontology/gbv/", 
+          "geo":"http://www.opengis.net/ont/geosparql#", 
+          "gndo":"https://d-nb.info/standards/elementset/gnd#", 
+          "isbd":"http://iflastandards.info/ns/isbd/elements/", 
+          "lib":"http://purl.org/library/", 
+          "madsrdf":"http://www.loc.gov/mads/rdf/v1#", 
+          "marcrole":"http://id.loc.gov/vocabulary/relators/",
+          "mo":"http://purl.org/ontology/mo/", 
+          "owl":"http://www.w3.org/2002/07/owl#", 
+          "rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
+          "rdfs":"http://www.w3.org/2000/01/rdf-schema#", 
+          "schema":"http://schema.org/", 
+          "sf":"http://www.opengis.net/ont/sf#", 
+          "skos":"http://www.w3.org/2004/02/skos/core#", 
+          "umbel":"http://umbel.org/umbel#", 
+          "v":"http://www.w3.org/2006/vcard/ns#", 
+          "vivo":"http://vivoweb.org/ontology/core#", 
+          "wdrs":"http://www.w3.org/2007/05/powder-s#", 
+          "xsd":"http://www.w3.org/2001/XMLSchema#"}
+    
+    xml = etree.fromstring(unicodedata.normalize("NFC", str(record)))
+     
+    #idn
+    idn = xml.findall(".//dc:identifier", namespaces=ns)
+    try:
+        idn = idn[0].text
+    except:
+        idn = 'N/A' 
+              
+    #creator
+    name = record.find_all('rdau:p60327')
+    
+    if name:
+        name = name[0].text
+    else:
+        name = "N/A"
+        
+    #title:
+    title = record.find_all('dc:title')
+    
+    if title:
+        title = title[0].text
+    else: 
+        title = "N/A"
+        
+    #publisher
+    publ = record.find_all('dc:publisher')
+        
+    if publ:
+        publ = publ[0].text
+    else:
+        publ = "N/A"
+    
+    #date
+    time = record.find_all('dcterms:issued')
+        
+    if time:
+        time = time[0].text
+    else:
+        time = "N/A"
+          
+    meta_dict = {"IDN":idn, "NAME":name, "TITLE":title, "PUBLISHER":publ, "DATE":time}
+    return meta_dict
+
                  
 ## -----------------------------------------------------------------------------
                  
@@ -379,8 +812,59 @@ if confirm:
                             # .set_properties(**{'text-align': 'left'})
                             # .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
         st.dataframe(df)
-else:
-    st.write("Es wurde noch keine Suchanfrage gestellt.")
+
+    #für GND:
+    elif auswahl.value == "GND" and meta.value == "MARC21-xml":
+        result4 = [parse_record_gndm(item) for item in gndm]
+        df = pandas.DataFrame(result4)            
+        #df1 = (df.style
+         #                .format({'Link': make_clickable})
+          #               .set_properties(**{'text-align': 'left'})
+           #              .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )                   
+        display(df)
+    elif auswahl.value == "GND" and meta.value == "oai_dc":
+        result5 = [parse_record_gndoai(item) for item in records]
+        df = pandas.DataFrame(result5)
+        st.write('Bitte beachten Sie, dass sich das Format "DNB Casual (oai_dc)" nur bedingt für GND-Datensätze eignet.')
+        st.write('Für eine Darstellung mit mehr Informationen wählen Sie bitte das Format "MARC21-xml".')
+        display(df)
+    elif auswahl.value == "GND" and meta.value == "RDFxml":
+        result6 = [parse_record_gndrdf(item) for item in records]
+        df = pandas.DataFrame(result6)
+        #df1 = (df.style
+        #                 .format({'LINK': make_clickable})
+        #                 .set_properties(**{'text-align': 'left'})
+        #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
+        display(df)
+        
+        #für DMA:
+    elif auswahl.value == "DMA" and meta.value == "MARC21-xml":
+        result7 = [parse_record_dmamarc(item) for item in records_marc]
+        df = pandas.DataFrame(result7)            
+        #df1 = (df.style
+        #                 .format({'URN': make_clickable})
+        #                 .set_properties(**{'text-align': 'left'})
+        #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )                   
+        display(df1)
+    elif auswahl.value == "DMA" and meta.value == "oai_dc":
+        result8 = [parse_record_dmadc(record) for record in records]
+        df = pandas.DataFrame(result8)
+        #df1 = (df.style
+        #                 .format({'URN': make_clickable})
+        #                 .set_properties(**{'text-align': 'left'})
+        #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) ) 
+        display(df)
+    elif auswahl.value == "DMA" and meta.value == "RDFxml":
+        result9 = [parse_record_dmardf(record) for record in records]
+        df = pandas.DataFrame(result9)
+        #df1 = (df.style
+        #              .format({'URN': make_clickable})
+        #                 .set_properties(**{'text-align': 'left'})
+        #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) ) 
+        display(df)
+    
+    else:
+        st.write("Es wurde noch keine Suchanfrage gestellt.")
         
 
         
