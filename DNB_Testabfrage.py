@@ -378,5 +378,6 @@ elif auswahl == "DNB" and meta == "RDFxml":
                         # .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
     st.dataframe(df)
                  
+ else st.write("Es wurde noch keine Suchanfrage gestellt.")
 
         
