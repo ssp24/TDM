@@ -819,7 +819,7 @@ if confirm:
         result2 = [parse_record_marc(item) for item in records_marc]
         df = pandas.DataFrame(result2)
         df1 = (df.style
-            .format({'URN': make_clickable})
+            .format({'URN': make_clickable}) )
             #.set_properties(**{'text-align': 'left'})
             #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
         st.dataframe(df1)
