@@ -67,9 +67,9 @@ st.write('Metadatenformat:', meta)
 st.subheader("Bitte geben Sie nun Ihren Suchbegriff ein:")
 searchterm = st.text_input('Suchbegriff:', 'Faust')
 
-
+confirm = st.button('Los!', key='push')
 #Suche ausführen: 
-if st.button('Los!', key='push2'):
+if confirm:
      parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : meta, 
                   'maximumRecords': '100'} 
 
@@ -350,35 +350,37 @@ def parse_record_rdf(record):
 st.subheader("Ausgeben und Speichern der Daten:")
                  
 st.subheader("Darstellung der Daten in tabellarischer Form:")
-                 
+
 
 ##für Titeldaten:
-if auswahl == "DNB" and meta == "oai_dc":
-    result = [parse_record_dc(record) for record in records]
-    df = pandas.DataFrame(result)
-            #df1 = (df.style
-                         #.format({'URN': make_clickable})
-                         #.set_properties(**{'text-align': 'left'})
-                         #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )    
-    st.dataframe(df)
-elif auswahl == "DNB" and meta == "MARC21-xml":
-    result2 = [parse_record_marc(item) for item in records_marc]
-    df = pandas.DataFrame(result2)
-            #df1 = (df.style
-                         #.format({'URN': make_clickable})
-                        # .set_properties(**{'text-align': 'left'})
-                         #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
-    st.dataframe(df)
-elif auswahl == "DNB" and meta == "RDFxml":
-    result3 = [parse_record_rdf(item) for item in records]
-    df = pandas.DataFrame(result3)
-            #df1 = (df.style
-                        # .format({'URN': make_clickable})
-                        # .set_properties(**{'text-align': 'left'})
-                        # .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
-    st.dataframe(df)
-                 
+if confirm:
+
+    if auswahl == "DNB" and meta == "oai_dc":
+        result = [parse_record_dc(record) for record in records]
+        df = pandas.DataFrame(result)
+                #df1 = (df.style
+                             #.format({'URN': make_clickable})
+                             #.set_properties(**{'text-align': 'left'})
+                             #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )    
+        st.dataframe(df)
+    elif auswahl == "DNB" and meta == "MARC21-xml":
+        result2 = [parse_record_marc(item) for item in records_marc]
+        df = pandas.DataFrame(result2)
+                #df1 = (df.style
+                             #.format({'URN': make_clickable})
+                            # .set_properties(**{'text-align': 'left'})
+                             #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
+        st.dataframe(df)
+    elif auswahl == "DNB" and meta == "RDFxml":
+        result3 = [parse_record_rdf(item) for item in records]
+        df = pandas.DataFrame(result3)
+                #df1 = (df.style
+                            # .format({'URN': make_clickable})
+                            # .set_properties(**{'text-align': 'left'})
+                            # .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
+        st.dataframe(df)
 else:
     st.write("Es wurde noch keine Suchanfrage gestellt.")
+        
 
         
