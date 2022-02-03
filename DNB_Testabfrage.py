@@ -886,7 +886,7 @@ def convert_df(df):
 st.download_button(
     label="Download CSV",
     data=convert_df(df),
-    file_name='Tabelle.csv'
+    file_name='Tabelle.csv',
     mime='text/csv',
 )
         
