@@ -37,7 +37,6 @@ auswahl = st.selectbox(
             'Katalog:', 
             ('DNB', 'DMA', 'GND'))
             
-display(auswahl)
 default = "https://services.dnb.de/sru/dnb"
 
 #Zweites Dropdown:
@@ -47,15 +46,15 @@ meta = st.selectbox(
         'Metadatenformat:',
         ('MARC21-xml', 'DNB Casual (oai_dc)', 'RDF (RDFxml)'))
 
-display(meta)
-
 
 if meta == "DNB Casual (oai_dc)":
-    meta == "oai_dc"
+    data == "oai_dc"
 elif meta == "RDF (RDFxml)":
-    meta == "RDFxml"
-else:
-    meta == "MARC21-xml"
+    data == "RDFxml"
+elif meta == "MARC21-xml":
+    data == "MARC21-xml"
+else: 
+    data = ""
 
 
 #Übernahme der Parameter bei Click auf Bestätigen: 
@@ -78,7 +77,7 @@ searchterm = st.text_input('Suchbegriff:', 'Faust')
 confirm = st.button('Los!', key='push')
 #Suche ausführen: 
 if confirm:
-     parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : meta, 
+     parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : data, 
                   'maximumRecords': '100'} 
 
      r1 = requests.get(selected_url, params = parameter)  
@@ -798,7 +797,7 @@ st.subheader("Darstellung der Daten in tabellarischer Form:")
 ##für Titeldaten:
 if confirm:
 
-    if auswahl == "DNB" and meta == "oai_dc":
+    if auswahl == "DNB" and data == "oai_dc":
         result = [parse_record_dc(record) for record in records]
         df = pandas.DataFrame(result)
                 #df1 = (df.style
@@ -806,7 +805,7 @@ if confirm:
                              #.set_properties(**{'text-align': 'left'})
                              #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )    
         st.dataframe(df)
-    elif auswahl == "DNB" and meta == "MARC21-xml":
+    elif auswahl == "DNB" and data == "MARC21-xml":
         result2 = [parse_record_marc(item) for item in records_marc]
         df = pandas.DataFrame(result2)
                 #df1 = (df.style
@@ -814,7 +813,7 @@ if confirm:
                             # .set_properties(**{'text-align': 'left'})
                              #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
         st.dataframe(df)
-    elif auswahl == "DNB" and meta == "RDFxml":
+    elif auswahl == "DNB" and data == "RDFxml":
         result3 = [parse_record_rdf(item) for item in records]
         df = pandas.DataFrame(result3)
                 #df1 = (df.style
@@ -824,7 +823,7 @@ if confirm:
         st.dataframe(df)
 
     #für GND:
-    elif auswahl == "GND" and meta == "MARC21-xml":
+    elif auswahl == "GND" and data == "MARC21-xml":
         result4 = [parse_record_gndm(item) for item in gndm]
         df = pandas.DataFrame(result4)            
         #df1 = (df.style
@@ -832,13 +831,13 @@ if confirm:
           #               .set_properties(**{'text-align': 'left'})
            #              .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )                   
         st.dataframe(df)
-    elif auswahl == "GND" and meta == "oai_dc":
+    elif auswahl == "GND" and data == "oai_dc":
         result5 = [parse_record_gndoai(item) for item in records]
         df = pandas.DataFrame(result5)
         st.write('Bitte beachten Sie, dass sich das Format "DNB Casual (oai_dc)" nur bedingt für GND-Datensätze eignet.')
         st.write('Für eine Darstellung mit mehr Informationen wählen Sie bitte das Format "MARC21-xml".')
         st.dataframe(df)
-    elif auswahl == "GND" and meta == "RDFxml":
+    elif auswahl == "GND" and data == "RDFxml":
         result6 = [parse_record_gndrdf(item) for item in records]
         df = pandas.DataFrame(result6)
         #df1 = (df.style
@@ -848,7 +847,7 @@ if confirm:
         st.dataframe(df)
         
         #für DMA:
-    elif auswahl == "DMA" and meta == "MARC21-xml":
+    elif auswahl == "DMA" and data == "MARC21-xml":
         result7 = [parse_record_dmamarc(item) for item in records_marc]
         df = pandas.DataFrame(result7)            
         #df1 = (df.style
@@ -856,7 +855,7 @@ if confirm:
         #                 .set_properties(**{'text-align': 'left'})
         #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )                   
         st.dataframe(df)
-    elif auswahl == "DMA" and meta == "oai_dc":
+    elif auswahl == "DMA" and data == "oai_dc":
         result8 = [parse_record_dmadc(record) for record in records]
         df = pandas.DataFrame(result8)
         #df1 = (df.style
@@ -864,7 +863,7 @@ if confirm:
         #                 .set_properties(**{'text-align': 'left'})
         #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) ) 
         st.dataframe(df)
-    elif auswahl == "DMA" and meta == "RDFxml":
+    elif auswahl == "DMA" and data == "RDFxml":
         result9 = [parse_record_dmardf(record) for record in records]
         df = pandas.DataFrame(result9)
         #df1 = (df.style
