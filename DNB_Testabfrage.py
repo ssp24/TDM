@@ -86,8 +86,9 @@ if confirm:
         
      if numberofrecords >= 1: 
         vorschau = records[0]
-        st.write("Vorschau des ersten Treffers der SRU-Antwort:")
-        st.code(vorschau)
+        with st.expander("Vorschau anzeigen"):
+            st.write("Vorschau des ersten Treffers der SRU-Antwort:")
+            st.code(vorschau)
      else: 
         st.write("Keine Treffer vorhanden")
 else:
