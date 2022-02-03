@@ -78,7 +78,7 @@ if st.button('Los!', key='push2'):
      st.write("Gefundene Treffer:", numberofrecords.text)
      vorschau = records[0]
      st.write("Vorschau des ersten Treffers der SRU-Antwort:")
-        
+     st.write(vorschau)
         
      
 
