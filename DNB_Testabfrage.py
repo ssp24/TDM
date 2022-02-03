@@ -360,7 +360,7 @@ if auswahl == "DNB" and meta == "oai_dc":
                          #.format({'URN': make_clickable})
                          #.set_properties(**{'text-align': 'left'})
                          #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )    
-    display(df)
+    st.dataframe(df)
 elif auswahl == "DNB" and meta == "MARC21-xml":
     result2 = [parse_record_marc(item) for item in records_marc]
     df = pandas.DataFrame(result2)
@@ -368,7 +368,7 @@ elif auswahl == "DNB" and meta == "MARC21-xml":
                          #.format({'URN': make_clickable})
                         # .set_properties(**{'text-align': 'left'})
                          #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
-    display(df)
+    st.dataframe(df)
 elif auswahl == "DNB" and meta == "RDFxml":
     result3 = [parse_record_rdf(item) for item in records]
     df = pandas.DataFrame(result3)
@@ -376,7 +376,7 @@ elif auswahl == "DNB" and meta == "RDFxml":
                         # .format({'URN': make_clickable})
                         # .set_properties(**{'text-align': 'left'})
                         # .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
-    display(df)
+    st.dataframe(df)
                  
 
         
