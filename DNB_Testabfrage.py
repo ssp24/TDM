@@ -75,8 +75,9 @@ if st.button('Los!', key='push2'):
      records = response.find_all('record')
      records_marc = response.find_all('record', {'type':'Bibliographic'})
      gndm = response.find_all('record', {'type':'Authority'})
-     numberofrecords = response.find('numberofrecords')      
-     st.write("Gefundene Treffer:", numberofrecords.text)
+     results = response.find('numberofrecords')  
+     numberofrecords = results.text
+     st.write("Gefundene Treffer:", numberofrecords)
         
      if numberofrecords >= 1: 
         vorschau = records[0]
