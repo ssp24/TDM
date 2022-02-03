@@ -47,19 +47,16 @@ display(meta)
 
 
 #Übernahme der Parameter bei Click auf Bestätigen: 
-if st.button('Bestätigen', key='push1'):
-     if auswahl == "DNB":
+if auswahl == "DNB":
         selected_url = "https://services.dnb.de/sru/dnb"
-     elif auswahl == "DMA":
+elif auswahl == "DMA":
         selected_url = "https://services.dnb.de/sru/dnb.dma"
-     elif auswahl == "GND":
+elif auswahl == "GND":
         selected_url = "https://services.dnb.de/sru/authorities"
-     else:
-        selected_url = "ERROR: Keine URL gewählt"  
-     st.write('Katalog:', auswahl, ':', selected_url)
-     st.write('Metadatenformat:', meta)
 else:
-     st.write('Bitte wählen Sie Katalog und Metadatenformat')
+        selected_url = "ERROR: Keine URL gewählt"  
+st.write('Katalog:', auswahl, ':', selected_url)
+st.write('Metadatenformat:', meta)
 
 
 #Eingabe Suchbegriff: 
@@ -88,5 +85,5 @@ if st.button('Los!', key='push2'):
      print(" - Ende der Vorschau - ")  
 
 else:
-     st.write('Bitte Suchbegriff eingeben')
+     st.write('Bitte wählen Sie Katalog und Metadatenformat und geben Sie einen Suchbegriff ein')
 
