@@ -79,10 +79,11 @@ else:
      st.write('Bitte wählen Sie Katalog und Metadatenformat und geben Sie einen Suchbegriff ein')
 
 numberofrecords = response.find_all('numberofrecords')
-test = numberofrecords[0].text
-test2 = test.text
-st.write(test)
-st.write(test2)
+st.write(numberofrecords)
+#test = numberofrecords[0].text
+#test2 = test.text
+#st.write(test)
+#st.write(test2)
      #vorschau = records[0]
      #st.write("Gefundene Treffer:", numberofrecords)
      #st.write(" ")
