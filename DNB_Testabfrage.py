@@ -823,7 +823,8 @@ if confirm:
             #.set_properties(**{'text-align': 'left'})
             #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
         st.dataframe(df1)
-        st.write(df1.to_html, unsafe_allow_html = True)
+        df2 = df1.to_html(escape=False)
+        st.write(df2, unsafe_allow_html=True)
     elif auswahl == "DNB" and dataform == "RDFxml":
         result3 = [parse_record_rdf(item) for item in records]
         df = pandas.DataFrame(result3)
