@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from lxml import etree
 import pandas
 import unicodedata
+from IPython.core.display import display, HTML
 
 if "button1_clicked" not in st.session_state:
     st.session_state.button1_clicked = False
