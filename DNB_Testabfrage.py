@@ -822,7 +822,7 @@ if confirm:
             .format({'URN': make_clickable}) )
             #.set_properties(**{'text-align': 'left'})
             #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
-        st.dataframe(df1)
+        st.table(df1)
     elif auswahl == "DNB" and dataform == "RDFxml":
         result3 = [parse_record_rdf(item) for item in records]
         df = pandas.DataFrame(result3)
