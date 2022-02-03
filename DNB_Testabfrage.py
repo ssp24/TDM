@@ -74,15 +74,14 @@ if st.button('Los!', key='push2'):
      records = response.find_all('record')
      records_marc = response.find_all('record', {'type':'Bibliographic'})
      gndm = response.find_all('record', {'type':'Authority'})
-     numberofrecords = response.find_all('numberofrecords')[0].text
+     numberofrecords = response.find_all('numberofrecords').text
      vorschau = records[0]
-     print("Gefundene Treffer:", numberofrecords)
-     print(" ")
-     print("Vorschau des ersten Treffers der SRU-Antwort:")
-     print("")
-     print(vorschau.prettify())
-     print("")
-     print(" - Ende der Vorschau - ")  
+     st.write("Gefundene Treffer:", numberofrecords)
+     st.write(" ")
+     st.write("Vorschau des ersten Treffers der SRU-Antwort:")
+     st.write(vorschau.prettify())
+     st.write("")
+     st.write(" - Ende der Vorschau - ")  
 
 else:
      st.write('Bitte wählen Sie Katalog und Metadatenformat und geben Sie einen Suchbegriff ein')
