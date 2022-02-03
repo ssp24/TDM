@@ -75,11 +75,15 @@ if st.button('Los!', key='push2'):
      records = response.find_all('record')
      records_marc = response.find_all('record', {'type':'Bibliographic'})
      gndm = response.find_all('record', {'type':'Authority'})
-     numberofrecords = response.find('numberofrecords')
+     numberofrecords = response.find('numberofrecords')      
      st.write("Gefundene Treffer:", numberofrecords.text)
-     vorschau = records[0]
-     st.write("Vorschau des ersten Treffers der SRU-Antwort:")
-     st.code(vorschau)
+        
+     if numberofrecords == 0: 
+        st.write("Keine Treffer vorhanden")
+     else: 
+        vorschau = records[0]
+        st.write("Vorschau des ersten Treffers der SRU-Antwort:")
+        st.code(vorschau)
         
      
 
