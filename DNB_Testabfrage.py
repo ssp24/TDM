@@ -150,7 +150,7 @@ def parse_record_dc(record):
     except:
         urn = "N/A"
          
-    meta_dict = {"IDN":idn, "CREATOR":creator, "TITLE":titel, "DATE":date, "PUBLISHER":publ, "URN":urn, "ISBN":ids)
+    meta_dict = {"IDN":idn, "CREATOR":creator, "TITLE":titel, "DATE":date, "PUBLISHER":publ, "URN":urn, "ISBN":ids}
     return meta_dict
   
     
