@@ -352,31 +352,31 @@ st.subheader("Ausgeben und Speichern der Daten:")
 st.subheader("Darstellung der Daten in tabellarischer Form:")
                  
 
-        ##für Titeldaten:
-        if auswahl == "DNB" and meta == "oai_dc":
-            result = [parse_record_dc(record) for record in records]
-            df = pandas.DataFrame(result)
+##für Titeldaten:
+if auswahl == "DNB" and meta == "oai_dc":
+    result = [parse_record_dc(record) for record in records]
+    df = pandas.DataFrame(result)
             #df1 = (df.style
                          #.format({'URN': make_clickable})
                          #.set_properties(**{'text-align': 'left'})
                          #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )    
-            display(df)
-        elif auswahl == "DNB" and meta == "MARC21-xml":
-            result2 = [parse_record_marc(item) for item in records_marc]
-            df = pandas.DataFrame(result2)
+    display(df)
+elif auswahl == "DNB" and meta == "MARC21-xml":
+    result2 = [parse_record_marc(item) for item in records_marc]
+    df = pandas.DataFrame(result2)
             #df1 = (df.style
                          #.format({'URN': make_clickable})
                         # .set_properties(**{'text-align': 'left'})
                          #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
-            display(df)
-        elif auswahl == "DNB" and meta == "RDFxml":
-            result3 = [parse_record_rdf(item) for item in records]
-            df = pandas.DataFrame(result3)
+    display(df)
+elif auswahl == "DNB" and meta == "RDFxml":
+    result3 = [parse_record_rdf(item) for item in records]
+    df = pandas.DataFrame(result3)
             #df1 = (df.style
                         # .format({'URN': make_clickable})
                         # .set_properties(**{'text-align': 'left'})
                         # .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
-            display(df)
+    display(df)
                  
 
         
