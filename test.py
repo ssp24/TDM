@@ -11,9 +11,7 @@ import unicodedata
 from IPython.core.display import display, HTML
 
 
-#st.markdown("<h1 style='text-align: left'>Testabfrage DNB-Daten</h1> <img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' align='right'>", unsafe_allow_html=True)
 st.markdown("# Testabfrage DNB-Daten <img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' align='right'>", unsafe_allow_html=True)
-#st.title("Testabfrage DNB-Daten")
 
 st.markdown("Hier können Sie die SRU-Schnittstelle der Deutschen Nationalbibliothek über einfache Formulareingaben "
         "abfragen. Wählen Sie dazu den Katalog, den Sie abfragen möchten und das Metadatenformat für die Ausgabe "
@@ -874,5 +872,31 @@ elif confirm and searchterm:
     )
         
         
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
 
-   
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Zuletzt aktualisiert am: 04.02.2022</a></p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
