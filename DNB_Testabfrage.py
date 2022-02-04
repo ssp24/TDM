@@ -801,7 +801,7 @@ def parse_record_dmardf(record):
                  
 st.subheader("Ausgeben und Speichern der Daten:")
 
-with output_xml:
+def output(repsonse):
     with open('data.xml', 'w', encoding='utf-8') as f:
         print(r1.text, file=f)
 
@@ -810,7 +810,7 @@ with output_xml:
 
 st.download_button(
         label="Download XML",
-        data=output_xml(r1),
+        data=output(r1),
         file_name='data.xml',
         mime='text/xml',
     )
