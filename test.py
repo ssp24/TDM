@@ -106,7 +106,7 @@ if confirm and searchterm:
         st.write("Keine Treffer vorhanden")
 
 elif confirm and not searchterm: 
-    st.error("Sie haben keinen Suchbegriff eingegeben. Ihre Anfrage wird mit dem Suchbegriff 'Test' durchgeführt.")
+    st.error("Sie haben keinen Suchbegriff eingegeben.")
 else:
     st.write('Bitte wählen Sie Katalog und Metadatenformat und geben Sie einen Suchbegriff ein')
 
@@ -797,7 +797,7 @@ def parse_record_dmardf(record):
 #Ausgaben:             
 
 if confirm and not searchterm:
-    st.error("Keine Chance")
+    st.write(" ")
 elif confirm and searchterm:
 
     st.markdown("##### Ausgeben und Speichern der Daten:")
