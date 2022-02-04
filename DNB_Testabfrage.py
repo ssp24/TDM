@@ -797,18 +797,11 @@ def parse_record_dmardf(record):
                  
                  
                  
-#Ausgaben: 
-                 
-st.subheader("Ausgeben und Speichern der Daten:")
+#Ausgaben:             
 
 if confirm:
-    
-    #def output(repsonse):
-        #with open('data.xml', 'w', encoding='utf-8') as f:
-            #print(r1.text, file=f)
 
-#response
-#records
+    st.markdown("####Ausgeben und Speichern der Daten:")
 
     st.download_button(
         label="Download XML",
@@ -816,9 +809,8 @@ if confirm:
         file_name='data.xml',
         mime='text/xml',
     )
-
                
-    st.subheader("Darstellung der Daten in tabellarischer Form:")
+    st.markdown("Darstellung der Daten in tabellarischer Form:")
 
 
 ##für Titeldaten:
