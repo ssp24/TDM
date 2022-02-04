@@ -874,7 +874,6 @@ elif confirm and searchterm:
         
 footer="""<style>
         .footer {
-position: fixed;
 left: 0;
 bottom: 0;
 width: 100%;
