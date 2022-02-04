@@ -24,8 +24,8 @@ st.markdown("Hier können Sie die SRU-Schnittstelle der Deutschen Nationalbiblio
         
 st.markdown("**Bitte beachten Sie**:  \n"
             "* Dieses Tutorial dient als Einstieg. Aus Performance-Gründen werden jeweils "
-            "immer nur die **ersten 100 Treffer** Ihrer Anfrage ausgegeben. "
-            "* Die Metadatenformate enthalten  \n "
+            "immer nur die **ersten 100 Treffer** Ihrer Anfrage ausgegeben. \n"
+            "* Die Metadatenformate enthalten "
             "unterschiedliche Informationen. Die Ausgabetabellen und -dateien variieren daher entsprechend in der "
             "Anzahl enthaltener Elemente und Informationen.")
 
