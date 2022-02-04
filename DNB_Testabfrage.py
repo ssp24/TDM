@@ -22,13 +22,13 @@ st.markdown("Hier können Sie die SRU-Schnittstelle der Deutschen Nationalbiblio
         "muss die Reihenfolge bei Eingaben und Buttonklicks eingehalten werden. Im Anschluss können Sie sich eine "
         "gekürzte tabellarische Darstellung Ihrer Anfrage ansehen und diese als XML- oder CSV-Datei speichern. ")
         
-st.markdown("**Bitte beachten Sie**: Dieses Tutorial dient als Einstieg. Aus Performance-Gründen werden jeweils "
-            "immer nur die **ersten 100 Treffer** Ihrer Anfrage ausgegeben. Die Metadatenformate enthalten "
+st.markdown("**Bitte beachten Sie**: * Dieses Tutorial dient als Einstieg. Aus Performance-Gründen werden jeweils "
+            "immer nur die **ersten 100 Treffer** Ihrer Anfrage ausgegeben. * Die Metadatenformate enthalten "
             "unterschiedliche Informationen. Die Ausgabetabellen und -dateien variieren daher entsprechend in der "
             "Anzahl enthaltener Elemente und Informationen.")
 
 
-st.subheader("Bitte wählen Sie zunächst den gewünschten Katalog:")
+st.markdown("## Bitte wählen Sie zunächst den gewünschten Katalog:")
 st.markdown("* DNB = Titeldaten der Deutschen Nationalbibliothek \n "
 "* DMA = Deutsches Musikarchiv \n "
         "* GND = Gemeinsame Normdatei ")
