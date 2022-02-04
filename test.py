@@ -108,7 +108,7 @@ if confirm and searchterm:
 elif confirm and not searchterm: 
     st.error("Sie haben keinen Suchbegriff eingegeben.")
 else:
-    st.write('Bitte wählen Sie Katalog und Metadatenformat und geben Sie einen Suchbegriff ein')
+    st.write(' ')
 
 
 ## TEIL 2 -------------------------------------------------------------------------------------------
@@ -817,39 +817,21 @@ elif confirm and searchterm:
 
     if auswahl == "DNB" and dataform == "oai_dc":
         result = [parse_record_dc(record) for record in records]
-        df = pandas.DataFrame(result)
-                #df1 = (df.style
-                             #.format({'URN': make_clickable})
-                             #.set_properties(**{'text-align': 'left'})
-                             #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )    
+        df = pandas.DataFrame(result)  
         st.dataframe(df)
     elif auswahl == "DNB" and dataform == "MARC21-xml":
         result2 = [parse_record_marc(item) for item in records_marc]
-        df = pandas.DataFrame(result2)
-        df1 = (df.style
-            .format({'URN': make_clickable}) )
-            #.set_properties(**{'text-align': 'left'})
-            #.set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
+        df = pandas.DataFrame(result2)      
         st.dataframe(df)
-        #df2 = df1.to_html()
-        #st.write(df2, unsafe_allow_html=True)
     elif auswahl == "DNB" and dataform == "RDFxml":
         result3 = [parse_record_rdf(item) for item in records]
-        df = pandas.DataFrame(result3)
-                #df1 = (df.style
-                            # .format({'URN': make_clickable})
-                            # .set_properties(**{'text-align': 'left'})
-                            # .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
+        df = pandas.DataFrame(result3)    
         st.dataframe(df)
 
     #für GND:
     elif auswahl == "GND" and dataform == "MARC21-xml":
         result4 = [parse_record_gndm(item) for item in gndm]
-        df = pandas.DataFrame(result4)            
-        #df1 = (df.style
-         #                .format({'Link': make_clickable})
-          #               .set_properties(**{'text-align': 'left'})
-           #              .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )                   
+        df = pandas.DataFrame(result4)                            
         st.dataframe(df)
     elif auswahl == "GND" and dataform == "oai_dc":
         result5 = [parse_record_gndoai(item) for item in records]
@@ -859,37 +841,21 @@ elif confirm and searchterm:
         st.dataframe(df)
     elif auswahl == "GND" and dataform == "RDFxml":
         result6 = [parse_record_gndrdf(item) for item in records]
-        df = pandas.DataFrame(result6)
-        #df1 = (df.style
-        #                 .format({'LINK': make_clickable})
-        #                 .set_properties(**{'text-align': 'left'})
-        #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )       
+        df = pandas.DataFrame(result6)     
         st.dataframe(df)
         
         #für DMA:
     elif auswahl == "DMA" and dataform == "MARC21-xml":
         result7 = [parse_record_dmamarc(item) for item in records_marc]
-        df = pandas.DataFrame(result7)            
-        #df1 = (df.style
-        #                 .format({'URN': make_clickable})
-        #                 .set_properties(**{'text-align': 'left'})
-        #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) )                   
+        df = pandas.DataFrame(result7)                           
         st.dataframe(df)
     elif auswahl == "DMA" and dataform == "oai_dc":
         result8 = [parse_record_dmadc(record) for record in records]
         df = pandas.DataFrame(result8)
-        #df1 = (df.style
-        #                 .format({'URN': make_clickable})
-        #                 .set_properties(**{'text-align': 'left'})
-        #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) ) 
         st.dataframe(df)
     elif auswahl == "DMA" and dataform == "RDFxml":
         result9 = [parse_record_dmardf(record) for record in records]
         df = pandas.DataFrame(result9)
-        #df1 = (df.style
-        #              .format({'URN': make_clickable})
-        #                 .set_properties(**{'text-align': 'left'})
-        #                 .set_table_styles([dict(selector = 'th', props=[('text-align', 'left')])]) ) 
         st.dataframe(df)
     
     else:
