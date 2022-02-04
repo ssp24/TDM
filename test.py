@@ -874,12 +874,14 @@ elif confirm and searchterm:
         
 footer="""<style>
         .footer {
-                padding: 5px;
-                text-align: center;
-                width: 100%;
-                bottom: 0;
-                position:fixed;
-        }
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
 </style>
 
 <div class="footer">
