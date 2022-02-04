@@ -29,9 +29,9 @@ st.markdown("**Bitte beachten Sie**: Dieses Tutorial dient als Einstieg. Aus Per
 
 
 st.subheader("Bitte wählen Sie zunächst den gewünschten Katalog:")
-st.text(" DNB = Titeldaten der Deutschen Nationalbibliothek \n "
-"DMA = Deutsches Musikarchiv \n "
-        "GND = Gemeinsame Normdatei ")
+st.markdown("* DNB = Titeldaten der Deutschen Nationalbibliothek \n "
+"* DMA = Deutsches Musikarchiv \n "
+        "* GND = Gemeinsame Normdatei ")
 
 ##Erstes Dropdown:
 auswahl = st.selectbox(
