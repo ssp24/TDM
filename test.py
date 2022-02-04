@@ -9,10 +9,10 @@ from lxml import etree
 import pandas
 import unicodedata
 from IPython.core.display import display, HTML
+from PIL import Image
 
-if "button1_clicked" not in st.session_state:
-    st.session_state.button1_clicked = False
-    st.session_state.button2_clicked = False
+image = Image.open('https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg')
+st.image(image, caption='DNB Logo', align="right")
 
 st.title("Testabfrage DNB-Daten")
 
