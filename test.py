@@ -874,8 +874,6 @@ elif confirm and searchterm:
         
 footer="""<style>
         .footer {
-                background-color: darkgreen;
-                color: white;
                 padding: 5px;
                 text-align: center;
                 bottom: 0;
