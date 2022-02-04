@@ -12,7 +12,7 @@ from IPython.core.display import display, HTML
 
 
 st.markdown("<h1 style='text-align: left'>Testabfrage DNB-Daten</h1> <img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' align='right'>", unsafe_allow_html=True)
-
+st.markdown("### Testabfrage DNB-Daten <img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' align='right'>", unsafe_allow_html=True)
 st.title("Testabfrage DNB-Daten")
 
 st.markdown("Hier können Sie die SRU-Schnittstelle der Deutschen Nationalbibliothek über einfache Formulareingaben "
