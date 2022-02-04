@@ -878,8 +878,8 @@ footer="""<style>
                 color: white;
                 padding: 3px;
                 text-align: center;
-                bottom: 0
-                position:fixed;
+                bottom: 0;
+                position:relative;
         }
 </style>
 
