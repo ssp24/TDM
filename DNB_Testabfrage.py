@@ -82,33 +82,34 @@ confirm = st.button('Los!', key='push')
 if not searchterm: 
     searchterm = "Test"
 else:
+    searchterm = searchterm
 
-    if confirm:
-        parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : dataform, 
-                    'maximumRecords': '100'} 
+if confirm:
+    parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : dataform, 
+                'maximumRecords': '100'} 
 
-        r1 = requests.get(selected_url, params = parameter)  
+    r1 = requests.get(selected_url, params = parameter)  
 
-        response = BeautifulSoup(r1.content)
-        records = response.find_all('record')
-        records_marc = response.find_all('record', {'type':'Bibliographic'})
-        gndm = response.find_all('record', {'type':'Authority'})
-        results = response.find('numberofrecords')  
+    response = BeautifulSoup(r1.content)
+    records = response.find_all('record')
+    records_marc = response.find_all('record', {'type':'Bibliographic'})
+    gndm = response.find_all('record', {'type':'Authority'})
+    results = response.find('numberofrecords')  
      
     
-        numberofrecords = results.text
-        numberofrecords = int(numberofrecords)
-        st.write("Gefundene Treffer:", numberofrecords)
+    numberofrecords = results.text
+    numberofrecords = int(numberofrecords)
+    st.write("Gefundene Treffer:", numberofrecords)
      
-        if numberofrecords >= 1: 
-            st.markdown("##### Anzeige des ersten Treffers der SRU_Antwort:")    
-            vorschau = records[0]
-            with st.expander("Vorschau anzeigen"):
-                st.code(vorschau)
-        else: 
-            st.write("Keine Treffer vorhanden")
-    else:
-        st.write('Bitte wählen Sie Katalog und Metadatenformat und geben Sie einen Suchbegriff ein')
+    if numberofrecords >= 1:
+        st.markdown("##### Anzeige des ersten Treffers der SRU_Antwort:")    
+        vorschau = records[0]
+        with st.expander("Vorschau anzeigen"):
+            st.code(vorschau)
+    else: 
+        st.write("Keine Treffer vorhanden")
+else:
+    st.write('Bitte wählen Sie Katalog und Metadatenformat und geben Sie einen Suchbegriff ein')
 
 
 ## TEIL 2 -------------------------------------------------------------------------------------------
