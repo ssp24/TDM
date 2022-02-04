@@ -73,7 +73,7 @@ st.write('Metadatenformat:', meta)
 
 #Eingabe Suchbegriff: 
 st.markdown("##### Bitte geben Sie nun Ihren Suchbegriff ein:")
-searchterm = st.text_input('Suchbegriff:', value=" ", placeholder="Bitte Suchbegriff eingeben")
+searchterm = st.text_input('Suchbegriff:', placeholder="Bitte Suchbegriff eingeben")
 
 confirm = st.button('Los!', key='push')
 #Suche ausführen: 
