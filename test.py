@@ -873,28 +873,19 @@ elif confirm and searchterm:
         
         
 footer="""<style>
-a:link , a:visited{
-color: blue;
-background-color: transparent;
-text-decoration: underline;
-}
-
-a:hover,  a:active {
-color: red;
-background-color: transparent;
-text-decoration: underline;
-}
-
-.footer {
-background-color: darkgrey;
-color: white;
-padding: 3px;
-text-align: center;
-bottom: 0;
-}
+        .footer {
+                background-color: darkgrey;
+                color: white;
+                padding: 3px;
+                text-align: center;
+                bottom: 0
+                position:fixed;
+        }
 </style>
+
 <div class="footer">
 <p>Zuletzt aktualisiert am: 04.02.2022</a></p>
 </div>
 """
+
 st.markdown(footer,unsafe_allow_html=True)
