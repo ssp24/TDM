@@ -801,28 +801,28 @@ def parse_record_dmardf(record):
                  
 st.subheader("Ausgeben und Speichern der Daten:")
 
-def output(repsonse):
-    with open('data.xml', 'w', encoding='utf-8') as f:
-        print(r1.text, file=f)
+if confirm:
+    
+    #def output(repsonse):
+        #with open('data.xml', 'w', encoding='utf-8') as f:
+            #print(r1.text, file=f)
 
 #response
 #records
 
-st.download_button(
+    st.download_button(
         label="Download XML",
-        data=output(r1),
+        data=r1.text,
         file_name='data.xml',
         mime='text/xml',
     )
 
-
-
-                 
-st.subheader("Darstellung der Daten in tabellarischer Form:")
+               
+    st.subheader("Darstellung der Daten in tabellarischer Form:")
 
 
 ##für Titeldaten:
-if confirm:
+
 
     if auswahl == "DNB" and dataform == "oai_dc":
         result = [parse_record_dc(record) for record in records]
