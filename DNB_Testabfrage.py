@@ -802,7 +802,7 @@ def parse_record_dmardf(record):
 st.subheader("Ausgeben und Speichern der Daten:")
 
 with output_xml:
-        with open('data.xml', 'w', encoding='utf-8') as f:
+    with open('data.xml', 'w', encoding='utf-8') as f:
         print(r1.text, file=f)
 
 #response
