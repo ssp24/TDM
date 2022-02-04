@@ -876,6 +876,7 @@ footer="""<style>
         .footer {
                 padding: 5px;
                 text-align: center;
+                align: center;
                 bottom: 0;
                 position:fixed;
         }
