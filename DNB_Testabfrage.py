@@ -72,8 +72,8 @@ st.write('Metadatenformat:', meta)
 
 
 #Eingabe Suchbegriff: 
-st.subheader("Bitte geben Sie nun Ihren Suchbegriff ein:")
-searchterm = st.text_input('Suchbegriff:', 'Faust')
+st.markdown("##### Bitte geben Sie nun Ihren Suchbegriff ein:")
+searchterm = st.text_input('Suchbegriff:', '')
 
 confirm = st.button('Los!', key='push')
 #Suche ausführen: 
@@ -93,10 +93,11 @@ if confirm:
      numberofrecords = results.text
      numberofrecords = int(numberofrecords)
      st.write("Gefundene Treffer:", numberofrecords)
-        
+     
      if numberofrecords >= 1: 
+        st.markdown("##### Anzeige des ersten Treffers der SRU_Antwort:")    
         vorschau = records[0]
-        with st.expander("Vorschau des ersten Treffers der SRU-Antwort anzeigen"):
+        with st.expander("Vorschau anzeigen"):
             st.code(vorschau)
      else: 
         st.write("Keine Treffer vorhanden")
@@ -810,7 +811,7 @@ if confirm:
         mime='text/xml',
     )
                
-    st.markdown("##### Darstellung der Daten in tabellarischer Form:")
+    st.markdown("##### Darstellung als Tabelle:")
 
 
 ##für Titeldaten:
@@ -896,6 +897,7 @@ if confirm:
     else:
         st.write("Es wurde noch keine Suchanfrage gestellt.")
         
+    st.write(" ")
     
     ## Download CSV: 
     def convert_df(df): 
