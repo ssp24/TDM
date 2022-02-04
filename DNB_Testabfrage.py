@@ -80,7 +80,7 @@ searchterm = st.text_input('Suchbegriff:', placeholder="Bitte Suchbegriff eingeb
 confirm = st.button('Los!', key='push')
 #Suche ausführen: 
 if not searchterm: 
-    st.write("Bitte geben Sie zunächst einen Suchbegriff ein.")
+    searchterm = "Test"
 else:
 
     if confirm:
