@@ -12,7 +12,7 @@ from IPython.core.display import display, HTML
 
 
 st.image('https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg', caption='DNB Logo')
-st.image("<img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg'; align='right'>")
+st.image("<img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg'; align='right'>", unsafe_allow_html=True)
 
 
 st.markdown("<h1 style='text-align: center; color: grey;'>Big headline</h1>", unsafe_allow_html=True)
