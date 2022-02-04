@@ -890,6 +890,7 @@ background-color: darkgrey;
 color: white;
 padding: 3px;
 text-align: center;
+bottom: 0;
 }
 </style>
 <div class="footer">
