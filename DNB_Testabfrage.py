@@ -69,8 +69,8 @@ elif auswahl == "GND":
         selected_url = "https://services.dnb.de/sru/authorities"
 else:
         selected_url = "ERROR: Keine URL gewählt"  
-st.write('Katalog:', auswahl, ':', selected_url)
-st.write('Metadatenformat:', meta)
+#st.write('Katalog:', auswahl, ':', selected_url)
+#st.write('Metadatenformat:', meta)
 
 
 #Eingabe Suchbegriff: 
