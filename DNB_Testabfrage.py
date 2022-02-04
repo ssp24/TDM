@@ -81,6 +81,7 @@ confirm = st.button('Los!', key='push')
 #Suche ausführen: 
 if not searchterm: 
     searchterm = "Test"
+    st.error("Sie haben keinen Suchbegriff eingegeben. Ihre Anfrage wird mit dem Suchbegriff 'Test' durchgeführt.")
 else:
     searchterm = searchterm
 
