@@ -75,11 +75,13 @@ else:
 
 #Eingabe Suchbegriff: 
 st.markdown("##### Bitte geben Sie nun Ihren Suchbegriff ein:")
-searchterm = st.text_input('Suchbegriff:', placeholder="Bitte Suchbegriff eingeben", value="Eingabe")
+searchterm = st.text_input('Suchbegriff:', placeholder="Bitte Suchbegriff eingeben")
 
 confirm = st.button('Los!', key='push')
 #Suche ausführen: 
-if searchterm:
+if not searchterm: 
+    st.write("Bitte geben Sie zunächst einen Suchbegriff ein.")
+else:
 
     if confirm:
         parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : dataform, 
@@ -108,8 +110,6 @@ if searchterm:
     else:
         st.write('Bitte wählen Sie Katalog und Metadatenformat und geben Sie einen Suchbegriff ein')
 
-else: 
-    st.write("Bitte geben Sie einen Suchbegriff ein.")
 
 ## TEIL 2 -------------------------------------------------------------------------------------------
 
