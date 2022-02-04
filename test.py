@@ -877,7 +877,6 @@ footer="""<style>
                 background-color: darkgreen;
                 color: white;
                 padding: 5px;
-                height: 20px;
                 text-align: center;
                 bottom: 0;
                 position:fixed;
