@@ -10,9 +10,10 @@ import pandas
 import unicodedata
 from IPython.core.display import display, HTML
 from PIL import Image
+from streamlit_embedcode import gitlab_snippet
 
-image = Image.open('https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg')
-st.image(image, caption='DNB Logo', align="right")
+
+st.image('https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg', caption='DNB Logo', align="right")
 
 st.title("Testabfrage DNB-Daten")
 
