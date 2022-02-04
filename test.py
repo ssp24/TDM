@@ -12,10 +12,10 @@ from IPython.core.display import display, HTML
 
 
 st.image('https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg', caption='DNB Logo')
-st.image("<img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg'; align='right'>", unsafe_allow_html=True)
+image_html = "<img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' class='img-fluid'>"
 
 
-st.markdown("<h1 style='text-align: center; color: grey;'>Big headline</h1>", unsafe_allow_html=True)
+st.markdown(image_html, unsafe_allow_html=True)
 
 st.markdown("<h2 style='text-align: center; color: black;'>Smaller headline in black </h2>", unsafe_allow_html=True)
 
