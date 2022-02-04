@@ -882,6 +882,7 @@ text-align: center;
 </style>
 
 <div class="footer">
+<br><br><br>
 <p>Zuletzt aktualisiert am: 04.02.2022</a></p>
 </div>
 """
