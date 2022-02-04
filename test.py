@@ -11,7 +11,7 @@ import unicodedata
 from IPython.core.display import display, HTML
 
 
-st.markdown("<img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' align='right'>", unsafe_allow_html=True)
+st.markdown("<h1>Testabfrage DNB-Daten</h1> <img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' align='right'>", unsafe_allow_html=True)
 
 st.title("Testabfrage DNB-Daten")
 
