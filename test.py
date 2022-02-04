@@ -886,12 +886,9 @@ text-decoration: underline;
 }
 
 .footer {
-position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-background-color: white;
-color: black;
+background-color: darkgrey;
+color: white;
+padding: 3px;
 text-align: center;
 }
 </style>
