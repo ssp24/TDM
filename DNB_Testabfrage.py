@@ -28,7 +28,7 @@ st.markdown("**Bitte beachten Sie**: * Dieses Tutorial dient als Einstieg. Aus P
             "Anzahl enthaltener Elemente und Informationen.")
 
 
-st.markdown("## Bitte wählen Sie zunächst den gewünschten Katalog:")
+st.markdown("##### Bitte wählen Sie zunächst den gewünschten Katalog:")
 st.markdown("* DNB = Titeldaten der Deutschen Nationalbibliothek \n "
 "* DMA = Deutsches Musikarchiv \n "
         "* GND = Gemeinsame Normdatei ")
@@ -41,7 +41,7 @@ auswahl = st.selectbox(
 default = "https://services.dnb.de/sru/dnb"
 
 #Zweites Dropdown:
-st.subheader("Bitte wählen Sie das Metadatenformat für die Ausgabe:")
+st.markdown("##### Bitte wählen Sie das Metadatenformat für die Ausgabe:")
 
 meta = st.selectbox(
         'Metadatenformat:',
@@ -801,7 +801,7 @@ def parse_record_dmardf(record):
 
 if confirm:
 
-    st.markdown("####Ausgeben und Speichern der Daten:")
+    st.markdown("##### Ausgeben und Speichern der Daten:")
 
     st.download_button(
         label="Download XML",
@@ -810,7 +810,7 @@ if confirm:
         mime='text/xml',
     )
                
-    st.markdown("Darstellung der Daten in tabellarischer Form:")
+    st.markdown("##### Darstellung der Daten in tabellarischer Form:")
 
 
 ##für Titeldaten:
