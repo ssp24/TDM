@@ -96,7 +96,7 @@ if searchterm:
         numberofrecords = int(numberofrecords)
         st.write("Gefundene Treffer:", numberofrecords)
      
-         if numberofrecords >= 1: 
+        if numberofrecords >= 1: 
             st.markdown("##### Anzeige des ersten Treffers der SRU_Antwort:")    
             vorschau = records[0]
             with st.expander("Vorschau anzeigen"):
