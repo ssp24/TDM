@@ -16,7 +16,7 @@ image_html = "<img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' cla
 
 
 st.markdown(image_html, unsafe_allow_html=True)
-st.markdown("<img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' style='align: center'>", unsafe_allow_html=True)
+st.markdown("<img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' align='right'>", unsafe_allow_html=True)
 
 st.markdown("<h2 style='text-align: center; color: black;'>Smaller headline in black </h2>", unsafe_allow_html=True)
 
