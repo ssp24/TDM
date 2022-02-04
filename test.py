@@ -8,3 +8,8 @@ if searchterm == None:
   st.write("Kein Searchterm")
 else: 
   st.write("SUCCESS")
+
+if not searchterm: 
+  st.write("Existiert, ist aber leer")
+else:
+  st.write("Auch nicht der Weg")
