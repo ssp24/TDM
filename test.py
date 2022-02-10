@@ -816,7 +816,8 @@ elif confirm and searchterm:
         data=r1.text,
         file_name='data.xml',
         mime='text/xml',
-        
+        key='letsgo',
+        on_click='enquiry()',
     )
                
     st.markdown("##### Darstellung als Tabelle:")
