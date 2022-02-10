@@ -10,6 +10,9 @@ import pandas
 import unicodedata
 from IPython.core.display import display, HTML
 
+if 'letsgo' not in st.session_state:
+    st.session_state.letsgo = 0
+
 
 st.markdown("# Testabfrage DNB-Daten <img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' align='right'>", unsafe_allow_html=True)
 
@@ -77,13 +80,21 @@ searchterm = st.text_input('Suchbegriff:', placeholder="Bitte Suchbegriff eingeb
 confirm = st.button('Los!', key='push')
 #Suche ausführen: 
 
-if confirm and searchterm:
+def enquiry(): 
     parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : dataform, 
                 'maximumRecords': '100'} 
 
     r1 = requests.get(selected_url, params = parameter)  
-
     response = BeautifulSoup(r1.content)
+
+    return response     
+
+
+if confirm and searchterm:
+    st.session_state.letsgo += 1
+    response = enquiry()
+        
+        
     records = response.find_all('record')
     records_marc = response.find_all('record', {'type':'Bibliographic'})
     gndm = response.find_all('record', {'type':'Authority'})
@@ -93,7 +104,8 @@ if confirm and searchterm:
     numberofrecords = results.text
     numberofrecords = int(numberofrecords)
     st.write("Gefundene Treffer:", numberofrecords)
-     
+      
+        
     if numberofrecords >= 1:
         st.markdown("##### Anzeige des ersten Treffers der SRU_Antwort:")    
         vorschau = records[0]
@@ -804,6 +816,7 @@ elif confirm and searchterm:
         data=r1.text,
         file_name='data.xml',
         mime='text/xml',
+        on_click
     )
                
     st.markdown("##### Darstellung als Tabelle:")
