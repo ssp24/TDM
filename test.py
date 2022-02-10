@@ -85,16 +85,16 @@ def enquiry():
                 'maximumRecords': '100'} 
 
     r1 = requests.get(selected_url, params = parameter)  
-    response = BeautifulSoup(r1.content)
-
-    return response     
+    
+    return r1    
 
 
 if confirm and searchterm:
     st.session_state.letsgo += 1
-    response = enquiry()
+    r1 = enquiry()
         
-        
+    response = BeautifulSoup(r1.content)
+    
     records = response.find_all('record')
     records_marc = response.find_all('record', {'type':'Bibliographic'})
     gndm = response.find_all('record', {'type':'Authority'})
