@@ -885,7 +885,7 @@ elif confirm and searchterm:
         mime='text/csv',
     )
     
-    if st.session_state.letsgo = 1:
+    if st.session_state.letsgo == 1:
         #df['result'] = df['data'] + a
         st.dataframe(df)
         
