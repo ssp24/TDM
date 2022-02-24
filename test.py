@@ -873,8 +873,8 @@ elif confirm and searchterm:
                
     st.markdown("##### Darstellung als Tabelle:")
     
-    df = table()
-    st.dataframe(df)
+    #df = table()
+    #st.dataframe(df)
 
 def convert_df(df): 
     return df.to_csv().encode('utf-8')
@@ -884,7 +884,7 @@ if st.session_state.letsgo == 1:
     df = table()
     st.dataframe(df)
     ## Download CSV: 
-    keep = st.download_button(
+    st.download_button(
         label="Download CSV",
         data=convert_df(df),
         file_name='Tabelle.csv',
