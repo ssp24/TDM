@@ -801,29 +801,6 @@ def parse_record_dmardf(record):
                  
 ## -----------------------------------------------------------------------------
                  
-                 
-                 
-#Ausgaben:             
-
-if confirm and not searchterm:
-    st.write(" ")
-elif confirm and searchterm:
-
-    st.markdown("##### Ausgeben und Speichern der Daten:")
-
-    st.download_button(
-        label="Download XML",
-        data=r1.text,
-        file_name='data.xml',
-        mime='text/xml',
-        #key='letsgo',
-        #on_click='enquiry()',
-    )
-               
-    st.markdown("##### Darstellung als Tabelle:")
-
-
-    
 def table():     
     if auswahl == "DNB" and dataform == "oai_dc":
         result = [parse_record_dc(record) for record in records]
@@ -872,7 +849,33 @@ def table():
         st.write("Es wurde noch keine Suchanfrage gestellt.")
         
     return df
-    
+
+
+df = table()
+st.dataframe(df)
+
+                 
+#Ausgaben:             
+
+if confirm and not searchterm:
+    st.write(" ")
+elif confirm and searchterm:
+
+    st.markdown("##### Ausgeben und Speichern der Daten:")
+
+    st.download_button(
+        label="Download XML",
+        data=r1.text,
+        file_name='data.xml',
+        mime='text/xml',
+        #key='letsgo',
+        #on_click='enquiry()',
+    )
+               
+    st.markdown("##### Darstellung als Tabelle:")
+
+
+ 
 ##für Titeldaten:
 if st.session_state.letsgo == 1:    
     st.dataframe(df)
