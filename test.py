@@ -81,6 +81,9 @@ confirm = st.button('Los!', key='push')
 if confirm:
     st.session_state.letsgo += 1
     
+
+st.write(st.session_state.letsgo)    
+    
 #Suche ausführen: 
 
 def enquiry(): 
