@@ -82,25 +82,18 @@ searchterm = st.text_input('Suchbegriff:', placeholder="Bitte Suchbegriff eingeb
 
 confirm = st.button('Los!', key='push')
 if confirm:
-    st.session_state.letsgo += 1
-    
-
-st.write(st.session_state.letsgo)    
+    st.session_state.letsgo += 1 
     
 #Suche ausführen: 
-
 def enquiry(): 
     parameter = {'version' : '1.1' , 'operation' : 'searchRetrieve' , 'query' : searchterm, 'recordSchema' : dataform, 
                 'maximumRecords': '100'} 
-
     r1 = requests.get(selected_url, params = parameter)  
-    
     return r1    
 
 
 if confirm and searchterm:
     r1 = enquiry()
-        
     response = BeautifulSoup(r1.content)
     
     records = response.find_all('record')
@@ -108,11 +101,9 @@ if confirm and searchterm:
     gndm = response.find_all('record', {'type':'Authority'})
     results = response.find('numberofrecords')  
      
-    
     numberofrecords = results.text
     numberofrecords = int(numberofrecords)
     st.write("Gefundene Treffer:", numberofrecords)
-      
         
     if numberofrecords >= 1:
         st.markdown("##### Anzeige des ersten Treffers der SRU_Antwort:")    
