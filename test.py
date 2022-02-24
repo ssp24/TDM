@@ -872,6 +872,9 @@ elif confirm and searchterm:
     )
                
     st.markdown("##### Darstellung als Tabelle:")
+    
+    df = table(records_marc)
+    st.dataframe(df)
 
 def convert_df(df): 
     return df.to_csv().encode('utf-8')
