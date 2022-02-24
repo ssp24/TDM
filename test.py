@@ -876,18 +876,14 @@ elif confirm and searchterm:
         data=r1.text,
         file_name='data.xml',
         mime='text/xml',
-        #key='letsgo',
-        #on_click='enquiry()',
+        key='letsgo',
+        on_click='table()',
     )
                
     st.markdown("##### Darstellung als Tabelle:")
     
     df = table()
-    
-    if st.session_state.downclick == 0:
-        st.dataframe(df)
-    else: 
-        st.dataframe(df)
+    st.dataframe(df)
 
     def convert_df(df): 
         return df.to_csv().encode('utf-8')
