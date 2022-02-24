@@ -889,7 +889,7 @@ if st.session_state.letsgo == 1:
         #df['result'] = df['data'] + a
         #st.dataframe(df)
 
- else:
+else:
     st.write("Test")
         
         
