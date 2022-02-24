@@ -78,6 +78,9 @@ st.markdown("##### Bitte geben Sie nun Ihren Suchbegriff ein:")
 searchterm = st.text_input('Suchbegriff:', placeholder="Bitte Suchbegriff eingeben")
 
 confirm = st.button('Los!', key='push')
+if confirm:
+    st.session_state.letsgo += 1
+    
 #Suche ausführen: 
 
 def enquiry(): 
@@ -90,7 +93,6 @@ def enquiry():
 
 
 if confirm and searchterm:
-    st.session_state.letsgo += 1
     r1 = enquiry()
         
     response = BeautifulSoup(r1.content)
@@ -874,11 +876,11 @@ elif confirm and searchterm:
 
  
 ##für Titeldaten:
-if st.session_state.letsgo == 1:    
+if st.session_state.letsgo == 1 and :    
     df = table(records_marc)
     st.dataframe(df)
 else:
-    st.write("Test")
+    st.write(" ")
     
 st.write(" ")
     
