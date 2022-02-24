@@ -851,7 +851,7 @@ def table():
     return df
 
 
-df = table()
+df = table(records)
 st.dataframe(df)
 
                  
