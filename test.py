@@ -874,7 +874,7 @@ elif confirm and searchterm:
     st.markdown("##### Darstellung als Tabelle:")
     
     df = table()
-    st.session_state.downclick["df"]=df 
+    st.session_state["df"]=df 
     #st.dataframe(df)
 
     def convert_df(df): 
