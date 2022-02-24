@@ -824,7 +824,7 @@ elif confirm and searchterm:
 
 
 ##für Titeldaten:
-
+if st.session_state.letsgo == 1:
 
     if auswahl == "DNB" and dataform == "oai_dc":
         result = [parse_record_dc(record) for record in records]
@@ -888,6 +888,10 @@ elif confirm and searchterm:
     #if st.session_state.letsgo == 1:
         #df['result'] = df['data'] + a
         #st.dataframe(df)
+
+ else:
+    st.write("Test")
+        
         
         
 footer="""<style>
