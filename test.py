@@ -856,7 +856,10 @@ def table():
     return df
 
 
-                 
+def downclick(): 
+    st.session_state.downclick += 1
+
+
 #Ausgaben:             
 
 if confirm and not searchterm:
@@ -877,21 +880,23 @@ elif confirm and searchterm:
     st.markdown("##### Darstellung als Tabelle:")
     
     df = table()
-    #st.dataframe(df)
+    
+    if st.session_state.downclick == 0:
+        st.dataframe(df)
+    else: 
+        st.dataframe(df)
 
     def convert_df(df): 
         return df.to_csv().encode('utf-8')
- 
-    ##für Titeldaten:
-   
-    st.dataframe(df)
+    
+    
     ## Download CSV: 
     st.download_button(
         label="Download CSV",
         data=convert_df(df),
         file_name='Tabelle.csv',
         mime='text/csv',
-        on_click=table(),
+        on_click=downclick(),
     )
 else:
     st.write(" ")
