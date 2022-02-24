@@ -884,14 +884,14 @@ def convert_df(df):
  
 ##für Titeldaten:
 if st.session_state.letsgo != 0 and searchterm:    
-    st.dataframe(df)
+    #st.dataframe(df)
     ## Download CSV: 
     st.download_button(
         label="Download CSV",
         data=convert_df(df),
         file_name='Tabelle.csv',
         mime='text/csv',
-        on_click=table,
+        on_click=table(),
     )
 else:
     st.write(" ")
