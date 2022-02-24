@@ -873,28 +873,27 @@ elif confirm and searchterm:
                
     st.markdown("##### Darstellung als Tabelle:")
 
-
+def convert_df(df): 
+    return df.to_csv().encode('utf-8')
  
 ##für Titeldaten:
 if st.session_state.letsgo == 1:    
     df = table(records_marc)
     st.dataframe(df)
-else:
-    st.write(" ")
-    
-st.write(" ")
-    
     ## Download CSV: 
-def convert_df(df): 
-    return df.to_csv().encode('utf-8')
-
-keep = st.download_button(
+    keep = st.download_button(
         label="Download CSV",
         data=convert_df(df),
         file_name='Tabelle.csv',
         mime='text/csv',
         on_click=table,
-)
+    )
+else:
+    st.write(" ")
+    
+st.write(" ")
+    
+
     
     #if st.session_state.letsgo == 1:
         #df['result'] = df['data'] + a
