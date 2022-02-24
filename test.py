@@ -876,7 +876,7 @@ elif confirm and searchterm:
 
  
 ##für Titeldaten:
-if st.session_state.letsgo == 1 and :    
+if st.session_state.letsgo == 1:    
     df = table(records_marc)
     st.dataframe(df)
 else:
