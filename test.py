@@ -905,6 +905,7 @@ st.write(" ")
     
 if st.session_state.downclick != 0:
     st.write("Button wurde bereits geklickt")
+    st.dataframe(df)
 
     
     #if st.session_state.letsgo == 1:
