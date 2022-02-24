@@ -12,6 +12,9 @@ from IPython.core.display import display, HTML
 
 if 'letsgo' not in st.session_state:
     st.session_state.letsgo = 0
+    
+if 'downclick' not in st.session_state:
+    st.session_state.downclick = 0
 
 
 st.markdown("# Testabfrage DNB-Daten <img src='https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg' align='right'>", unsafe_allow_html=True)
