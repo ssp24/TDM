@@ -876,8 +876,8 @@ elif confirm and searchterm:
         data=r1.text,
         file_name='data.xml',
         mime='text/xml',
-        key='letsgo',
-        on_click='table()',
+        #key='letsgo',
+        #on_click='table()',
     )
                
     st.markdown("##### Darstellung als Tabelle:")
@@ -895,7 +895,7 @@ elif confirm and searchterm:
         data=convert_df(df),
         file_name='Tabelle.csv',
         mime='text/csv',
-        on_click=downclick(),
+        #on_click=downclick(),
     )
 else:
     st.write(" ")
