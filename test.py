@@ -873,7 +873,7 @@ elif confirm and searchterm:
                
     st.markdown("##### Darstellung als Tabelle:")
     
-    df = table(records_marc)
+    df = table()
     st.dataframe(df)
 
 def convert_df(df): 
@@ -881,7 +881,7 @@ def convert_df(df):
  
 ##für Titeldaten:
 if st.session_state.letsgo == 1:    
-    df = table(records_marc)
+    df = table()
     st.dataframe(df)
     ## Download CSV: 
     keep = st.download_button(
