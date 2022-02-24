@@ -876,6 +876,8 @@ def table():
 ##für Titeldaten:
 if st.session_state.letsgo == 1:    
     st.dataframe(df)
+else:
+    st.write("Test")
     
 st.write(" ")
     
@@ -895,9 +897,7 @@ keep = st.download_button(
         #df['result'] = df['data'] + a
         #st.dataframe(df)
 
-else:
-    st.write("Test")
-        
+     
         
         
 footer="""<style>
