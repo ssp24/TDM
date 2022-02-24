@@ -851,9 +851,6 @@ def table():
     return df
 
 
-df = table(records)
-st.dataframe(df)
-
                  
 #Ausgaben:             
 
@@ -878,6 +875,7 @@ elif confirm and searchterm:
  
 ##für Titeldaten:
 if st.session_state.letsgo == 1:    
+    df = table()
     st.dataframe(df)
 else:
     st.write("Test")
@@ -893,7 +891,7 @@ keep = st.download_button(
         data=convert_df(df),
         file_name='Tabelle.csv',
         mime='text/csv',
-        on_click=tabel,
+        on_click=table,
 )
     
     #if st.session_state.letsgo == 1:
