@@ -874,6 +874,7 @@ elif confirm and searchterm:
     st.markdown("##### Darstellung als Tabelle:")
     
     df = table()
+    
     st.session_state["df"]=df 
     #st.dataframe(df)
 
@@ -897,7 +898,7 @@ st.write(" ")
     
 if st.session_state.downclick != 0:
     st.write("Button wurde bereits geklickt")
-    
+    st.session_state["df"]
 
     
     #if st.session_state.letsgo == 1:
