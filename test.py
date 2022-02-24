@@ -895,8 +895,9 @@ elif confirm and searchterm:
         data=convert_df(df),
         file_name='Tabelle.csv',
         mime='text/csv',
-        #on_click=downclick(),
+        on_click=downclick(),
     )
+    st.write(st.session_state.downclick)
 else:
     st.write(" ")
     
