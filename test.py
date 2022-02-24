@@ -874,7 +874,7 @@ elif confirm and searchterm:
     st.markdown("##### Darstellung als Tabelle:")
     
     df = table()
-    st.session_state[df]
+    st.session_state.downclick[df]
     #st.dataframe(df)
 
     def convert_df(df): 
@@ -897,14 +897,7 @@ st.write(" ")
     
 if st.session_state.downclick != 0:
     st.write("Button wurde bereits geklickt")
-    r1 = enquiry()
-        
-    response = BeautifulSoup(r1.content)
     
-    records = response.find_all('record')
-    records_marc = response.find_all('record', {'type':'Bibliographic'})
-    gndm = response.find_all('record', {'type':'Authority'})
-    df = table()
 
     
     #if st.session_state.letsgo == 1:
