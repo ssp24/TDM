@@ -880,7 +880,7 @@ def convert_df(df):
     return df.to_csv().encode('utf-8')
  
 ##für Titeldaten:
-if st.session_state.letsgo == 1:    
+if st.session_state.letsgo == 1 and searchterm:    
     df = table()
     st.dataframe(df)
     ## Download CSV: 
