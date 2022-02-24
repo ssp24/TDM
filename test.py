@@ -879,12 +879,12 @@ elif confirm and searchterm:
     df = table()
     #st.dataframe(df)
 
-def convert_df(df): 
-    return df.to_csv().encode('utf-8')
+    def convert_df(df): 
+        return df.to_csv().encode('utf-8')
  
-##für Titeldaten:
-if st.session_state.letsgo != 0 and searchterm:    
-    #st.dataframe(df)
+    ##für Titeldaten:
+   
+    st.dataframe(df)
     ## Download CSV: 
     st.download_button(
         label="Download CSV",
