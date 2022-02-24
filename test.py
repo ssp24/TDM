@@ -884,7 +884,6 @@ def convert_df(df):
  
 ##für Titeldaten:
 if st.session_state.letsgo != 0:    
-    df = table()
     st.dataframe(df)
     ## Download CSV: 
     st.download_button(
