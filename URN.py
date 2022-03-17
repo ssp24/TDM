@@ -23,11 +23,13 @@ json_url = "https://nbn-resolving.org/json/"
 xmlrequest = xml_url + urn
 st.write(xmlrequest) 
          
-#def query(urn): 
+def query(urn): 
+    
+    response = requests.get(xmlrequest)
          
-    #return xmlrequest
+    return response
 
  
- #test = query(urn)
+ test = query(urn)
          
- #st.code(test)
+ st.code(test)
