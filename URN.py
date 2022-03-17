@@ -7,6 +7,7 @@ from lxml import etree
 import pandas
 import unicodedata
 from IPython.core.display import display, HTML
+import xmltodict
 
 
 st.header("Test - Informationen zu URNs") 
@@ -32,6 +33,8 @@ def query(urn):
  
 test = query(urn)
 data = test.content
+data2 = xmltodict.parse(test.content)
          
 st.code(test)
 st.code(data)
+st.code(data2)
