@@ -17,7 +17,7 @@ urn = st.text_input('gesuchte URN')
          
 #testurn: urn:nbn:de:hebis:26-opus-37188
          
-def query(): 
+def query(urn): 
          
     xml_url = "https://nbn-resolving.org/xml/"    
     json_url = "https://nbn-resolving.org/json/"
