@@ -31,5 +31,7 @@ def query(urn):
 
  
 test = query(urn)
+data = test.content
          
 st.code(test)
+st.code(data)
