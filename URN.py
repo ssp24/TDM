@@ -17,15 +17,15 @@ urn = st.text_input('gesuchte URN')
          
 #testurn: urn:nbn:de:hebis:26-opus-37188
          
-def query(urn): 
+xml_url = "https://nbn-resolving.org/xml/"    
+json_url = "https://nbn-resolving.org/json/"
          
-    xml_url = "https://nbn-resolving.org/xml/"    
-    json_url = "https://nbn-resolving.org/json/"
+xmlrequest = xml_url + urn
+st.write(xmlrequest) 
          
-    xmlrequest = xml_url + urn
-    st.write(xmlrequest) 
+#def query(urn): 
          
-    return xmlrequest
+    #return xmlrequest
 
  
  #test = query(urn)
