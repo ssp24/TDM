@@ -11,7 +11,7 @@ from IPython.core.display import display, HTML
 
 st.header("Test - Informationen zu URNs") 
 
-st.write("Hier können Sie sich Informationen zu einer URN aus dem Namensraum urn:nbn:de anzeigen lassen". 
+st.write("Hier können Sie sich Informationen zu einer URN aus dem Namensraum urn:nbn:de anzeigen lassen.") 
          
 urn = st.text_input('gesuchte URN')
          
