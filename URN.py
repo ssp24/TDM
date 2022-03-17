@@ -25,7 +25,8 @@ def query():
     xmlrequest = xml_url + urn
     st.write(xmlrequest) 
          
-    
+    return xmlrequest
+
  
  content = query(urn)
          
