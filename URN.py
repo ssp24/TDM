@@ -28,6 +28,6 @@ def query(urn):
     return xmlrequest
 
  
- content = query(urn)
+ #test = query(urn)
          
- st.code(content)
+ #st.code(test)
