@@ -7,4 +7,6 @@ requests
 bs4
 lxml
 nltk
-
+numpy
+plotly
+wordcloud
