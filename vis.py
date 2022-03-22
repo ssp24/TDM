@@ -37,4 +37,4 @@ plt.figure(figsize=(10, 10))
 fig6 = plt.imshow(wc2, interpolation="bilinear")
 plt.axis("off")
 
-st.pyplot(fig6)
+st.pyplot()
