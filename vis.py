@@ -12,9 +12,10 @@ fig = px.sunburst(data, path=['Parent_no', 'Fachgebiet'], values='Results')
 
 st.plotly_chart(fig, use_container_width=True)
 
+st.subheading("Darstellung Sachgruppen DDC")
 
 fig2 = px.sunburst(data, path=['Parent_title','Fachgebiet'], values='Results',
-                  color='Anzahl Werke in dieser Sachgruppe', hover_data=['DDC'],
+                  color='Results', hover_data=['DDC'],
                   color_continuous_scale='YlGn',
                   #color_continuous_midpoint=np.average(data['Parent_no'], weights=data['Results']),
                   height=800)
