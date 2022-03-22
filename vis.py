@@ -35,6 +35,6 @@ wc2 = WordCloud(background_color="white", width=800, height=400).generate_from_f
 
 plt.figure(figsize=(10, 10))
 fig6 = plt.imshow(wc2, interpolation="bilinear")
-plt.axis("off")
+fig6.axis("off")
 
 st.pyplot(fig6)
