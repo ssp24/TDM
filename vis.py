@@ -17,7 +17,7 @@ st.write("Stand der Daten: 21.03.2022")
 
 st.subheader("Darstellung Sachgruppen DDC 1")
 
-fig = px.sunburst(data, path=['Parent_no', 'Fachgebiet'], values='Results', height=600)
+fig = px.sunburst(data, path=['Parent_no', 'Fachgebiet'], values='Results', height=600, color_discrete_sequence = dnbcolor)
 
 st.plotly_chart(fig, use_container_width=True)
 
@@ -26,7 +26,6 @@ st.subheader("Darstellung Sachgruppen DDC 2")
 fig2 = px.sunburst(data, path=['Parent_title','Fachgebiet'], values='Results',
                   color='Results', hover_data=['DDC'],
                   color_continuous_scale='YlGn',
-                  color_discrete_sequence = dnbcolor,
                   #color_continuous_midpoint=np.average(data['Parent_no'], weights=data['Results']),
                   height=800)
 
