@@ -39,6 +39,6 @@ fig6, ax = plt.subplots()
 
 #plt.figure(figsize=(10, 10))
 ax.imshow(wc2, interpolation="bilinear")
-#plt.axis("off")
+ax.axis("off")
 
 st.pyplot(fig6)
