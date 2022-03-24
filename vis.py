@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 data = pd.read_json("data/hitlist.json")
 dnbcolor = ['#40d0c8', '#e4463e', '#124ec9', '#b6c73f', '#feca21',
-                           '#3cb8f6', '#fa8e46', '#e3d98f', '#91D4D2', '#F1A39F']
+                           '#3cb8f6', '#f9852e', '#e3d98f', '#8102ff', '#01be00']
 
 st.header("Darstellung der Sammlungen der DNB")
 
