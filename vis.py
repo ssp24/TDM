@@ -41,4 +41,4 @@ fig6, ax = plt.subplots()
 ax.imshow(wc2, interpolation="bilinear")
 #plt.axis("off")
 
-st.pyplot()
+st.pyplot(fig6)
