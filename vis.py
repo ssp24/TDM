@@ -33,8 +33,13 @@ worddata = data.set_index('Fachgebiet').to_dict()['Results']
 wc = WordCloud(background_color="white").generate_from_frequencies(ddcdata)
 wc2 = WordCloud(background_color="white", width=800, height=400).generate_from_frequencies(worddata)
 
-plt.figure(figsize=(10, 10))
-fig6 = plt.imshow(wc2, interpolation="bilinear")
+
+fig6, ax = plt.subplots(wc2, interpolation="bilinear")
+ax.scatter([1, 2, 3], [1, 2, 3])
+
+
+#plt.figure(figsize=(10, 10))
+#fig6 = plt.imshow(wc2, interpolation="bilinear")
 plt.axis("off")
 
-st.pyplot()
+st.pyplot(fig6)
