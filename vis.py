@@ -10,9 +10,13 @@ data = pd.read_json("data/hitlist.json")
 dnbcolor = ['#40d0c8', '#e4463e', '#124ec9', '#b6c73f', '#feca21',
                            '#3cb8f6', '#f9852e', '#e3d98f', '#8102ff', '#01be00']
 
+alldata = data['Results'].sum(axis=0) 
+
+
 st.header("Darstellung der Sammlungen der DNB")
 
 st.write("Die Datengrundlage für die hier gezeigten Visualisieurungen sind die Titeldaten der DNB.") 
+st.write("Abgebildete Titeldaten:", alldata) 
 st.write("Stand der Daten: 21.03.2022")
 
 st.subheader("Darstellung Sachgruppen DDC 1")
