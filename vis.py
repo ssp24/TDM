@@ -7,8 +7,8 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 data = pd.read_json("data/hitlist.json")
-dnbcolor = ['#40d0c8', '#e4463e', '#124ec9', '#b6c73f', '#feca21',
-                           '#3cb8f6', '#f9852e', '#e3d98f', '#8102ff', '#01be00']
+dnbcolor = ['#40d0c8', '#124ec9', '#e4463e', '#b6c73f', '#feca21',
+            '#3cb8f6', '#f9852e', '#e3d98f', '#8102ff', '#01be00']
 
 alldata = data['Results'].sum(axis=0) 
 
