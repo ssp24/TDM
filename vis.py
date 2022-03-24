@@ -12,7 +12,8 @@ dnbcolor = ['#40d0c8', '#e4463e', '#124ec9', '#b6c73f', '#feca21',
 
 st.header("Darstellung der Sammlungen der DNB")
 
-st.write("Die Datengrundlage für die hier gezeigten Visualisieurungen sind die Titeldaten der DNB. Es werden 
+st.write("Die Datengrundlage für die hier gezeigten Visualisieurungen sind die Titeldaten der DNB.") 
+st.write("Stand der Daten: 21.03.2022")
 
 st.subheader("Darstellung Sachgruppen DDC 1")
 
