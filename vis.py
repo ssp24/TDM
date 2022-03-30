@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 
 data = pd.read_json("data/DDCall.json")
 #data = pd.read_excel("data/DDCall.xlsx")
-dnbcolor = ['#d80038', '#2499ff', '#e4463e', '#b6c73f', '#ffd44d',
-            '#3cb8f6', '#f9852e', '#e3d98f', '#8102ff', '#01be00']
+dnbcolor = ['#FEFEFE', '#2499ff', '##f33930', '#b6c73f', '#ffd44d',
+            '#3cb8f6', '#f9852e', '#e3d98f', '#000000', '#01be00']
 
 alldata = data['found'].sum(axis=0) 
 
