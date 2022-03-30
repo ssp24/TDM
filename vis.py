@@ -10,6 +10,9 @@ data = pd.read_json("data/DDCall.json")
 #data = pd.read_excel("data/DDCall.xlsx")
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
             '#3cb8f6', '#f9852e', '#e3d98f', '#000000', '#01be00']
+testcolor = ['#ff6900', '#fcb900', '#7bdcb5', '#00d084', '#8ed1fc',
+            '#0693e3', '#abb8c3', '#eb144c', '#f78da7', '#9900ef']
+
 
 alldata = data['found'].sum(axis=0) 
 
@@ -29,7 +32,7 @@ st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Da
 #Erster Darstellung: 
 fig = px.sunburst(data, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='found', 
                   custom_data=['Parent_title', 'found', 'Parent_no'],
-                  height=900, color_discrete_sequence = dnbcolor)
+                  height=900, color_discrete_sequence = testcolor)
 fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
                  hovertemplate="<br>".join([
                         "DDC-Sachgruppe: %{label}",
