@@ -6,22 +6,25 @@ import numpy as np
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-data = pd.read_json("data/hitlist.json")
+#data = pd.read_json("data/hitlist.json")
+data = pd.read_excel("data/DDCall.xlsx", index_col = 0, converters={'DDCthird':str, 'DDCsecond':str, 'DDCmain':str, 'Parent_no':str})
 dnbcolor = ['#40d0c8', '#124ec9', '#e4463e', '#b6c73f', '#feca21',
             '#3cb8f6', '#f9852e', '#e3d98f', '#8102ff', '#01be00']
 
-alldata = data['Results'].sum(axis=0) 
+alldata = data['found'].sum(axis=0) 
+allofit = alldata.to_string()
 
 
 st.header("Darstellung der Sammlungen der DNB")
 
-st.write("Die Datengrundlage für die hier gezeigten Visualisieurungen sind die Titeldaten der DNB.") 
-st.write("Abgebildete Titeldaten:", alldata) 
+st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde für jede DDC-Sachgruppe "
+         "eine Suchanfrage über die SRU-Schnittstelle gestellt und die erhaltene Treffermenge übernommen.") 
+st.write("Abgebildete Titeldaten:", allofit) 
 st.write("Stand der Daten: 21.03.2022")
 
-st.subheader("Darstellung Sachgruppen DDC 1")
+st.subheader("Unsere Sammlungen:")
 
-fig = px.sunburst(data, path=['Parent_no', 'Fachgebiet'], values='Results', height=600, color_discrete_sequence = dnbcolor)
+fig = px.sunburst(data, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='found', height=800, color_discrete_sequence = dnbcolor)
 
 st.plotly_chart(fig, use_container_width=True)
 
