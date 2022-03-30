@@ -23,15 +23,24 @@ st.write("Stand der Daten: 21.03.2022")
 
 st.subheader("Unsere Sammlungen:")
 
-st.info("Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
+st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
         "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
 
+#Erster Darstellung: 
 fig = px.sunburst(data, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='found', 
                   custom_data=['Parent_title', 'found', 'Parent_no'],
                   height=900, color_discrete_sequence = dnbcolor)
-fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}")
+fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
+                 hovertemplate="<br>".join([
+                        "Label: %{label}",
+                        "Anzahl: %{customdata[1]}",
+                        "Anteil: %{percentEntry:.2%}",   
+                        "DDC-Hauptklasse: %{customdata[2]} - %{customdata[0]}"]),
+                 )
 
 st.plotly_chart(fig, use_container_width=True)
+
+
 
 st.subheader("Darstellung Sachgruppen DDC 2")
 
