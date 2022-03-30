@@ -32,7 +32,7 @@ st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Da
 #Erster Darstellung: 
 fig = px.sunburst(data, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='found', 
                   custom_data=['Parent_title', 'found', 'Parent_no'],
-                  height=900, color_discrete_sequence = testcolor)
+                  height=1000, color_discrete_sequence = testcolor)
 fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
                  hovertemplate="<br>".join([
                         "DDC-Sachgruppe: %{label}",
@@ -41,6 +41,7 @@ fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{pe
                         "DDC-Hauptklasse: %{customdata[2]} - %{customdata[0]}"]),
                         sort=False,
                         rotation=180,
+                        textfont_size=12
                  )
 
 st.plotly_chart(fig, use_container_width=True)
