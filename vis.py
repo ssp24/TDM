@@ -32,7 +32,7 @@ fig = px.sunburst(data, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], 
                   height=900, color_discrete_sequence = dnbcolor)
 fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
                  hovertemplate="<br>".join([
-                        "Label: %{label}",
+                        "DDC-Sachgruppe: %{label}",
                         "Anzahl: %{customdata[1]}",
                         "Anteil: %{percentEntry:.2%}",   
                         "DDC-Hauptklasse: %{customdata[2]} - %{customdata[0]}"]),
