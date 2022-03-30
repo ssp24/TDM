@@ -36,6 +36,8 @@ fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{pe
                         "Anzahl: %{customdata[1]}",
                         "Anteil: %{percentEntry:.2%}",   
                         "DDC-Hauptklasse: %{customdata[2]} - %{customdata[0]}"]),
+                        sort=False,
+                        rotation=180,
                  )
 
 st.plotly_chart(fig, use_container_width=True)
