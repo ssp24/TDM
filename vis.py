@@ -63,8 +63,8 @@ st.plotly_chart(fig2, use_container_width=True)
 
 st.subheader("Wordcloud")
 
-ddcdata = data.set_index('Parent_title').to_dict()['Results']
-worddata = data.set_index('Sachgebiet').to_dict()['Results']
+ddcdata = data.set_index('Parent_title').to_dict()['found']
+worddata = data.set_index('Sachgebiet').to_dict()['found']
 
 wc = WordCloud(background_color="white").generate_from_frequencies(ddcdata)
 wc2 = WordCloud(background_color="white", width=800, height=400).generate_from_frequencies(worddata)
