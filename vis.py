@@ -12,7 +12,7 @@ dnbcolor = ['#40d0c8', '#124ec9', '#e4463e', '#b6c73f', '#feca21',
             '#3cb8f6', '#f9852e', '#e3d98f', '#8102ff', '#01be00']
 
 alldata = data['found'].sum(axis=0) 
-allofit = alldata.to_string()
+allofit = alldata.to_str()
 
 
 st.header("Darstellung der Sammlungen der DNB")
