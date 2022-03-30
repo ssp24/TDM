@@ -23,7 +23,12 @@ st.write("Stand der Daten: 21.03.2022")
 
 st.subheader("Unsere Sammlungen:")
 
-fig = px.sunburst(data, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='found', height=900, color_discrete_sequence = dnbcolor)
+st.info("Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
+        "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
+
+fig = px.sunburst(data, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='found', 
+                  custom_data=['Parent', 'values', 'DDCparent'],
+                  height=900, color_discrete_sequence = dnbcolor)
 fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}")
 
 st.plotly_chart(fig, use_container_width=True)
