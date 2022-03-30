@@ -27,7 +27,7 @@ st.info("Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstell
         "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
 
 fig = px.sunburst(data, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='found', 
-                  custom_data=['Parent', 'values', 'DDCparent'],
+                  custom_data=['Parent_title', 'found', 'Parent_no'],
                   height=900, color_discrete_sequence = dnbcolor)
 fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}")
 
