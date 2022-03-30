@@ -7,7 +7,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 #data = pd.read_json("data/hitlist.json")
-data = pd.read_excel("data/DDCall.xlsx", index_col = 0, converters={'DDCthird':str, 'DDCsecond':str, 'DDCmain':str, 'Parent_no':str})
+data = pd.read_excel("data/DDCall.xlsx")
 dnbcolor = ['#40d0c8', '#124ec9', '#e4463e', '#b6c73f', '#feca21',
             '#3cb8f6', '#f9852e', '#e3d98f', '#8102ff', '#01be00']
 
