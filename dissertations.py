@@ -9,7 +9,7 @@ import requests
 
 url = "https://www.bygenius.eu/data/online_diss_cleaned.h5"
 test = requests.get(url).text
-upload = st.file_uploader(url)
+upload = st.file_uploader(test)
 #data = pd.read_hdf("https://www.bygenius.eu/data/online_diss_cleaned.h5")
 #data = pd.read_excel("data/DDCall.xlsx")
 data = pd.read_hdf(upload)
