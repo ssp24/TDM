@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 
-data = pd.read_hdf("data/online_diss_cleaned.h5", index_col = 0)
+#data = pd.read_hdf("data/online_diss_cleaned.h5", index_col = 0)
+data = pd.read_hdf("data/testdf.h5", index_col = 0)
 #data['Results'] = data['Results'].astype(int)
 #data
 
