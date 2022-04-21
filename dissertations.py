@@ -5,6 +5,9 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
+import h5py
+
+test = h5py.File("data/testdf.h5")
 
 #data = pd.read_hdf("data/online_diss_cleaned.h5", index_col = 0)
 data = pd.read_hdf("data/testdf.h5")
