@@ -7,12 +7,12 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import requests
 
-url = "https://www.bygenius.eu/data/online_diss_cleaned.h5"
-test = requests.get(url).text
-upload = st.file_uploader(test)
+#url = "https://www.bygenius.eu/data/online_diss_cleaned.h5"
+#test = requests.get(url).text
+#upload = st.file_uploader(test)
 #data = pd.read_hdf("https://www.bygenius.eu/data/online_diss_cleaned.h5")
-#data = pd.read_excel("data/DDCall.xlsx")
-data = pd.read_hdf(upload)
+data = pd.read_hdf("online_diss_cleaned.h5")
+#data = pd.read_hdf(upload)
 
 
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
