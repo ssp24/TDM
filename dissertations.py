@@ -6,14 +6,9 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
-import h5py
 
-test = h5py.File("data/testdf.h5")
 
-#data = pd.read_hdf("data/online_diss_cleaned.h5")
-test2 = h5py.File("data/online_diss_cleaned.h5")
-data = pd.DataFrame(test2, key="df")
-#data['Results'] = data['Results'].astype(int)
+data = pd.read_json("data/od_cleaned.json")
 st.dataframe(data)
 
 
@@ -36,12 +31,12 @@ st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
 st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt." ) 
 
 #Jahre: 
-#data = data[data['Year'].notna()]
-#data = data.astype({'Year':'int'})
-#data = data[(data['Year'] >= 1900) & (data['Year'] <= 2100)]
+data = data[data['Year'].notna()]
+data = data.astype({'Year':'int'})
+data = data[(data['Year'] >= 1900) & (data['Year'] <= 2100)]
 
-#s = data['Year'].value_counts()[:33].sort_index()
-#fig = px.bar(s, labels={'index':'Jahr', 'value':'Anzahl'}, color='value', height=500)
-#st.plotly_chart(fig, use_container_width=True)
+s = data['Year'].value_counts()[:33].sort_index()
+fig = px.bar(s, labels={'index':'Jahr', 'value':'Anzahl'}, color='value', height=500)
+st.plotly_chart(fig, use_container_width=True)
 
 
