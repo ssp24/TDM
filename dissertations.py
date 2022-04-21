@@ -14,7 +14,7 @@ test = h5py.File("data/testdf.h5")
 test2 = h5py.File("data/online_diss_cleaned.h5")
 data = pd.DataFrame(test2)
 #data['Results'] = data['Results'].astype(int)
-data
+st.dataframe(data)
 
 
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
