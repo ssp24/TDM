@@ -11,7 +11,7 @@ import requests
 #test = requests.get(url).text
 #upload = st.file_uploader(test)
 #data = pd.read_hdf("https://www.bygenius.eu/data/online_diss_cleaned.h5")
-data = pd.read_hdf("online_diss_cleaned.h5")
+data = pd.read_hdf("data/online_diss_cleaned.h5")
 #data = pd.read_hdf(upload)
 
 
