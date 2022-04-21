@@ -12,7 +12,7 @@ test = h5py.File("data/testdf.h5")
 
 #data = pd.read_hdf("data/online_diss_cleaned.h5")
 test2 = h5py.File("data/online_diss_cleaned.h5")
-data = pd.DataFrame(test2)
+data = pd.DataFrame(test2, key="df")
 #data['Results'] = data['Results'].astype(int)
 st.dataframe(data)
 
