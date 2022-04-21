@@ -10,7 +10,7 @@ import h5py
 test = h5py.File("data/testdf.h5")
 
 #data = pd.read_hdf("data/online_diss_cleaned.h5", index_col = 0)
-data = pd.read_hdf("data/testdf.h5")
+#data = pd.read_hdf("data/testdf.h5")
 #data['Results'] = data['Results'].astype(int)
 #data
 
