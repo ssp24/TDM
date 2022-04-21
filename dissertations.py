@@ -9,7 +9,7 @@ import plotly.express as px
 
 
 data = pd.read_json("data/od_cleaned.json")
-st.dataframe(data)
+#st.dataframe(data)
 
 
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
