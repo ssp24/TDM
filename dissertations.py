@@ -1,18 +1,14 @@
-import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.figure_factory as ff
 import numpy as np
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import requests
+import plotly.graph_objects as go
+import plotly.express as px
 
-#url = "https://www.bygenius.eu/data/online_diss_cleaned.h5"
-#test = requests.get(url).text
-#upload = st.file_uploader(test)
-#data = pd.read_hdf("https://www.bygenius.eu/data/online_diss_cleaned.h5")
-data = pd.read_hdf("data/online_diss_cleaned.h5")
-#data = pd.read_hdf(upload)
+data = pd.read_hdf("data/online_diss_cleaned.h5", index_col = 0)
+#data['Results'] = data['Results'].astype(int)
+#data
 
 
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
