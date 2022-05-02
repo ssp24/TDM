@@ -28,8 +28,6 @@ st.write("Stand der Daten: 22.03.2022")
 
 st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
 
-st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt." ) 
-
 #Jahre: 
 data = data[data['Year'].notna()]
 data = data.astype({'Year':'int'})
@@ -39,4 +37,5 @@ s = data['Year'].value_counts()[:33].sort_index()
 fig = px.bar(s, labels={'index':'Jahr', 'value':'Anzahl'}, color='value', height=500)
 st.plotly_chart(fig, use_container_width=True)
 
+st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
 
