@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 
-data = pd.read_json("data/od_cleaned.json")
+data = pd.read_json("data/diss_06-2022_cleaned.json")
 #st.dataframe(data)
 
 
@@ -24,7 +24,7 @@ st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen 
          '"Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 Online-Dissertationen '
          "ohne Zugriffsbeschränkung aus Deutschland enthält. ") 
 
-st.write("Stand der Daten: 22.03.2022")
+st.write("Stand der Daten: 23.06.2022")
 
 st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
 
