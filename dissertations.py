@@ -35,7 +35,7 @@ data1 = data1.astype({'Year':'int'})
 data1 = data1[(data1['Year'] >= 1900) & (data1['Year'] <= 2100)]
 
 s = data1['Year'].value_counts()[:33].sort_index()
-fig = px.bar(s, labels={'index':'Jahr', 'value':'Anzahl'}, color='value', height=500)
+fig = px.bar(s, x="jahre", labels={'index':'Jahr', 'value':'Anzahl'}, color='value', height=500)
 st.plotly_chart(fig, use_container_width=True)
 
 st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
