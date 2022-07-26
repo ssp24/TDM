@@ -9,8 +9,9 @@ import plotly.express as px
 
 
 #data = pd.read_json("data/diss_06-2022_cleaned.json")
-data = pd.read_json("https://www.bygenius.eu/data/diss_06-2022_cleaned.json")
+#data = pd.read_json("https://www.bygenius.eu/data/diss_06-2022_cleaned.json")
 #st.dataframe(data)
+dissyears = pd.read_excel("data/diss_years.xlsx")
 
 
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
@@ -30,12 +31,12 @@ st.write("Stand der Daten: 23.06.2022")
 st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
 
 #Jahre: 
-data1 = data[data['Year'].notna()]
-data1 = data1.astype({'Year':'int'})
-data1 = data1[(data1['Year'] >= 1900) & (data1['Year'] <= 2100)]
+#data1 = data[data['Year'].notna()]
+#data1 = data1.astype({'Year':'int'})
+#data1 = data1[(data1['Year'] >= 1900) & (data1['Year'] <= 2100)]
 
-s = data1['Year'].value_counts()[:33].sort_index()
-fig = px.bar(s, labels={'index':'Jahr', 'value':'Anzahl'}, color='value', height=500)
+#s = data1['Year'].value_counts()[:33].sort_index()
+fig = px.bar(dissyears, labels={'index':'Jahr', 'value':'Anzahl'}, color='value', height=500)
 st.plotly_chart(fig, use_container_width=True)
 
 st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
