@@ -40,27 +40,3 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
 
-
-#st.subheader("Hochschulschriften nach Sachgruppen:")
-
-#st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
-        "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
-
-#Erster Darstellung: 
-#fig = px.sunburst(data, path=['DDC', 'DDC2'], values='found', 
-                 # custom_data=['DDC', 'found', 'Parent_no'],
-                  #height=1000, color_discrete_sequence = testcolor)
-#fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
-                 #hovertemplate="<br>".join([
-                      #  "DDC-Sachgruppe: %{label}",
-                    #    "Anzahl: %{customdata[1]}",
-                    #    "Anteil: %{percentEntry:.2%}",   
-                    #    "DDC-Hauptklasse: %{customdata[2]} - %{customdata[0]}"]),
-                    #    sort=False,
-                   #     rotation=180,
-              #      #    textfont_size=12
-             #    )#
-#
-#st.plotly_chart(fig, use_container_width=True)
-
-
