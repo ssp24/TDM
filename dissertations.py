@@ -30,13 +30,37 @@ st.write("Stand der Daten: 23.06.2022")
 st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
 
 #Jahre: 
-data = data[data['Year'].notna()]
-data = data.astype({'Year':'int'})
-data = data[(data['Year'] >= 1900) & (data['Year'] <= 2100)]
+data1 = data[data['Year'].notna()]
+data1 = data1.astype({'Year':'int'})
+data1 = data1[(data1['Year'] >= 1900) & (data1['Year'] <= 2100)]
 
-s = data['Year'].value_counts()[:33].sort_index()
+s = data1['Year'].value_counts()[:33].sort_index()
 fig = px.bar(s, labels={'index':'Jahr', 'value':'Anzahl'}, color='value', height=500)
 st.plotly_chart(fig, use_container_width=True)
 
 st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
+
+
+st.subheader("Hochschulschriften nach Sachgruppen:")
+
+st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
+        "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
+
+#Erster Darstellung: 
+fig = px.sunburst(data, path=['DDC', 'DDC2'], values='found', 
+                  custom_data=['DDC', 'found', 'Parent_no'],
+                  height=1000, color_discrete_sequence = testcolor)
+fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
+                 hovertemplate="<br>".join([
+                        "DDC-Sachgruppe: %{label}",
+                        "Anzahl: %{customdata[1]}",
+                        "Anteil: %{percentEntry:.2%}",   
+                        "DDC-Hauptklasse: %{customdata[2]} - %{customdata[0]}"]),
+                        sort=False,
+                        rotation=180,
+                        textfont_size=12
+                 )
+
+st.plotly_chart(fig, use_container_width=True)
+
 
