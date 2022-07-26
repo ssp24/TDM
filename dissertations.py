@@ -8,7 +8,8 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 
-data = pd.read_json("data/diss_06-2022_cleaned.json")
+#data = pd.read_json("data/diss_06-2022_cleaned.json")
+data = pd.read_json("https://www.bygenius.eu/data/diss_06-2022_cleaned.json")
 #st.dataframe(data)
 
 
