@@ -10,8 +10,9 @@ import plotly.express as px
 
 #data = pd.read_json("data/diss_06-2022_cleaned.json")
 #data = pd.read_json("https://www.bygenius.eu/data/diss_06-2022_cleaned.json")
-#st.dataframe(data)
+
 dissyears = pd.read_json("data/diss_years.json")
+st.dataframe(dissyears)
 
 
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
