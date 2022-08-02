@@ -8,13 +8,6 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 
-#data = pd.read_json("data/diss_06-2022_cleaned.json")
-#data = pd.read_json("https://www.bygenius.eu/data/diss_06-2022_cleaned.json")
-
-dissyears = pd.read_json("data/diss_years.json")
-#st.dataframe(dissyears)
-
-
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
             '#3cb8f6', '#f9852e', '#e3d98f', '#000000', '#01be00']
 testcolor = ['#ff6900', '#fcb900', '#7bdcb5', '#00d084', '#8ed1fc',
@@ -30,17 +23,8 @@ st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen 
 st.write("Stand der Daten: 23.06.2022")
 
 st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
+st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
 
-#Jahre: 
-#data1 = data[data['Year'].notna()]
-#data1 = data1.astype({'Year':'int'})
-#data1 = data1[(data1['Year'] >= 1900) & (data1['Year'] <= 2100)]
-
-#s = data1['Year'].value_counts()[:33].sort_index()
-fig = px.bar(dissyears, labels={'index':'Jahr', 'value':'Anzahl'}, color='value', height=500)
-st.plotly_chart(fig, use_container_width=True)
-
-st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
 
 dissyears2 = pd.read_json("data/dissyears.json")
 dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=catalog=dnb.hss+location=onlinefree+jhr="+dissyears2["years"].astype(str)
@@ -59,3 +43,5 @@ for i in range (0,update):
             )
 fig2.update_layout()
 st.plotly_chart(fig2, use_container_width=True)
+
+st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
