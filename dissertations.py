@@ -46,14 +46,14 @@ dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=
 dissyears2
 
 fig2 = px.bar(dissyears, x="years", y = "count", labels={'years':'Jahr', 'count':'Anzahl'}, color='count', height=500)
-update = (len(test["years"]))
+update = (len(dissyears2["years"]))
 
 for i in range (0,update):     
     fig2.add_annotation(      
-                x = test["years"].values[i],
-                y = test["count"].values[i],
+                x = dissyears2["years"].values[i],
+                y = dissyears2["count"].values[i],
                 textangle = 90,
-                text = f"""<a href="{test["url"].values[i]}" target="_blank">{test["count"].values[i]}</a>""",
+                text = f"""<a href="{dissyears2["url"].values[i]}" target="_blank">{dissyears2["count"].values[i]}</a>""",
                 showarrow=True,
                 arrowhead=1,                        
             )
