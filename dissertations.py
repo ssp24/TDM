@@ -41,3 +41,19 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
 
+
+fig2 = px.bar(test, x="years", y = "count", labels={'years':'Jahr', 'count':'Anzahl'}, color='count', height=500)
+update = (len(test["years"]))
+
+for i in range (0,update):     
+    fig2.add_annotation(      
+                x = test["years"].values[i],
+                y = test["count"].values[i],
+                textangle = 90,
+                text = f"""<a href="{test["url"].values[i]}" target="_blank">{test["count"].values[i]}</a>""",
+                showarrow=True,
+                arrowhead=1,                        
+            )
+fig2.update_layout()
+fig2.show()
+
