@@ -44,7 +44,6 @@ st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) darges
 
 dissyears2 = pd.read_json("data/dissyears.json")
 dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=catalog=dnb.hss+location=onlinefree+jhr="+dissyears2["years"].astype(str)
-dissyears2
 
 fig2 = px.bar(dissyears2, x="years", y = "count", labels={'years':'Jahr', 'count':'Anzahl'}, color='count', height=500)
 update = (len(dissyears2["years"]))
@@ -59,5 +58,4 @@ for i in range (0,update):
                 arrowhead=1,                        
             )
 fig2.update_layout()
-fig2.show()
-
+st.plotly_chart(fig2, use_container_width=True)
