@@ -41,7 +41,7 @@ for i in range (0,update):
                 showarrow=True,
                 arrowhead=1,                        
             )
-fig2.update_layout(showlegend=False)
+fig2.update_layout(layout_showlegend=False)
 st.plotly_chart(fig2, use_container_width=True)
 
 st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
