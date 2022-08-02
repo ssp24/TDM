@@ -23,8 +23,6 @@ st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen 
 st.write("Stand der Daten: 23.06.2022")
 
 st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
-st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
-
 
 dissyears2 = pd.read_json("data/dissyears.json")
 dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=catalog=dnb.hss+location=onlinefree+jhr="+dissyears2["years"].astype(str)
@@ -44,4 +42,5 @@ for i in range (0,update):
 fig2.update_traces(showlegend=False)
 st.plotly_chart(fig2, use_container_width=True)
 
+st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
 st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
