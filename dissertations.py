@@ -13,7 +13,10 @@ with st.sidebar:
      'Bitte wählen Sie die Anzeige: ',
      ('Publikationsjahre', 'Verteilung nach Fächern', 'Publikationsorte')
     )
-    st.write('Momentan angezeigt:', visual)
+    st.write('Momentan ausgewählt:',
+             visual)
+    
+    st.write("Stand der Daten: 23.06.2022")
 
 
 
@@ -29,7 +32,7 @@ st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen 
          '"Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 Online-Dissertationen '
          "ohne Zugriffsbeschränkung aus Deutschland enthält. ") 
 
-st.write("Stand der Daten: 23.06.2022")
+
 
 if visual == "Publikationsjahre":  
 
@@ -85,4 +88,4 @@ elif visual == "Verteilung nach Fächern":
     
 else: 
     
-    st. write("Noch nicht verfügbar - bitte schauen Sie später noch einmal vorbei.") 
+    st.warning("Noch nicht verfügbar - bitte schauen Sie später noch einmal vorbei.") 
