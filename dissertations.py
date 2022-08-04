@@ -54,7 +54,7 @@ st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Da
 #Erster Darstellung: 
 fig = px.sunburst(dissddc, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='count', 
                   custom_data=['Parent_title', 'count', 'Parent_no'],
-                  height = "500", color_discrete_sequence = dnbcolor)
+                  height = 500, color_discrete_sequence = dnbcolor)
 fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
                  hovertemplate="<br>".join([
                         "DDC-Sachgruppe: %{label}",
