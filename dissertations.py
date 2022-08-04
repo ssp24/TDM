@@ -8,12 +8,12 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 with st.sidebar:
-    st.selectbox(
+    visual = st.selectbox(
      'Bitte wählen Sie die Anzeige: ',
      ('Publikationsjahre', 'Verteilung nach Fächern', 'Publikationsorte')
     )
 
-st.write('You selected:', option)
+st.write('You selected:', visual)
 
 
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
