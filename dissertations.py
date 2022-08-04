@@ -44,3 +44,26 @@ st.plotly_chart(fig2, use_container_width=True)
 
 st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
 st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
+
+
+dissddc = pd.read_json("data/diss_ddc.json")
+
+st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
+        "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
+
+#Erster Darstellung: 
+fig = px.sunburst(dissddc, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='count', 
+                  custom_data=['Parent_title', 'count', 'Parent_no'],
+                  height=1000, color_discrete_sequence = testcolor)
+fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
+                 hovertemplate="<br>".join([
+                        "DDC-Sachgruppe: %{label}",
+                        "Anzahl: %{customdata[1]}",
+                        "Anteil: %{percentEntry:.2%}",   
+                        "DDC-Hauptklasse: %{customdata[2]} - %{customdata[0]}"]),
+                        sort=False,
+                        rotation=180,
+                        textfont_size=12
+                 )
+
+st.plotly_chart(fig, use_container_width=True)
