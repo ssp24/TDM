@@ -8,12 +8,13 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 with st.sidebar:
+    st.subheader("Auswahlmenü")
     visual = st.selectbox(
      'Bitte wählen Sie die Anzeige: ',
-     ('Publikationsjahre', 'Verteilung nach Fächern', 'Publikationsorte')
+     ('Publikationsjahre', 'Verteilung nach Fächern', 'Publikationsorte', index=1)
     )
+    st.write('Momentan angezeigt:', visual)
 
-st.write('You selected:', visual)
 
 
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
@@ -30,16 +31,18 @@ st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen 
 
 st.write("Stand der Daten: 23.06.2022")
 
-st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
+if visual == "Publikationsjahre":  
 
-dissyears2 = pd.read_json("data/dissyears.json")
-dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=catalog=dnb.hss+location=onlinefree+jhr="+dissyears2["years"].astype(str)
+    st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
 
-fig2 = px.bar(dissyears2, x="years", y = "count", labels={'years':'Jahr', 'count':'Anzahl'}, color='count', height=500)
-update = (len(dissyears2["years"]))
+    dissyears2 = pd.read_json("data/dissyears.json")
+    dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=catalog=dnb.hss+location=onlinefree+jhr="+dissyears2["years"].astype(str)
 
-for i in range (0,update):     
-    fig2.add_annotation(      
+    fig2 = px.bar(dissyears2, x="years", y = "count", labels={'years':'Jahr', 'count':'Anzahl'}, color='count', height=500)
+    update = (len(dissyears2["years"]))
+
+    for i in range (0,update):     
+        fig2.add_annotation(      
                 x = dissyears2["years"].values[i],
                 y = dissyears2["count"].values[i],
                 textangle = 90,
@@ -47,23 +50,23 @@ for i in range (0,update):
                 showarrow=True,
                 arrowhead=1,                        
             )
-fig2.update_traces(showlegend=False)
-st.plotly_chart(fig2, use_container_width=True)
+    fig2.update_traces(showlegend=False)
+    st.plotly_chart(fig2, use_container_width=True)
 
-st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
-st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " ) 
+    st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
+    st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " )     
+ 
+    
+elif visual == "Verteilung nach Fächern":
+    
+    dissddc = pd.read_json("data/diss_ddc.json")
 
 
-dissddc = pd.read_json("data/diss_ddc.json")
-
-st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
-        "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
-
-#Erster Darstellung: 
-fig = px.sunburst(dissddc, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='count', 
+    #Erster Darstellung: 
+    fig = px.sunburst(dissddc, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='count', 
                   custom_data=['Parent_title', 'count', 'Parent_no'],
                   height = 750, color_discrete_sequence = testcolor)
-fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
+    fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{percentEntry:.2%}",
                  hovertemplate="<br>".join([
                         "DDC-Sachgruppe: %{label}",
                         "Anzahl: %{customdata[1]}",
@@ -74,4 +77,12 @@ fig.update_traces(insidetextorientation='radial', texttemplate="%{label}<br>%{pe
                         textfont_size=12
                  )
 
-st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
+    
+    st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
+        "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
+    
+    
+else: 
+    
+    st. write("Noch nicht verfügbar - bitte schauen Sie später noch einmal vorbei.") 
