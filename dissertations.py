@@ -11,7 +11,7 @@ with st.sidebar:
     st.subheader("Auswahlmenü")
     visual = st.selectbox(
      'Bitte wählen Sie die Anzeige: ',
-     ('Publikationsjahre', 'Verteilung nach Fächern', 'Publikationsorte', 1)
+     ('Publikationsjahre', 'Verteilung nach Fächern', 'Publikationsorte')
     )
     st.write('Momentan angezeigt:', visual)
 
