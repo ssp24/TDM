@@ -85,7 +85,7 @@ elif visual == "Verteilung nach Fächern":
     st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
         "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
        
-    col1, col2 = st.columns([1, 5])
+    col1, col2 = st.columns([1, 6])
     
     with col1:
         st.image("https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png", width=88)
