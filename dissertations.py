@@ -84,14 +84,13 @@ elif visual == "Verteilung nach Fächern":
     
     st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
         "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
+       
     
-    
-    #<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Namensnennung - Nicht kommerziell - Keine Bearbeitungen 4.0 International Lizenz</a>.
-    
-    st.image("https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png", use_column_width="never", 
-                caption="This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License "
+    st.image("https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png", width=88) 
+    st.caption("This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License "
             "by OCLC Online Computer Library Center, Inc. All copyright rights in the Dewey Decimal Classification system are "
-            "owned by OCLC. Dewey, Dewey Decimal Classification, DDC, OCLC and WebDewey are registered trademarks of OCLC. ") 
+            "owned by OCLC. Dewey, Dewey Decimal Classification, DDC, OCLC and WebDewey are registered trademarks of OCLC. ")
+    
     
 else: 
     
