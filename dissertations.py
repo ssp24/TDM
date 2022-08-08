@@ -85,8 +85,12 @@ elif visual == "Verteilung nach Fächern":
     st.info("INFO: Klicken Sie auf die einzelnen Elemente, um eine detailliertere Darstellung der Teilmengen sehen zu können. "
         "Bewegen Sie Ihren Cursor auf die Elemente, um Zusatzinformationen zu erhalten." ) 
        
+    col1, col2 = st.columns([1, 3])
     
-    st.image("https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png", width=88) 
+    with col1:
+        st.image("https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png", width=88)
+        
+    with col2:     
     st.caption("This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License "
             "by OCLC Online Computer Library Center, Inc. All copyright rights in the Dewey Decimal Classification system are "
             "owned by OCLC. Dewey, Dewey Decimal Classification, DDC, OCLC and WebDewey are registered trademarks of OCLC. ")
