@@ -87,7 +87,10 @@ elif visual == "Verteilung nach Fächern":
        
     col1, col2 = st.columns([1, 6])
     
+     
+    
     with col1:
+        st.markdown("[![Foo](https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png)](http://creativecommons.org/licenses/by-nc-nd/3.0/)") 
         st.image("https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png", width=88)
         
     with col2:     
