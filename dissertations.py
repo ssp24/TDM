@@ -91,7 +91,7 @@ elif visual == "Verteilung nach Fächern":
         st.image("https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png", width=88)
         
     with col2:     
-    st.caption("This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License "
+        st.caption("This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License "
             "by OCLC Online Computer Library Center, Inc. All copyright rights in the Dewey Decimal Classification system are "
             "owned by OCLC. Dewey, Dewey Decimal Classification, DDC, OCLC and WebDewey are registered trademarks of OCLC. ")
     
