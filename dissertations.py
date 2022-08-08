@@ -90,8 +90,9 @@ elif visual == "Verteilung nach Fächern":
      
     
     with col1:
+        st.write("")
         st.markdown("[![Foo](https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png)](http://creativecommons.org/licenses/by-nc-nd/3.0/)") 
-        st.image("https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png", width=88)
+        st.write()
         
     with col2:     
         st.caption("This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License "
