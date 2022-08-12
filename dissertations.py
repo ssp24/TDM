@@ -28,13 +28,13 @@ dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
 testcolor = ['#ff6900', '#fcb900', '#7bdcb5', '#00d084', '#8ed1fc',
             '#0693e3', '#abb8c3', '#eb144c', '#f78da7', '#9900ef']
 
-st.header('Die freien Online-Hochschulschriften in der DNB')
+st.header('"Freie Online-Hochschulschriften" in der DNB')
 
 # ------- MAIN TEXT ----------
 
 if visual == "Übersicht":
 
-    st.subheader('Übersicht "Freie Online-Hochschulschriften" in der DNB')
+    st.subheader('Statistik')
 
     st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
          '"Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 Online-Dissertationen '
