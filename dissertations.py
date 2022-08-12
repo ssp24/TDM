@@ -32,14 +32,14 @@ st.header('"Freie Online-Hochschulschriften" in der DNB')
 st.write("Informationen zur Datengrundlage: "
          " Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
          ' "Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 freien Online-Dissertationen '
-         " ohne Zugriffsbeschränkung aus Deutschland enthält. "
-         " Das Datenset wird alle 3 Monate aktualisiert."  ) 
+         " ohne Zugriffsbeschränkung aus Deutschland enthält. ")
+st.write(" Das Datenset wird alle 3 Monate aktualisiert."  ) 
 
 # ------- MAIN TEXT ----------
 
 if visual == "Übersicht":
 
-    st.subheader('Statistik')
+    #st.subheader('Statistik')
 
     st.write("")
 
