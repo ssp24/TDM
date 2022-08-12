@@ -68,7 +68,7 @@ if visual == "Übersicht":
     
     # --- boxes
     
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     
     with col1:
         wch_colour_box = (0,504,102)
@@ -106,6 +106,28 @@ if visual == "Übersicht":
         iconname = "fas fa-asterisk"
         sline = "Philosophie & Psychologie"
         i = pub_100
+
+        htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
+                        color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
+                        font-size: {fontsize}px; 
+                        border-radius: 7px; 
+                        padding-left: 12px; 
+                        padding-top: 18px; 
+                        padding-bottom: 18px; 
+                        line-height:25px;'>
+                        <i class='{iconname} fa-xs'></i> {i}
+                        </style><BR><span style='font-size: 14px; 
+                        margin-top: 0;'>{sline}</style></span></p>"""
+
+        st.markdown(htmlstr, unsafe_allow_html=True)
+        
+    with col3:
+        wch_colour_box = (700,204,602)
+        wch_colour_font = (0,0,0)
+        fontsize = 18
+        iconname = "fas fa-asterisk"
+        sline = "Religion"
+        i = pub_200
 
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
