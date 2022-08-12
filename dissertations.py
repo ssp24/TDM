@@ -41,9 +41,11 @@ if visual == "Übersicht":
          "ohne Zugriffsbeschränkung aus Deutschland enthält. ") 
 
 
-    all_publications = 288145
+    all_ofd = 288145
+    ofd_last = 264357
+    growth = all_ofd-ofd_last
 
-    st.metric(label="Anzahl freie online Dissertationen", value=all_publications)
+    st.metric(label="Anzahl freie online Dissertationen", value=all_ofd, delta=grwoth)
 
 
 
