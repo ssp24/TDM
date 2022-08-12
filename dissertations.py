@@ -123,9 +123,9 @@ if visual == "Übersicht":
         
     with col3:
         wch_colour_box = (000,204,602)
-        wch_colour_font = (0,0,0)
+        #wch_colour_font = (0,0,0)
         fontsize = 18
-        iconname = "fas fa-asterisk"
+        #iconname = "fas fa-asterisk"
         sline = "Religion"
         i = pub_200
 
