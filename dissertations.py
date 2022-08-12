@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 
+# ---- SIDEBAR ----- 
+
 with st.sidebar:
     st.subheader("Auswahlmenü")
     visual = st.selectbox(
@@ -17,13 +19,17 @@ with st.sidebar:
              visual)
     
     st.write("Stand der Daten: 23.06.2022")
+    
 
-
+# ----- color codes ---------
 
 dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
             '#3cb8f6', '#f9852e', '#e3d98f', '#000000', '#01be00']
 testcolor = ['#ff6900', '#fcb900', '#7bdcb5', '#00d084', '#8ed1fc',
             '#0693e3', '#abb8c3', '#eb144c', '#f78da7', '#9900ef']
+
+
+# ------- MAIN TEXT ----------
 
 
 st.header('Übersicht "Freie Online-Hochschulschriften" in der DNB')
@@ -33,6 +39,13 @@ st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen 
          "ohne Zugriffsbeschränkung aus Deutschland enthält. ") 
 
 
+all_publications = 288145
+
+st.metric(label="Anzahl freie online Dissertationen", value=all_publications)
+
+
+
+#------ PUBLIKATIONSJAHRE --------------
 
 if visual == "Publikationsjahre":  
 
@@ -59,7 +72,9 @@ if visual == "Publikationsjahre":
     st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
     st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " )     
  
-    
+
+# --------- DDC -----------------
+
 elif visual == "Verteilung nach Fächern":
     
     dissddc = pd.read_json("data/diss_ddc.json")
