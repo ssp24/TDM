@@ -90,8 +90,7 @@ if visual == "Übersicht":
                         border-radius: 7px; 
                         padding-left: 12px; 
                         padding-top: 18px; 
-                        padding-bottom: 18px; 
-                        line-height: 15px;'>
+                        padding-bottom: 18px; '>
                         <i class='{iconname} fa-xs'></i> {i}
                         </style><BR><span style='font-size: 14px; 
                         margin-top: 0;'>{sline}</style></span></p>"""
