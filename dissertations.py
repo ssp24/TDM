@@ -74,7 +74,7 @@ if visual == "Übersicht":
         wch_colour_box = (0,504,102)
         wch_colour_font = (0,0,0)
         fontsize = 18
-        valign = "left"
+        #valign = "left"
         iconname = "fas fa-asterisk"
         sline = "Informatik, Information & Wissen, allgemeine Werke"
         #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
@@ -82,14 +82,14 @@ if visual == "Übersicht":
     
     
     with col2: 
-        wch_colour_box1 = (200,504,102)
+        wch_colour_box = (200,504,102)
         wch_colour_font = (0,0,0)
         fontsize = 18
-        valign = "right"
+        #valign = "right"
         iconname = "fas fa-asterisk"
         sline = "Philosophie & Psychologie"
         #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-        i = pub_100
+        g = pub_100
     
     
 
