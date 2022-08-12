@@ -79,7 +79,7 @@ if visual == "Übersicht":
     wch_colour_box1 = (200,504,102)
     wch_colour_font = (0,0,0)
     fontsize = 18
-    valign = "left"
+    valign = "right"
     iconname = "fas fa-asterisk"
     sline = "Philosophie & Psychologie"
     #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
