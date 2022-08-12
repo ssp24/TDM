@@ -103,20 +103,12 @@ if visual == "Übersicht":
         wch_colour_box = (200,504,102)
         wch_colour_font = (0,0,0)
         fontsize = 18
-        #valign = "right"
         iconname = "fas fa-asterisk"
         sline = "Philosophie & Psychologie"
-        #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
         i = pub_100
-    
-    
 
-        htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
-                                              {wch_colour_box[1]}, 
-                                              {wch_colour_box[2]}, 0.75); 
-                        color: rgb({wch_colour_font[0]}, 
-                                   {wch_colour_font[1]}, 
-                                   {wch_colour_font[2]}, 0.75); 
+        htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
+                        color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
                         font-size: {fontsize}px; 
                         border-radius: 7px; 
                         padding-left: 12px; 
