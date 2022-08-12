@@ -37,7 +37,7 @@ st.write("Informationen zur Datengrundlage: "
          " ohne Zugriffsbeschränkung aus Deutschland enthält. ")
 st.write(" Das Datenset wird alle 3 Monate aktualisiert."  ) 
 
-# ------- MAIN TEXT ----------
+# ------- MAIN BOX ----------
 
 if visual == "Übersicht":
 
@@ -51,6 +51,22 @@ if visual == "Übersicht":
     st.metric(label="Anzahl freie online Dissertationen", value=all_ofd, delta=growth)
     st.caption("Seit der letzten Aktualisierung des Datensets im März 2022.")
   
+     # --- Data ---- 
+    
+    df = pd.read_json("data/diss_06-2022_cleaned.json")
+    
+    pub_000 = df[df.DDC.str.startswith('0')].shape[0]
+    pub_100 = df[df.DDC.str.startswith('1')].shape[0]
+    pub_200 = df[df.DDC.str.startswith('2')].shape[0]
+    pub_300 = df[df.DDC.str.startswith('3')].shape[0]
+    pub_400 = df[df.DDC.str.startswith('4')].shape[0]
+    pub_500 = df[df.DDC.str.startswith('5')].shape[0]
+    pub_600 = df[df.DDC.str.startswith('6')].shape[0]
+    pub_700 = df[df.DDC.str.startswith('7')].shape[0]
+    pub_800 = df[df.DDC.str.startswith('8')].shape[0]
+    pub_900 = df[df.DDC.str.startswith('9')].shape[0]   
+    
+    
     wch_colour_box = (0,204,102)
     wch_colour_font = (0,0,0)
     fontsize = 18
