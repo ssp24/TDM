@@ -45,7 +45,7 @@ if visual == "Übersicht":
     ofd_last = 264357
     growth = all_ofd-ofd_last
 
-    st.metric(label="Anzahl freie online Dissertationen", value=all_ofd, delta=grwoth)
+    st.metric(label="Anzahl freie online Dissertationen", value=all_ofd, delta=growth)
 
 
 
