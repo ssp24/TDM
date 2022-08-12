@@ -76,7 +76,7 @@ if visual == "Übersicht":
     #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
     i = pub_000
     
-    wch_colour_box = (200,504,102)
+    wch_colour_box1 = (200,504,102)
     wch_colour_font = (0,0,0)
     fontsize = 18
     valign = "left"
