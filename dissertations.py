@@ -13,7 +13,7 @@ with st.sidebar:
     st.subheader("Auswahlmenü")
     visual = st.selectbox(
      'Bitte wählen Sie die Anzeige: ',
-     ('Publikationsjahre', 'Verteilung nach Fächern', 'Publikationsorte')
+     ('Übersicht', 'Publikationsjahre', 'Verteilung nach Fächern', 'Publikationsorte')
     )
     st.write('Momentan ausgewählt:',
              visual)
@@ -28,26 +28,28 @@ dnbcolor = ['#FEFEFE', '#2499ff', '#f33930', '#b6c73f', '#ffd44d',
 testcolor = ['#ff6900', '#fcb900', '#7bdcb5', '#00d084', '#8ed1fc',
             '#0693e3', '#abb8c3', '#eb144c', '#f78da7', '#9900ef']
 
+st.header('Die freien Online-Hochschulschriften in der DNB')
 
 # ------- MAIN TEXT ----------
 
+if visual == "Übersicht":
 
-st.header('Übersicht "Freie Online-Hochschulschriften" in der DNB')
+    st.subheader('Übersicht "Freie Online-Hochschulschriften" in der DNB')
 
-st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
+    st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
          '"Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 Online-Dissertationen '
          "ohne Zugriffsbeschränkung aus Deutschland enthält. ") 
 
 
-all_publications = 288145
+    all_publications = 288145
 
-st.metric(label="Anzahl freie online Dissertationen", value=all_publications)
+    st.metric(label="Anzahl freie online Dissertationen", value=all_publications)
 
 
 
 #------ PUBLIKATIONSJAHRE --------------
 
-if visual == "Publikationsjahre":  
+elif visual == "Publikationsjahre":  
 
     st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
 
