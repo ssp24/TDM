@@ -93,7 +93,7 @@ if visual == "Übersicht":
                         padding-bottom: 18px; 
                         line-height:25px;'>
                         <i class='{iconname} fa-xs'></i> {i}
-                        </style><BR><span style='font-size: 14px; 
+                        </style><BR><span style='font-size: 10px; 
                         margin-top: 0;'>{sline}</style></span></p>"""
 
         st.markdown(htmlstr, unsafe_allow_html=True)
@@ -122,7 +122,7 @@ if visual == "Übersicht":
         st.markdown(htmlstr, unsafe_allow_html=True)
         
     with col3:
-        wch_colour_box = (700,204,602)
+        wch_colour_box = (000,204,602)
         wch_colour_font = (0,0,0)
         fontsize = 18
         iconname = "fas fa-asterisk"
