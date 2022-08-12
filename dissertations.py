@@ -107,7 +107,7 @@ if visual == "Übersicht":
         iconname = "fas fa-asterisk"
         sline = "Philosophie & Psychologie"
         #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-        g = pub_100
+        i = pub_100
     
     
 
