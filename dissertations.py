@@ -67,14 +67,14 @@ if visual == "Übersicht":
     pub_900 = df[df.DDC.str.startswith('9')].shape[0]   
     
     
-    wch_colour_box = (0,204,102)
+    wch_colour_box = (0,504,102)
     wch_colour_font = (0,0,0)
     fontsize = 18
     valign = "left"
     iconname = "fas fa-asterisk"
-    sline = "Observations"
+    sline = "000 - Informatik, Information & Wissen, allgemeine Werke"
     #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-    i = 123
+    i = pub_000
 
     htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
                                               {wch_colour_box[1]}, 
