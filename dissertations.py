@@ -14,7 +14,7 @@ fontsize = 18
 valign = "left"
 iconname = "fas fa-asterisk"
 sline = "Observations"
-lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
+#lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
 i = 123
 
 htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
