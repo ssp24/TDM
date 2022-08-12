@@ -66,28 +66,34 @@ if visual == "Übersicht":
     pub_800 = df[df.DDC.str.startswith('8')].shape[0]
     pub_900 = df[df.DDC.str.startswith('9')].shape[0]   
     
+    # --- boxes
     
-    wch_colour_box = (0,504,102)
-    wch_colour_font = (0,0,0)
-    fontsize = 18
-    valign = "left"
-    iconname = "fas fa-asterisk"
-    sline = "Informatik, Information & Wissen, allgemeine Werke"
-    #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-    i = pub_000
+    col1, col2 = st.columns(2)
     
-    wch_colour_box1 = (200,504,102)
-    wch_colour_font = (0,0,0)
-    fontsize = 18
-    valign = "right"
-    iconname = "fas fa-asterisk"
-    sline = "Philosophie & Psychologie"
-    #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-    i = pub_100
+    with col1:
+        wch_colour_box = (0,504,102)
+        wch_colour_font = (0,0,0)
+        fontsize = 18
+        valign = "left"
+        iconname = "fas fa-asterisk"
+        sline = "Informatik, Information & Wissen, allgemeine Werke"
+        #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
+        i = pub_000
+    
+    
+    with col2: 
+        wch_colour_box1 = (200,504,102)
+        wch_colour_font = (0,0,0)
+        fontsize = 18
+        valign = "right"
+        iconname = "fas fa-asterisk"
+        sline = "Philosophie & Psychologie"
+        #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
+        i = pub_100
     
     
 
-    htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
+        htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
                                               {wch_colour_box[1]}, 
                                               {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, 
@@ -103,7 +109,7 @@ if visual == "Übersicht":
                         </style><BR><span style='font-size: 14px; 
                         margin-top: 0;'>{sline}</style></span></p>"""
 
-    st.markdown(htmlstr, unsafe_allow_html=True)
+        st.markdown(htmlstr, unsafe_allow_html=True)
 
 
 #------ PUBLIKATIONSJAHRE --------------
