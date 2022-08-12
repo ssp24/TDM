@@ -29,6 +29,11 @@ testcolor = ['#ff6900', '#fcb900', '#7bdcb5', '#00d084', '#8ed1fc',
             '#0693e3', '#abb8c3', '#eb144c', '#f78da7', '#9900ef']
 
 st.header('"Freie Online-Hochschulschriften" in der DNB')
+st.write("Informationen zur Datengrundlage: "
+         " Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
+         ' "Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 freien Online-Dissertationen '
+         " ohne Zugriffsbeschränkung aus Deutschland enthält. "
+         " Das Datenset wird alle 3 Monate aktualisiert."  ) 
 
 # ------- MAIN TEXT ----------
 
@@ -36,9 +41,7 @@ if visual == "Übersicht":
 
     st.subheader('Statistik')
 
-    st.write("Informationen zu Datengrundlage: Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
-         '"Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 Online-Dissertationen '
-         "ohne Zugriffsbeschränkung aus Deutschland enthält. ") 
+    st.write("")
 
 
     all_ofd = 288145
@@ -46,6 +49,7 @@ if visual == "Übersicht":
     growth = all_ofd-ofd_last
 
     st.metric(label="Anzahl freie online Dissertationen", value=all_ofd, delta=growth)
+    st.caption("Seit der letzten Aktualisierung des Datensets im März 2022.")
 
 
 
