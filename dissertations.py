@@ -167,7 +167,7 @@ if visual == "Übersicht":
         st.markdown(htmlstr, unsafe_allow_html=True)
         
     with twocol2: 
-        wch_colour_box = (100,204,302)
+        wch_colour_box = (800,204,002)
         fontsize = 18
         sline = "Sprache"
         i = pub_400
