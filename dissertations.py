@@ -33,7 +33,7 @@ htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]},
                         </style><BR><span style='font-size: 14px; 
                         margin-top: 0;'>{sline}</style></span></p>"""
 
-st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+st.markdown(htmlstr, unsafe_allow_html=True)
 
 
 
