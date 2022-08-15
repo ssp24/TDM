@@ -280,7 +280,8 @@ elif visual == "Sprachen":
     
 
     
-    df_stats = pd.DataFrame({'lang':[lang_ger, lang_eng, lang_fre, lang_ita, lang_spa, lang_por, lang_dut, lang_gre, lang_grc, lang_rus, lang_mul]}, columns= ['lang'])
+    df_stats = pd.DataFrame({'lang':[lang_ger, lang_eng, lang_fre, lang_ita, lang_spa, lang_por, lang_dut, lang_gre, lang_grc, lang_rus, lang_mul],
+                            'Sprache':["Deutsch", "Englisch", "Französisch", "Italienisch", "Spanisch", "Portugiesisch", "Niederländlisch", "GRE", "GRC", "Russisch", "Mehrere Sprachen"]})
     
     st.dataframe(df_stats)
     #fig_s = px.pie(df_stats, values='Sprachen', names='Sprachen')
