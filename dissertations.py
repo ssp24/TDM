@@ -284,8 +284,8 @@ elif visual == "Sprachen":
                             'Sprache':["Deutsch", "Englisch", "Französisch", "Italienisch", "Spanisch", "Portugiesisch", "Niederländlisch", "GRE", "GRC", "Russisch", "Mehrere Sprachen"]})
     
     st.dataframe(df_stats)
-    #fig_s = px.pie(df_stats, values='Sprachen', names='Sprachen')
-    #fig_s.show()
+    fig_s = px.pie(df_stats, values='Sprachen', names='Sprachen')
+    st.plotly_chart(fig_s, use_container_width=True)
     
     
 else: 
