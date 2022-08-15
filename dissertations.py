@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 
-
+stats = pd.read_json("data/stats.json")
 
 # ---- SIDEBAR ----- 
 
@@ -15,7 +15,7 @@ with st.sidebar:
     st.subheader("Auswahlmenü")
     visual = st.selectbox(
      'Bitte wählen Sie die Anzeige: ',
-     ('Übersicht', 'Publikationsjahre', 'Verteilung nach Fächern', 'Publikationsorte')
+     ('Übersicht', 'Publikationsjahre', 'Verteilung nach Fächern', 'Sprachen', 'Publikationsorte')
     )
     st.write('Momentan ausgewählt:',
              visual)
@@ -31,20 +31,22 @@ testcolor = ['#ff6900', '#fcb900', '#7bdcb5', '#00d084', '#8ed1fc',
             '#0693e3', '#abb8c3', '#eb144c', '#f78da7', '#9900ef']
 
 st.header('"Freie Online-Hochschulschriften" in der DNB')
-st.write("Informationen zur Datengrundlage: "
-         " Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
-         ' "Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 freien Online-Dissertationen '
-         " ohne Zugriffsbeschränkung aus Deutschland enthält. ")
-st.write(" Das Datenset wird alle 3 Monate aktualisiert."  ) 
+
 
 # ------- MAIN BOX ----------
 
 if visual == "Übersicht":
 
+    st.write("Informationen zur Datengrundlage: "
+         " Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
+         ' "Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 freien Online-Dissertationen '
+         " ohne Zugriffsbeschränkung aus Deutschland enthält. ")
+    st.write(" Das Datenset wird alle 3 Monate aktualisiert."  ) 
     st.write("")
 
 
-    all_ofd = 288145
+    all_ofd = len(stats.index)
+         
     ofd_last = 264357
     growth = all_ofd-ofd_last
 
@@ -256,6 +258,35 @@ elif visual == "Verteilung nach Fächern":
         st.caption("This work is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License "
             "by OCLC Online Computer Library Center, Inc. All copyright rights in the Dewey Decimal Classification system are "
             "owned by OCLC. Dewey, Dewey Decimal Classification, DDC, OCLC and WebDewey are registered trademarks of OCLC. ")
+    
+
+elif visual == "Sprachen":
+    
+    #stats = pd.read_json("data/stats.json") 
+    stats.drop(stats.loc[stats['DDC']== "N/A"].index, inplace=True)
+    stats.drop(stats.loc[stats['DDC']=="NaN"].index, inplace=True)
+    
+    pub_000 = stats[stats.DDC.str.startswith('0', na=False)].shape[0]
+    pub_100 = stats[stats.DDC.str.startswith('1', na=False)].shape[0]
+    pub_200 = stats[stats.DDC.str.startswith('2', na=False)].shape[0]
+    pub_300 = stats[stats.DDC.str.startswith('3', na=False)].shape[0]
+    pub_400 = stats[stats.DDC.str.startswith('4', na=False)].shape[0]
+    pub_500 = stats[stats.DDC.str.startswith('5', na=False)].shape[0]
+    pub_600 = stats[stats.DDC.str.startswith('6', na=False)].shape[0]
+    pub_700 = stats[stats.DDC.str.startswith('7', na=False)].shape[0]
+    pub_800 = stats[stats.DDC.str.startswith('8', na=False)].shape[0]
+    pub_900 = stats[stats.DDC.str.startswith('9', na=False)].shape[0]
+    print(pub_000)
+    print(pub_100)
+    print(pub_200)
+    print(pub_300)
+    print(pub_400)
+    print(pub_500)
+    print(pub_600)
+    print(pub_700)
+    print(pub_800)
+    print(pub_900)
+    
     
     
 else: 
