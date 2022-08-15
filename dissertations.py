@@ -8,6 +8,8 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 stats = pd.read_json("data/stats.json")
+dissyears2 = pd.read_json("data/dissyears.json")
+
 
 # ---- SIDEBAR ----- 
 
@@ -45,7 +47,7 @@ if visual == "Übersicht":
     st.write("")
 
 
-    all_ofd = len(stats.index)
+    all_ofd = len(dissyears2.index)
          
     ofd_last = 264357
     growth = all_ofd-ofd_last
@@ -195,7 +197,6 @@ elif visual == "Publikationsjahre":
 
     st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
 
-    dissyears2 = pd.read_json("data/dissyears.json")
     dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=catalog=dnb.hss+location=onlinefree+jhr="+dissyears2["years"].astype(str)
 
     fig2 = px.bar(dissyears2, x="years", y = "count", labels={'years':'Jahr', 'count':'Anzahl'}, color='count', height=500)
