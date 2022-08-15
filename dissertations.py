@@ -266,17 +266,17 @@ elif visual == "Sprachen":
     stats.drop(stats.loc[stats['DDC']== "N/A"].index, inplace=True)
     stats.drop(stats.loc[stats['DDC']=="NaN"].index, inplace=True)
     
-    lang_ger = data.lang.value_counts()["ger"]
-    lang_eng = data.lang.value_counts()["eng"]
-    lang_fre = data.lang.value_counts()["fre"]
-    lang_ita = data.lang.value_counts()["ita"]
-    lang_spa = data.lang.value_counts()["spa"]
-    lang_por = data.lang.value_counts()["por"]
-    lang_dut = data.lang.value_counts()["dut"]
-    lang_gre = data.lang.value_counts()["gre"]
-    lang_grc = data.lang.value_counts()["grc"]
-    lang_rus = data.lang.value_counts()["rus"]
-    lang_mul = data.lang.value_counts()["mul"]
+    lang_ger = stats.lang.value_counts()["ger"]
+    lang_eng = stats.lang.value_counts()["eng"]
+    lang_fre = stats.lang.value_counts()["fre"]
+    lang_ita = stats.lang.value_counts()["ita"]
+    lang_spa = stats.lang.value_counts()["spa"]
+    lang_por = stats.lang.value_counts()["por"]
+    lang_dut = stats.lang.value_counts()["dut"]
+    lang_gre = stats.lang.value_counts()["gre"]
+    lang_grc = stats.lang.value_counts()["grc"]
+    lang_rus = stats.lang.value_counts()["rus"]
+    lang_mul = stats.lang.value_counts()["mul"]
     
 
     
