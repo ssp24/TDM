@@ -281,8 +281,10 @@ elif visual == "Sprachen":
 
     
     df_stats = pd.DataFrame([lang_ger, lang_eng, lang_fre, lang_ita, lang_spa, lang_por, lang_dut, long_gre, long_grc, long_rus, long_mul], columns= ['lang'])
-    fig_s = px.pie(df_stats, values='Sprachen', names='Sprachen')
-    fig_s.show()
+    
+    st.dataframe(df_stats)
+    #fig_s = px.pie(df_stats, values='Sprachen', names='Sprachen')
+    #fig_s.show()
     
     
 else: 
