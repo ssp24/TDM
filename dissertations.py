@@ -47,7 +47,7 @@ if visual == "Übersicht":
     st.write("")
 
 
-    all_ofd = len(dissyears2.index)
+    all_ofd = 288123
          
     ofd_last = 264357
     growth = all_ofd-ofd_last
