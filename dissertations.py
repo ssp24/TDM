@@ -283,8 +283,7 @@ elif visual == "Sprachen":
     df_stats = pd.DataFrame({'lang':[lang_ger, lang_eng, lang_fre, lang_ita, lang_spa, lang_por, lang_dut, lang_gre, lang_grc, lang_rus, lang_mul],
                             'Sprache':["Deutsch", "Englisch", "Französisch", "Italienisch", "Spanisch", "Portugiesisch", "Niederländlisch", "GRE", "GRC", "Russisch", "Mehrere Sprachen"]})
     
-    st.dataframe(df_stats)
-    fig_s = px.pie(df_stats, values='lang', names='Sprache', color_discrete_sequence=px.colors.sequential.RdBu)
+    fig_s = px.pie(df_stats, values='lang', names='Sprache', height=600, color_discrete_sequence=px.colors.sequential.RdBu)
     st.plotly_chart(fig_s, use_container_width=True)
     
     
