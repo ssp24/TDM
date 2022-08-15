@@ -266,27 +266,23 @@ elif visual == "Sprachen":
     stats.drop(stats.loc[stats['DDC']== "N/A"].index, inplace=True)
     stats.drop(stats.loc[stats['DDC']=="NaN"].index, inplace=True)
     
-    pub_000 = stats[stats.DDC.str.startswith('0', na=False)].shape[0]
-    pub_100 = stats[stats.DDC.str.startswith('1', na=False)].shape[0]
-    pub_200 = stats[stats.DDC.str.startswith('2', na=False)].shape[0]
-    pub_300 = stats[stats.DDC.str.startswith('3', na=False)].shape[0]
-    pub_400 = stats[stats.DDC.str.startswith('4', na=False)].shape[0]
-    pub_500 = stats[stats.DDC.str.startswith('5', na=False)].shape[0]
-    pub_600 = stats[stats.DDC.str.startswith('6', na=False)].shape[0]
-    pub_700 = stats[stats.DDC.str.startswith('7', na=False)].shape[0]
-    pub_800 = stats[stats.DDC.str.startswith('8', na=False)].shape[0]
-    pub_900 = stats[stats.DDC.str.startswith('9', na=False)].shape[0]
-    print(pub_000)
-    print(pub_100)
-    print(pub_200)
-    print(pub_300)
-    print(pub_400)
-    print(pub_500)
-    print(pub_600)
-    print(pub_700)
-    print(pub_800)
-    print(pub_900)
+    lang_ger = data.loc[data['lang']== "ger"].shape[0]
+    lang_eng = data.loc[data['lang']== "eng"].shape[0]
+    lang_fre = data.loc[data['lang']== "fre"].shape[0]
+    lang_ita = data.loc[data['lang']== "ita"].shape[0]
+    lang_spa = data.loc[data['lang']== "spa"].shape[0]
+    lang_por = data.loc[data['lang']== "por"].shape[0]
+    lang_dut = data.loc[data['lang']== "dut"].shape[0]
+    lang_gre = data.loc[data['lang']== "gre"].shape[0]
+    lang_grc = data.loc[data['lang']== "grc"].shape[0]
+    lang_rus = data.loc[data['lang']== "rus"].shape[0]
+    lang_mul = data.loc[data['lang']== "mul"].shape[0]
     
+
+    
+    df_stats = pd.DataFrame([lang_ger, lang_eng, lang_fre, lang_ita, lang_spa, lang_por, lang_dut, long_gre, long_grc, long_rus, long_mul], columns= ['lang'])
+    fig_s = px.pie(df_stats, values='Sprachen', names='Sprachen')
+    fig_s.show()
     
     
 else: 
