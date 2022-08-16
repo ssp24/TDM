@@ -287,6 +287,23 @@ elif visual == "Sprachen":
     fig_s = px.pie(df_stats, values='lang', names='Sprache', height=600, color_discrete_sequence=px.colors.sequential.RdBu)
     st.plotly_chart(fig_s, use_container_width=True)
     
+
+elif visual="Publikationsorte": 
+    df = pd.read_json("data/geodf.json")
+    places = pd.read_json("data/geoplaces.json") 
+    
+    dfmerge = pd.merge(df, places, on='Place', how='left')
+
+    gis = GIS()
+
+    # create an anonymous connection to ArcGIS Online and get a public item
+    item = gis.content.get("85d0ca4ea1ca4b9abf0c51b9bd34de2e")
+    flayer = item.layers[0]
+    
+    m2 = GeoAccessor.from_xy(dfmerge, 'long', 'lat').spatial.plot()
+    m2.layout.height = "500px"
+    m2
+    
     
 else: 
     
