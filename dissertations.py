@@ -288,7 +288,7 @@ elif visual == "Sprachen":
     st.plotly_chart(fig_s, use_container_width=True)
     
 
-elif visual="Publikationsorte": 
+elif visual=="Publikationsorte": 
     df = pd.read_json("data/geodf.json")
     places = pd.read_json("data/geoplaces.json") 
     
