@@ -11,3 +11,5 @@ numpy
 plotly.express
 wordcloud
 h5py
+arcgis
+geopy
