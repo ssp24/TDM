@@ -7,12 +7,12 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 #from arcgis import GIS
-import geopy
-from geopy.geocoders import Nominatim
+#import geopy
+#from geopy.geocoders import Nominatim
 
 #from arcgis.features import SpatialDataFrame
-from arcgis.features import GeoAccessor
-from arcgis.gis import GIS
+#from arcgis.features import GeoAccessor
+#from arcgis.gis import GIS
 
 stats = pd.read_json("data/stats.json")
 dissyears2 = pd.read_json("data/dissyears.json")
@@ -301,15 +301,16 @@ elif visual=="Publikationsorte":
     
     dfmerge = pd.merge(df, places, on='Place', how='left')
 
-    gis = GIS()
+    st.map(dfmerge)
+    #gis = GIS()
 
     # create an anonymous connection to ArcGIS Online and get a public item
-    item = gis.content.get("85d0ca4ea1ca4b9abf0c51b9bd34de2e")
-    flayer = item.layers[0]
+    #item = gis.content.get("85d0ca4ea1ca4b9abf0c51b9bd34de2e")
+    #flayer = item.layers[0]
     
-    m2 = GeoAccessor.from_xy(dfmerge, 'long', 'lat').spatial.plot()
-    m2.layout.height = "500px"
-    m2
+    #m2 = GeoAccessor.from_xy(dfmerge, 'long', 'lat').spatial.plot()
+    #m2.layout.height = "500px"
+    #m2
     
     
 else: 
