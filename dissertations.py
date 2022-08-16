@@ -6,7 +6,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
-import GIS
+import arcgis
 import geopy
 from geopy.geocoders import Nominatim
 
