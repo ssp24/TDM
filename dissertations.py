@@ -303,7 +303,7 @@ elif visual=="Publikationsorte":
     dfvis = dfmerge.dropna(inplace=True)
     #st.dataframe(dfmerge)
 
-    st.map(dfvis)
+    st.map(data=dfvis, zoom=6)
     #gis = GIS()
 
     # create an anonymous connection to ArcGIS Online and get a public item
