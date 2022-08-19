@@ -301,7 +301,7 @@ elif visual=="Publikationsorte":
     
     dfmerge = pd.merge(df, places, on='Place', how='left')
     
-    dfshort = dfmerge.head(50)
+    dfshort = dfmerge.head(2000)
     st.dataframe(dfshort)
 
        
