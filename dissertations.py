@@ -308,7 +308,7 @@ elif visual=="Publikationsorte":
     
     import numpy as np
     dftest = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    np.random.randn(1000, 2) / [50, 50] + [47.9427, 11.5763],
     columns=['lat', 'lon'])
     
     
