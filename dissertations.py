@@ -1,12 +1,3 @@
-import conda
-import os
-
-conda_file_dir = conda.__file__
-conda_dir = conda_file_dir.split('lib')[0]
-proj_lib = os.path.join(os.path.join(conda_dir, 'share'), 'proj')
-os.environ["PROJ_LIB"] = proj_lib
-
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -15,7 +6,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
-#from arcgis import GIS
+from arcgis import GIS
 #import geopy
 #from geopy.geocoders import Nominatim
 
