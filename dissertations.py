@@ -302,7 +302,7 @@ elif visual=="Publikationsorte":
     dfmerge = pd.merge(df, places, on='Place', how='left')
     
     dfshort = dfmerge.head(50)
-    st.dataframe(dfshort)
+    #st.dataframe(dfshort)
 
     
     
@@ -310,7 +310,7 @@ elif visual=="Publikationsorte":
     dftest = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 50] + [47.9427, 11.5763],
     columns=['lat', 'lon'])
-    
+    st.dataframe(dftest)
     
     
     dfvis = dfshort.dropna(subset = ['gcode'], inplace=True)
