@@ -300,13 +300,12 @@ elif visual=="Publikationsorte":
     places = pd.read_json("data/geoplaces.json") 
     
     dfmerge = pd.merge(df, places, on='Place', how='left')
-    #dfvis = dfmerge.dropna(inplace=True)
+    
     dfvis = dfmerge.head(20)
-    
-    
-    
     st.dataframe(dfvis)
 
+    
+    dfvis = dfvis.dropna(inplace=True)
     st.map(data=dfvis, zoom=6)
     #gis = GIS()
 
