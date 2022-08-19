@@ -306,7 +306,7 @@ elif visual=="Publikationsorte":
 
        
     dfvis = dfshort.dropna(subset = ['gcode'], inplace=True)
-    dftest = dfvis[['lat'], ['lon']]
+    dftest = dfvis[['lat', 'lon']]
     
     
     st.map(dftest)
