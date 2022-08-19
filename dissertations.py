@@ -301,12 +301,12 @@ elif visual=="Publikationsorte":
     
     dfmerge = pd.merge(df, places, on='Place', how='left')
     
-    dfvis = dfmerge.head(20)
+    dfshort = dfmerge.head(50)
     st.dataframe(dfvis)
 
     
-    dfvis = dfvis.dropna(inplace=True)
-    st.map(data=dfvis, zoom=6)
+    dfvis = dfshort.dropna(subset = ['gcode'], inplace=True)
+    st.map(dfvis)
     #gis = GIS()
 
     # create an anonymous connection to ArcGIS Online and get a public item
