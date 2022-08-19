@@ -307,10 +307,10 @@ elif visual=="Publikationsorte":
        
     dfvis = dfshort.dropna(subset = ['gcode'])
     #dftest = dfvis[('lat', 'lon')]
-    dftest = dfvis.drop(['Creator', 'Title', 'Place', 'Year', 'gcode'], axis=1)
-    st.dataframe(dftest)
+    #dftest = dfvis.drop(['Creator', 'Title', 'Place', 'Year', 'gcode'], axis=1)
+    #st.dataframe(dftest)
     
-    st.map(dftest)
+    st.map(dfvis)
     #gis = GIS()
 
     # create an anonymous connection to ArcGIS Online and get a public item
