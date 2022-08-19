@@ -302,12 +302,13 @@ elif visual=="Publikationsorte":
     dfmerge = pd.merge(df, places, on='Place', how='left')
     
     dfshort = dfmerge.head(50)
-    #st.dataframe(dfshort)
+    st.dataframe(dfshort)
 
        
     dfvis = dfshort.dropna(subset = ['gcode'], inplace=True)
-    dftest = dfvis[('lat', 'lon')]
-    st.dataframe(dftest)
+    #dftest = dfvis[('lat', 'lon')]
+    dftest = dfvis.drop(['Title', 'Publisher'], axis=1)
+    st.dataframe(dfvis)
     
     st.map(dftest)
     #gis = GIS()
