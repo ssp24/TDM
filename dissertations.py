@@ -301,13 +301,13 @@ elif visual=="Publikationsorte":
     
     dfmerge = pd.merge(df, places, on='Place', how='left')
     #dfvis = dfmerge.dropna(inplace=True)
-    dfvis = dfmerge.head(10)
+    dfvis = dfmerge.head(20)
     
     
     
     st.dataframe(dfvis)
 
-    #st.map(data=dfvis, zoom=6)
+    st.map(data=dfvis, zoom=6)
     #gis = GIS()
 
     # create an anonymous connection to ArcGIS Online and get a public item
