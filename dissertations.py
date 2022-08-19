@@ -300,10 +300,14 @@ elif visual=="Publikationsorte":
     places = pd.read_json("data/geoplaces.json") 
     
     dfmerge = pd.merge(df, places, on='Place', how='left')
-    dfvis = dfmerge.dropna(inplace=True)
-    #st.dataframe(dfmerge)
+    #dfvis = dfmerge.dropna(inplace=True)
+    dfvis = dfmerge.head(10)
+    
+    
+    
+    st.dataframe(dfvis)
 
-    st.map(data=dfvis, zoom=6)
+    #st.map(data=dfvis, zoom=6)
     #gis = GIS()
 
     # create an anonymous connection to ArcGIS Online and get a public item
