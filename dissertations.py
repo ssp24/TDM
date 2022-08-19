@@ -305,7 +305,7 @@ elif visual=="Publikationsorte":
     st.dataframe(dfshort)
 
        
-    dfvis = dfshort.dropna(subset = ['gcode'], inplace=True)
+    dfvis = dfshort.dropna(subset = ['gcode'])
     #dftest = dfvis[('lat', 'lon')]
     #dftest = dfvis.drop(['Title', 'Publisher'], axis=1)
     st.dataframe(dfvis)
