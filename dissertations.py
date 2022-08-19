@@ -305,8 +305,16 @@ elif visual=="Publikationsorte":
     st.dataframe(dfshort)
 
     
+    
+    import numpy as np
+    dftest = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
+    
+    
+    
     dfvis = dfshort.dropna(subset = ['gcode'], inplace=True)
-    st.map(dfvis)
+    st.map(dftest)
     #gis = GIS()
 
     # create an anonymous connection to ArcGIS Online and get a public item
