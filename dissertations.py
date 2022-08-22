@@ -309,7 +309,7 @@ elif visual=="Publikationsorte":
     
     
     fig3 = px.scatter_mapbox(dfvis, lat="lat", lon="lon", hover_name="Place",
-                        size="count", color="count", zoom=5, height=500)
+                        size="count", color_discrete_sequence=px.colors.sequential.RdBu, zoom=5, height=500)
     fig3.update_layout(mapbox_style="open-street-map")
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     st.plotly_chart(fig3, use_container_width=True)
