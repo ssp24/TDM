@@ -312,7 +312,7 @@ elif visual=="Publikationsorte":
                         size="count", color="count", color_continuous_scale=px.colors.cyclical.IceFire, zoom=5, height=500)
     fig3.update_layout(mapbox_style="open-street-map")  
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-    fig.update_traces(marker_sizemin = 5)
+    fig3.update_traces(marker_sizemin = 5)
     st.plotly_chart(fig3, use_container_width=True)
     
         
