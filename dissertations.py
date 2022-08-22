@@ -320,8 +320,9 @@ elif visual=="Publikationsorte":
     
     
     markerdf = dfvis["Place"]
-    markerdf["counts"] = markerdf['Place'].value_counts()
-    #markerdf = markerdf.groupby(["Place"])
+    test = markerdf['Place'].value_counts()
+    markerdf = markerdf.groupby(["Place"])
+    markerdf = pd.merge(markerdf, test, on='Place', how='left')
     st.dataframe(markerdf)
     
     fig4 = px.scatter_geo(dfvis, #locations="iso_alpha",
