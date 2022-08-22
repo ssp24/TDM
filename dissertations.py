@@ -303,7 +303,6 @@ elif visual=="Publikationsorte":
     dfmerge = pd.merge(df, places, on='Place', how='left')
         
     dfshort = dfmerge.head(10000)
-    dfshort["count"] = dfshort.groupby('Place')['Place'].transform('count')
     st.dataframe(dfshort)
        
     dfvis = dfshort.dropna(subset = ['gcode'])
