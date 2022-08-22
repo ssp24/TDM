@@ -319,7 +319,7 @@ elif visual=="Publikationsorte":
     
     
     
-    markerdf = dfvis.groupby(["Place"]).agg({"Frequency":"count"})
+    markerdf = dfvis.groupby(["Place"])
     st.dataframe(markerdf)
     
     fig4 = px.scatter_geo(dfvis, #locations="iso_alpha",
