@@ -317,16 +317,9 @@ elif visual=="Publikationsorte":
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     st.plotly_chart(fig3, use_container_width=True)
     
-    
-    
-    markerdf = dfvis["Place"]
-    test = markerdf['Place'].value_counts()
-    #markerdf = markerdf.groupby(["Place"])
-    #markerdf = pd.merge(markerdf, test, on='Place', how='left')
-    st.dataframe(test)
-    
+        
     fig4 = px.scatter_geo(dfvis, #locations="iso_alpha",
-                     size="Place", # size of markers, "pop" is one of the columns of gapminder
+                     #size="Place", # size of markers, "pop" is one of the columns of gapminder
                      )
     st.plotly_chart(fig4, use_container_width=True)
     
