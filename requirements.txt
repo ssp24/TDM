@@ -13,4 +13,4 @@ wordcloud
 h5py
 six
 arcgis
-geopy.geocoders
+geopy
