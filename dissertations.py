@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 from arcgis import GIS
-import geopy
+#import geopy
 #from geopy.geocoders import Nominatim
 
 #from arcgis.features import SpatialDataFrame
