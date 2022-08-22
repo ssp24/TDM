@@ -298,8 +298,9 @@ elif visual == "Sprachen":
 elif visual=="Publikationsorte": 
     df = pd.read_json("data/geodf.json", encoding="utf-8")
     places = pd.read_json("data/geoplaces.json", encoding="utf-8") 
+    st.dataframe(places)
     
-    dfmerge = pd.merge(df, places, on='Place', how='left', encoding="utf-8")
+    dfmerge = pd.merge(df, places, on='Place', how='left')
         
     dfshort = dfmerge.head(10000)
     dfshort["count"] = dfshort.groupby('Place')['Place'].transform('count')
