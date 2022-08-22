@@ -310,7 +310,19 @@ elif visual=="Publikationsorte":
     #dftest = dfvis.drop(['Creator', 'Title', 'Place', 'Year', 'gcode'], axis=1)
     #st.dataframe(dftest)
     
-    st.map(dfvis)
+    
+    px.set_mapbox_access_token(open(".mapbox_token").read())
+    fig3 = px.scatter_mapbox(dfvis,
+                        lat=dfvis.lat.y,
+                        lon=dfvis.long.x,
+                        hover_name="name",
+                        zoom=1)
+    st.plotly_chart(fig3, use_container_width=True)
+    
+    
+    
+    
+    #st.map(dfvis)
     #gis = GIS()
 
     # create an anonymous connection to ArcGIS Online and get a public item
