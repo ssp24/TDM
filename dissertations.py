@@ -317,7 +317,10 @@ elif visual=="Publikationsorte":
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     st.plotly_chart(fig3, use_container_width=True)
     
-    
+    fig4 = px.scatter_geo(dfvis, #locations="iso_alpha",
+                     size="Place", # size of markers, "pop" is one of the columns of gapminder
+                     )
+    st.plotly_chart(fig4, use_container_width=True)
     
     
     #st.map(dfvis)
