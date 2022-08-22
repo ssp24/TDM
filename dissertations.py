@@ -296,19 +296,19 @@ elif visual == "Sprachen":
     
 
 elif visual=="Publikationsorte": 
-    df = pd.read_json("data/geodf.json", encoding="utf-8")
-    places = pd.read_json("data/geoplaces.json", encoding="utf-8") 
-    st.dataframe(places)
+    df = pd.read_json("geoplacecount.json", encoding="utf-8")
+    #places = pd.read_json("data/geoplaces.json", encoding="utf-8") 
+    #st.dataframe(places)
     
-    dfmerge = pd.merge(df, places, on='Place', how='left')
+    #dfmerge = pd.merge(df, places, on='Place', how='left')
         
-    dfshort = dfmerge.head(10000)
-    st.dataframe(dfshort)
+    #dfshort = dfmerge.head(10000)
+    #st.dataframe(dfshort)
        
-    dfvis = dfshort.dropna(subset = ['gcode'])
+    #dfvis = dfshort.dropna(subset = ['gcode'])
     
     
-    fig3 = px.scatter_mapbox(dfvis, lat="lat", lon="lon", hover_name="Place",
+    fig3 = px.scatter_mapbox(df, lat="lat", lon="lon", hover_name="Place",
                         size="count", color="count", color_continuous_scale=px.colors.cyclical.IceFire, zoom=5, height=500)
     fig3.update_layout(mapbox_style="open-street-map")
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
