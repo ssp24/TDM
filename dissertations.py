@@ -300,8 +300,9 @@ elif visual=="Publikationsorte":
     places = pd.read_json("data/geoplaces.json") 
     
     dfmerge = pd.merge(df, places, on='Place', how='left')
-    
+        
     dfshort = dfmerge.head(2000)
+    dfshort["count"] = dfshort.groupby('Place')['Place'].transform('count')
     st.dataframe(dfshort)
 
        
@@ -312,7 +313,7 @@ elif visual=="Publikationsorte":
     
     
     fig3 = px.scatter_mapbox(dfvis, lat="lat", lon="lon", hover_name="Place", hover_data=["ID", "Title", "Creator", "Year"],
-                        color_discrete_sequence=["fuchsia"], zoom=5, height=500)
+                        size="count", color_discrete_sequence=["fuchsia"], zoom=5, height=500)
     fig3.update_layout(mapbox_style="open-street-map")
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     st.plotly_chart(fig3, use_container_width=True)
