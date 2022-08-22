@@ -311,8 +311,8 @@ elif visual=="Publikationsorte":
     #st.dataframe(dftest)
     
     
-    fig3 = px.scatter_mapbox(dfvis, lat="lat", lon="lon",
-                        color_discrete_sequence=["fuchsia"], zoom=3, height=300)
+    fig3 = px.scatter_mapbox(dfvis, lat="lat", lon="lon", hover_name="Place", hover_data=["ID", "Title", "Creator", "Year"],
+                        color_discrete_sequence=["fuchsia"], zoom=5, height=500)
     fig3.update_layout(mapbox_style="open-street-map")
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     st.plotly_chart(fig3, use_container_width=True)
