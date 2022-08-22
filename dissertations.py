@@ -296,8 +296,8 @@ elif visual == "Sprachen":
     
 
 elif visual=="Publikationsorte": 
-    df = pd.read_json("data/geodf.json")
-    places = pd.read_json("data/geoplaces.json") 
+    df = pd.read_json("data/geodf.json", encoding="utf-8")
+    places = pd.read_json("data/geoplaces.json", encoding="utf-8") 
     
     dfmerge = pd.merge(df, places, on='Place', how='left')
         
