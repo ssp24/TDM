@@ -321,9 +321,9 @@ elif visual=="Publikationsorte":
     
     markerdf = dfvis["Place"]
     test = markerdf['Place'].value_counts()
-    markerdf = markerdf.groupby(["Place"])
-    markerdf = pd.merge(markerdf, test, on='Place', how='left')
-    st.dataframe(markerdf)
+    #markerdf = markerdf.groupby(["Place"])
+    #markerdf = pd.merge(markerdf, test, on='Place', how='left')
+    st.dataframe(test)
     
     fig4 = px.scatter_geo(dfvis, #locations="iso_alpha",
                      size="Place", # size of markers, "pop" is one of the columns of gapminder
