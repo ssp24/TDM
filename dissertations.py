@@ -301,41 +301,21 @@ elif visual=="Publikationsorte":
     
     dfmerge = pd.merge(df, places, on='Place', how='left')
         
-    dfshort = dfmerge.head(2000)
+    dfshort = dfmerge.head(10000)
     dfshort["count"] = dfshort.groupby('Place')['Place'].transform('count')
-    st.dataframe(dfshort)
-
+    #st.dataframe(dfshort)
        
     dfvis = dfshort.dropna(subset = ['gcode'])
-    #dftest = dfvis[('lat', 'lon')]
-    #dftest = dfvis.drop(['Creator', 'Title', 'Place', 'Year', 'gcode'], axis=1)
-    #st.dataframe(dftest)
     
     
-    fig3 = px.scatter_mapbox(dfvis, lat="lat", lon="lon", hover_name="Place", hover_data=["ID", "Title", "Creator", "Year"],
-                        size="count", color_discrete_sequence=["fuchsia"], zoom=5, height=500)
+    fig3 = px.scatter_mapbox(dfvis, lat="lat", lon="lon", hover_name="Place",
+                        size="count", color="count", zoom=5, height=500)
     fig3.update_layout(mapbox_style="open-street-map")
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     st.plotly_chart(fig3, use_container_width=True)
     
         
-    fig4 = px.scatter_geo(dfvis, #locations="iso_alpha",
-                     #size="Place", # size of markers, "pop" is one of the columns of gapminder
-                     )
-    st.plotly_chart(fig4, use_container_width=True)
-    
-    
-    #st.map(dfvis)
-    #gis = GIS()
-
-    # create an anonymous connection to ArcGIS Online and get a public item
-    #item = gis.content.get("85d0ca4ea1ca4b9abf0c51b9bd34de2e")
-    #flayer = item.layers[0]
-    
-    #m2 = GeoAccessor.from_xy(dfmerge, 'long', 'lat').spatial.plot()
-    #m2.layout.height = "500px"
-    #m2
-    
+       
     
 else: 
     
