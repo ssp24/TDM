@@ -58,7 +58,7 @@ if visual == "Übersicht":
     all_oft_str = "288.123"     
     ofd_last = 282864
     growth = all_ofd-ofd_last
-    str_growth = str(str_growth)
+    str_growth = str(growth)
     newstring = '.'.join(str_growth[i:i+3] for i in range(0, len(my_str), 3))
     
 
