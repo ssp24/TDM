@@ -286,7 +286,7 @@ elif visual == "Publikationsjahre":
 
 elif visual == "Verteilung nach Fächern":
     
-    dissyears2 = pd.read_json("data/dissyears.json")
+    dissddc = pd.read_json("data/diss_ddc.json")
     
     #Erste Darstellung: 
     fig = px.sunburst(dissddc, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='count', 
