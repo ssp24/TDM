@@ -68,19 +68,27 @@ if visual == "Übersicht":
     dissddc = pd.read_json("data/diss_ddc.json")
     
     zero = dissddc[dissddc["Parent_no"].astype(str).str.startswith('0')]
-    
+    first = dissddc[dissddc["Parent_no"].astype(str).str.startswith('1')]
+    second = dissddc[dissddc["Parent_no"].astype(str).str.startswith('2')]
+    third = dissddc[dissddc["Parent_no"].astype(str).str.startswith('3')]
+    fourth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('4')]
+    fifth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('5')]
+    sixth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('6')]
+    seventh = dissddc[dissddc["Parent_no"].astype(str).str.startswith('7')]
+    eigth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('8')]
+    ninth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('9')]
     
     
     pub_000 = zero['count'].sum()
-    pub_100 = dissddc[dissddc.DDC.str.startswith('1')].shape[0]
-    pub_200 = dissddc[dissddc.DDC.str.startswith('2')].shape[0]
-    pub_300 = dissddc[dissddc.DDC.str.startswith('3')].shape[0]
-    pub_400 = dissddc[dissddc.DDC.str.startswith('4')].shape[0]
-    pub_500 = dissddc[dissddc.DDC.str.startswith('5')].shape[0]
-    pub_600 = dissddc[dissddc.DDC.str.startswith('6')].shape[0]
-    pub_700 = dissddc[dissddc.DDC.str.startswith('7')].shape[0]
-    pub_800 = dissddc[dissddc.DDC.str.startswith('8')].shape[0]
-    pub_900 = dissddc[dissddc.DDC.str.startswith('9')].shape[0]   
+    pub_100 = first['count'].sum()
+    pub_200 = second['count'].sum()
+    pub_300 = third['count'].sum()
+    pub_400 = fourth['count'].sum()
+    pub_500 = fifth['count'].sum()
+    pub_600 = sixth['count'].sum()
+    pub_700 = seventh['count'].sum()
+    pub_800 = eigth['count'].sum()
+    pub_900 = ninth['count'].sum()   
     
     # --- boxes
     
