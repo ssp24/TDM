@@ -283,8 +283,10 @@ elif visual == "Publikationsjahre":
  
 
 # --------- DDC -----------------
-dissyears2 = pd.read_json("data/dissyears.json")
+
 elif visual == "Verteilung nach Fächern":
+    
+    dissyears2 = pd.read_json("data/dissyears.json")
     
     #Erste Darstellung: 
     fig = px.sunburst(dissddc, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='count', 
