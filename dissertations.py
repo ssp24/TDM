@@ -435,7 +435,7 @@ elif visual=="Publikationsorte":
     fig3.update_layout(mapbox_style="open-street-map", 
                       center=dict(
                             lat=51.10,
-                            lon=-10.27),
+                            lon=10.27),
                         )  
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     fig3.update_traces(marker_sizemin = 5, marker_sizeref = 10)
