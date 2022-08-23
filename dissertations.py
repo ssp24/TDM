@@ -283,7 +283,7 @@ elif visual == "Publikationsjahre":
  
 
 # --------- DDC -----------------
-
+dissyears2 = pd.read_json("data/dissyears.json")
 elif visual == "Verteilung nach Fächern":
     
     #Erste Darstellung: 
