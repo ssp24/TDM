@@ -211,7 +211,7 @@ if visual == "Übersicht":
         st.markdown(htmlstr, unsafe_allow_html=True)
         
         
-        with twocol3: 
+    with twocol3: 
         wch_colour_box = (400,204,402)
         fontsize = 18
         sline = "Naturwissenschaften"
