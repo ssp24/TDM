@@ -437,8 +437,8 @@ elif visual=="Publikationsorte":
                             #accesstoken=mapbox_access_token,
                             bearing=0,
                             center=dict(
-                                    lat=38.92,
-                                    lon=-77.07
+                                    lat=51.10,
+                                    lon=10.27
                                             ))
                         )  
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
