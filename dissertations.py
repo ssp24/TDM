@@ -434,7 +434,7 @@ elif visual=="Publikationsorte":
                         size="count", color="count", color_continuous_scale=px.colors.cyclical.IceFire, zoom=5, height=500)
     fig3.update_layout(mapbox_style="open-street-map", 
                       mapbox=dict(
-                            accesstoken=mapbox_access_token,
+                            #accesstoken=mapbox_access_token,
                             bearing=0,
                             center=dict(
                                     lat=38.92,
