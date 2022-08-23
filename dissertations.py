@@ -54,7 +54,7 @@ if visual == "Übersicht":
     st.write("")
 
 
-    all_ofd = 288123
+    all_ofd = "288.123"
          
     ofd_last = 282864
     growth = all_ofd-ofd_last
