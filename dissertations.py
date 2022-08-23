@@ -261,7 +261,7 @@ if visual == "Übersicht":
         sline = "Künste & Freizeit und Erholung"
         i = pub_700
         
-        htmlstr = f"""<a href="https://portal.dnb.de/opac/simpleSearch?query=catalog%3Ddnb.hss+diss*+location%3Donlinefree+hsg%3D7*&cqlMode=true" target="new">
+        htmlstr = f"""<a href="https://portal.dnb.de/opac/simpleSearch?query=catalog%3Ddnb.hss+diss*+location%3Donlinefree+hsg%3D7*&cqlMode=true" target="new" style="text-decoration:none">
                         <p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
                         font-size: {fontsize}px; 
