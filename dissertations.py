@@ -55,14 +55,10 @@ if visual == "Übersicht":
 
 
     all_ofd = 288123
-    all_oft_str = "288.123"     
     ofd_last = 282864
-    growth = all_ofd-ofd_last
-    str_growth = str(growth)
-    newstring = '.'.join(str_growth[i:i+3] for i in range(0, len(my_str), 3))
-    
+       
 
-    st.metric(label="Anzahl freie online Dissertationen", value=all_ofd_str, delta=newstring)
+    st.metric(label="Anzahl freie online Dissertationen", value=all_ofd, delta=growth)
     st.caption("Seit der letzten Aktualisierung des Datensets im März 2022.")
   
      # --- Data ---- 
