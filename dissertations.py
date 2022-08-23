@@ -439,7 +439,7 @@ elif visual=="Publikationsorte":
                             center=dict(
                                     lat=38.92,
                                     lon=-77.07
-                                            ),
+                                            ))
                         )  
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     fig3.update_traces(marker_sizemin = 5, marker_sizeref = 10)
