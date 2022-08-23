@@ -261,7 +261,8 @@ if visual == "Übersicht":
         sline = "Künste & Freizeit und Erholung"
         i = pub_700
         
-        htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
+        htmlstr = f"""<a href="https://portal.dnb.de/opac/simpleSearch?query=catalog%3Ddnb.hss+diss*+location%3Donlinefree+hsg%3D7*&cqlMode=true" target="new">
+                        <p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
                         font-size: {fontsize}px; 
                         border-radius: 7px; 
@@ -271,7 +272,7 @@ if visual == "Übersicht":
                         line-height:25px;'>
                         <i class='{iconname} fa-xs'></i> {i}
                         </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        margin-top: 0;'>{sline}</style></span></p></a>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
