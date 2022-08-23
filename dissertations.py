@@ -235,7 +235,7 @@ if visual == "Übersicht":
     threecol1, threecol2, threecol3 = st.columns(3)
       
     with threecol1: 
-        wch_colour_box = (800,204,702)
+        wch_colour_box = (255,212,77)
         fontsize = 18
         sline = "Technik"
         i = pub_600
