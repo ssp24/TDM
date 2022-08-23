@@ -431,7 +431,7 @@ elif visual=="Publikationsorte":
     
     
     fig3 = px.scatter_mapbox(df, lat="lat", lon="lon", hover_name="Place",
-                        size="count", color="count", color_continuous_scale=px.colors.cyclical.IceFire, center zoom=5, height=500)
+                        size="count", color="count", color_continuous_scale=px.colors.cyclical.IceFire, zoom=5, height=500)
     fig3.update_layout(mapbox_style="open-street-map", 
                       center=dict(
                             lat=51.10,
