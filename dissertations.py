@@ -65,17 +65,22 @@ if visual == "Übersicht":
      # --- Data ---- 
     
     df = pd.read_json("data/diss_06-2022_cleaned.json")
+    dissddc = pd.read_json("data/diss_ddc.json")
     
-    pub_000 = df[df.DDC.str.startswith('0')].shape[0]
-    pub_100 = df[df.DDC.str.startswith('1')].shape[0]
-    pub_200 = df[df.DDC.str.startswith('2')].shape[0]
-    pub_300 = df[df.DDC.str.startswith('3')].shape[0]
-    pub_400 = df[df.DDC.str.startswith('4')].shape[0]
-    pub_500 = df[df.DDC.str.startswith('5')].shape[0]
-    pub_600 = df[df.DDC.str.startswith('6')].shape[0]
-    pub_700 = df[df.DDC.str.startswith('7')].shape[0]
-    pub_800 = df[df.DDC.str.startswith('8')].shape[0]
-    pub_900 = df[df.DDC.str.startswith('9')].shape[0]   
+    zero = dissddc[dissddc["Parent_no"].astype(str).str.startswith('0')]
+    
+    
+    
+    pub_000 = zero['count'].sum()
+    pub_100 = dissddc[dissddc.DDC.str.startswith('1')].shape[0]
+    pub_200 = dissddc[dissddc.DDC.str.startswith('2')].shape[0]
+    pub_300 = dissddc[dissddc.DDC.str.startswith('3')].shape[0]
+    pub_400 = dissddc[dissddc.DDC.str.startswith('4')].shape[0]
+    pub_500 = dissddc[dissddc.DDC.str.startswith('5')].shape[0]
+    pub_600 = dissddc[dissddc.DDC.str.startswith('6')].shape[0]
+    pub_700 = dissddc[dissddc.DDC.str.startswith('7')].shape[0]
+    pub_800 = dissddc[dissddc.DDC.str.startswith('8')].shape[0]
+    pub_900 = dissddc[dissddc.DDC.str.startswith('9')].shape[0]   
     
     # --- boxes
     
@@ -229,10 +234,7 @@ elif visual == "Publikationsjahre":
 
 elif visual == "Verteilung nach Fächern":
     
-    dissddc = pd.read_json("data/diss_ddc.json")
-
-
-    #Erster Darstellung: 
+    #Erste Darstellung: 
     fig = px.sunburst(dissddc, path=['Parent_title', 'DDCsecond-title', 'Sachgebiet'], values='count', 
                   custom_data=['Parent_title', 'count', 'Parent_no'],
                   height = 750, color_discrete_sequence = testcolor)
