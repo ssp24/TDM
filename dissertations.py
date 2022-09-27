@@ -55,7 +55,7 @@ if visual == "Übersicht":
 
 
     all_ofd = 288123
-    test = (f"{all_ofd:.d}")
+    test = f"{all_ofd:.d}"
     test2 = '{:.}'.format(all_ofd)
     ofd_last = 282864
     growth = all_ofd-ofd_last
