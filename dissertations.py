@@ -55,14 +55,16 @@ if visual == "Übersicht":
 
 
     all_ofd = 288128
-    test = f'{all_ofd:,}'
-    test2 = float(test.replace(',', '.'))
-    test3 = test.replace(',', '.')
+    conv_ofd = f'{all_ofd:,}'
+    #test2 = float(test.replace(',', '.'))
+    conv1_ofd = conv_ofd.replace(',', '.')
     ofd_last = 282864
     growth = all_ofd-ofd_last
+    conv_growth = f'{growth:,}'
+    conv1_growth = conv_growth.replace(',', '.')
        
-    st.write(test3)
-    st.metric(label="Anzahl freie online Dissertationen", value=test3, delta=growth)
+  
+    st.metric(label="Anzahl freie online Dissertationen", value=conv1_ofd, delta=conv1_growth)
     st.caption("Seit der letzten Aktualisierung des Datensets im März 2022.")
   
      # --- Data ---- 
