@@ -85,7 +85,7 @@ if visual == "Übersicht":
     
     
     pub_000 = zero['count'].sum()
-    conv_pub000 = f'{pub_000:,}'
+    conv_pub_000 = f'{pub_000:,}'
     conv1_pub_000 = conv_pub_000.replace(',', '.')
     pub_100 = first['count'].sum()
     pub_200 = second['count'].sum()
