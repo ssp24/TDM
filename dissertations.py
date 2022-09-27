@@ -88,14 +88,32 @@ if visual == "Übersicht":
     conv_pub_000 = f'{pub_000:,}'
     conv1_pub_000 = conv_pub_000.replace(',', '.')
     pub_100 = first['count'].sum()
+    conv_pub_100 = f'{pub_100:,}'
+    conv1_pub_100 = conv_pub_100.replace(',', '.')
     pub_200 = second['count'].sum()
+    conv_pub_200 = f'{pub_200:,}'
+    conv1_pub_200 = conv_pub_200.replace(',', '.')
     pub_300 = third['count'].sum()
+    conv_pub_300 = f'{pub_300:,}'
+    conv1_pub_300 = conv_pub_300.replace(',', '.')
     pub_400 = fourth['count'].sum()
+    conv_pub_400 = f'{pub_400:,}'
+    conv1_pub_400 = conv_pub_400.replace(',', '.')
     pub_500 = fifth['count'].sum()
+    conv_pub_500 = f'{pub_500:,}'
+    conv1_pub_500 = conv_pub_500.replace(',', '.')
     pub_600 = sixth['count'].sum()
+    conv_pub_600 = f'{pub_600:,}'
+    conv1_pub_600 = conv_pub_600.replace(',', '.')
     pub_700 = seventh['count'].sum()
+    conv_pub_700 = f'{pub_700:,}'
+    conv1_pub_700 = conv_pub_700.replace(',', '.')
     pub_800 = eigth['count'].sum()
-    pub_900 = ninth['count'].sum()   
+    conv_pub_800 = f'{pub_800:,}'
+    conv1_pub_800 = conv_pub_800.replace(',', '.')
+    pub_900 = ninth['count'].sum()
+    conv_pub_900 = f'{pub_900:,}'
+    conv1_pub_900 = conv_pub_900.replace(',', '.')
     
     # --- boxes
     
@@ -136,7 +154,7 @@ if visual == "Übersicht":
         fontsize = 18
         iconname = "fas fa-asterisk"
         sline = "Philosophie & Psychologie"
-        i = pub_100
+        i = conv1_pub_100
 
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
@@ -158,7 +176,7 @@ if visual == "Übersicht":
         fontsize = 18
         #iconname = "fas fa-asterisk"
         sline = "Religion"
-        i = pub_200
+        i = conv1_pub_200
 
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
@@ -181,7 +199,7 @@ if visual == "Übersicht":
         wch_colour_box = (100,204,302)
         fontsize = 18
         sline = "Sozialwissenschaften"
-        i = pub_300
+        i = conv1_pub_300
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
@@ -201,7 +219,7 @@ if visual == "Übersicht":
         wch_colour_box = (800,204,102)
         fontsize = 18
         sline = "Sprache"
-        i = pub_400
+        i = conv1_pub_400
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
@@ -222,7 +240,7 @@ if visual == "Übersicht":
         wch_colour_box = (400,204,402)
         fontsize = 18
         sline = "Naturwissenschaften"
-        i = pub_500
+        i = conv1_pub_500
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
@@ -245,7 +263,7 @@ if visual == "Übersicht":
         wch_colour_box = (255,200,31)
         fontsize = 18
         sline = "Technik"
-        i = pub_600
+        i = conv1_pub_600
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
@@ -266,7 +284,7 @@ if visual == "Übersicht":
         wch_colour_box = (230,45,45)
         fontsize = 18
         sline = "Künste & Freizeit und Erholung"
-        i = pub_700
+        i = conv1_pub_700
         
         htmlstr = f"""<a href="https://portal.dnb.de/opac/simpleSearch?query=catalog%3Ddnb.hss+diss*+location%3Donlinefree+hsg%3D7*&cqlMode=true" target="new" style="text-decoration:none">
                         <p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
@@ -287,7 +305,7 @@ if visual == "Übersicht":
         wch_colour_box = (0,70,196)
         fontsize = 18
         sline = "Literatur"
-        i = pub_800
+        i = conv1_pub_800
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
@@ -309,7 +327,7 @@ if visual == "Übersicht":
         wch_colour_box = (77,170,1)
         fontsize = 18
         sline = "Geschichte & Geografie"
-        i = pub_900
+        i = conv1_pub_900
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
