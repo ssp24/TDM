@@ -55,7 +55,7 @@ if visual == "Übersicht":
 
 
     all_ofd = 288128
-    test = f'{all_ofd:,}'
+    test = f'{all_ofd:.}'
     ofd_last = 282864
     growth = all_ofd-ofd_last
        
