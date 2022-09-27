@@ -85,6 +85,8 @@ if visual == "Übersicht":
     
     
     pub_000 = zero['count'].sum()
+    conv_pub000 = f'{pub_000:,}'
+    conv1_pub_000 = conv_pub_000.replace(',', '.')
     pub_100 = first['count'].sum()
     pub_200 = second['count'].sum()
     pub_300 = third['count'].sum()
@@ -107,7 +109,7 @@ if visual == "Übersicht":
         iconname = "fas fa-asterisk"
         sline = "Informatik, Information & Wissen, allgemeine Werke"
         #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-        i = pub_000
+        i = conv1_pub_000
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
                                               {wch_colour_box[1]}, 
