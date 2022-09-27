@@ -62,7 +62,7 @@ if visual == "Übersicht":
     growth = all_ofd-ofd_last
        
     st.write(test3)
-    st.metric(label="Anzahl freie online Dissertationen", value=all_ofd, delta=growth)
+    st.metric(label="Anzahl freie online Dissertationen", value=test3, delta=growth)
     st.caption("Seit der letzten Aktualisierung des Datensets im März 2022.")
   
      # --- Data ---- 
