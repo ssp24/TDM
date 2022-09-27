@@ -56,10 +56,11 @@ if visual == "Übersicht":
 
     all_ofd = 288128
     test = f'{all_ofd:,}'
+    test2 = float(test.replace(',', '.'))
     ofd_last = 282864
     growth = all_ofd-ofd_last
        
-    st.write(test)
+    st.write(test2)
     st.metric(label="Anzahl freie online Dissertationen", value=all_ofd, delta=growth)
     st.caption("Seit der letzten Aktualisierung des Datensets im März 2022.")
   
