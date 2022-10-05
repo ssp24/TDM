@@ -62,10 +62,11 @@ if visual == "Übersicht":
     growth = all_ofd-ofd_last
     conv_growth = f'{growth:,}'
     conv1_growth = conv_growth.replace(',', '.')
+    update = conv1_growth + ' (seit März 2022)'
        
   
-    st.metric(label="Anzahl freie online Dissertationen", value=conv1_ofd, delta=conv1_growth)
-    st.caption("Seit der letzten Aktualisierung des Datensets im März 2022.")
+    st.metric(label="Anzahl freie online Dissertationen", value=conv1_ofd, delta=update)
+    #st.caption("Seit der letzten Aktualisierung des Datensets im März 2022.")
   
      # --- Data ---- 
     
