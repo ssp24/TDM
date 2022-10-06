@@ -183,7 +183,7 @@ if visual == "Übersicht":
                         padding-left: 12px; 
                         padding-top: 18px; 
                         padding-bottom: 18px; 
-                        line-height:25px;'>
+                        line-height:30px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
                         </style><BR><span style='font-size: 22px; 
                         margin-top: 0;'><b>{i}</b></style></span></p>"""
@@ -206,7 +206,7 @@ if visual == "Übersicht":
                         padding-left: 12px; 
                         padding-top: 18px; 
                         padding-bottom: 18px; 
-                        line-height:25px;'>
+                        line-height:30px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
                         </style><BR><span style='font-size: 22px; 
                         margin-top: 0;'><b>{i}</b></style></span></p>"""
