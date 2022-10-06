@@ -195,7 +195,7 @@ if visual == "Übersicht":
       
     with twocol1: 
         wch_colour_box = (100,204,302)
-        fontsize = 18
+        fontsize = 16
         sline = "Sozialwissenschaften"
         i = conv1_pub_300
         
@@ -207,9 +207,9 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height:25px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
-                        </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><BR><span style='font-size: 22px; 
+                        margin-top: 0;'><b>{i}</b></style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
