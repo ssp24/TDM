@@ -123,7 +123,7 @@ if visual == "Übersicht":
         fontsize = 18
         #valign = "left"
         iconname = "fas fa-asterisk"
-        sline = "Informatik, Information & Wissen, allgemeine Werke"
+        sline = "Allgemeines, Informatik, Informationswissenschaft"
         #lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
         i = conv1_pub_000
         
@@ -151,7 +151,7 @@ if visual == "Übersicht":
         wch_colour_font = (0,0,0)
         fontsize = 18
         iconname = "fas fa-asterisk"
-        sline = "Philosophie & Psychologie"
+        sline = "Philosophie und Psychologie"
         i = conv1_pub_100
 
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
@@ -237,7 +237,7 @@ if visual == "Übersicht":
     with twocol3: 
         wch_colour_box = (400,204,402)
         fontsize = 18
-        sline = "Naturwissenschaften"
+        sline = "Naturwissenschaften und Mathematik"
         i = conv1_pub_500
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
@@ -260,7 +260,7 @@ if visual == "Übersicht":
     with threecol1: 
         wch_colour_box = (255,200,31)
         fontsize = 18
-        sline = "Technik"
+        sline = "Technik, Medizin, angewandte Wissenschaften"
         i = conv1_pub_600
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
@@ -281,7 +281,7 @@ if visual == "Übersicht":
     with threecol2: 
         wch_colour_box = (230,45,45)
         fontsize = 18
-        sline = "Künste & Freizeit und Erholung"
+        sline = "Künste und Unterhaltung"
         i = conv1_pub_700
         
         htmlstr = f"""<a href="https://portal.dnb.de/opac/simpleSearch?query=catalog%3Ddnb.hss+diss*+location%3Donlinefree+hsg%3D7*&cqlMode=true" target="new" style="text-decoration:none">
@@ -324,7 +324,7 @@ if visual == "Übersicht":
     with fourcol1: 
         wch_colour_box = (77,170,1)
         fontsize = 18
-        sline = "Geschichte & Geografie"
+        sline = "Geschichte und Geografie"
         i = conv1_pub_900
         
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
@@ -335,9 +335,9 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height:25px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
+                        <i class='{iconname} fa-xs'></i> {sline}
                         </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        margin-top: 0;'>{i}</style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
