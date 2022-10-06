@@ -140,8 +140,8 @@ if visual == "Übersicht":
                         padding-bottom: 18px; 
                         line-height: 20px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
-                        </style><br><span style='font-size: 20px; 
-                        margin-top: 0; line-height: 30px'>{i}</style></span></p>"""
+                        </style><br><span style='font-size: 22px; 
+                        margin-top: 0; line-height: 30px'><b>{i}</b></style></span></p>"""
 
         st.markdown(htmlstr, unsafe_allow_html=True)
     
@@ -163,8 +163,8 @@ if visual == "Übersicht":
                         padding-bottom: 18px; 
                         line-height:25px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
-                        </style><BR><span style='font-size: 20px; 
-                        margin-top: 0;'>{i}</style></span></p>"""
+                        </style><BR><span style='font-size: 22px; 
+                        margin-top: 0;'><b>{i}</b></style></span></p>"""
 
         st.markdown(htmlstr, unsafe_allow_html=True)
         
@@ -185,8 +185,8 @@ if visual == "Übersicht":
                         padding-bottom: 18px; 
                         line-height:25px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
-                        </style><BR><span style='font-size: 20px; 
-                        margin-top: 0;'>{i}</style></span></p>"""
+                        </style><BR><span style='font-size: 22px; 
+                        margin-top: 0;'><b>{i}</b></style></span></p>"""
 
         st.markdown(htmlstr, unsafe_allow_html=True)
 
@@ -215,7 +215,7 @@ if visual == "Übersicht":
         
     with twocol2: 
         wch_colour_box = (800,204,102)
-        fontsize = 18
+        fontsize = 16
         sline = "Sprache"
         i = conv1_pub_400
         
@@ -227,16 +227,16 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height:25px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
-                        </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><BR><span style='font-size: 22px; 
+                        margin-top: 0;'><b>{i}</b></style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
         
     with twocol3: 
         wch_colour_box = (400,204,402)
-        fontsize = 18
+        fontsize = 16
         sline = "Naturwissenschaften und Mathematik"
         i = conv1_pub_500
         
@@ -248,9 +248,9 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height:25px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
-                        </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><BR><span style='font-size: 22px; 
+                        margin-top: 0;'><b>{i}</b></style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
@@ -259,7 +259,7 @@ if visual == "Übersicht":
       
     with threecol1: 
         wch_colour_box = (255,200,31)
-        fontsize = 18
+        fontsize = 16
         sline = "Technik, Medizin, angewandte Wissenschaften"
         i = conv1_pub_600
         
@@ -271,16 +271,16 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height:25px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
-                        </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><BR><span style='font-size: 22px; 
+                        margin-top: 0;'><b>{i}</b></style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
         
     with threecol2: 
         wch_colour_box = (230,45,45)
-        fontsize = 18
+        fontsize = 16
         sline = "Künste und Unterhaltung"
         i = conv1_pub_700
         
@@ -293,15 +293,15 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height:25px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
-                        </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p></a>"""
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><BR><span style='font-size: 22px; 
+                        margin-top: 0;'><b>{i}</b></style></span></p></a>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
     with threecol3: 
         wch_colour_box = (0,70,196)
-        fontsize = 18
+        fontsize = 16
         sline = "Literatur"
         i = conv1_pub_800
         
@@ -313,9 +313,9 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height:25px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
-                        </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><BR><span style='font-size: 22px; 
+                        margin-top: 0;'></b>{i}</b></style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
@@ -323,7 +323,7 @@ if visual == "Übersicht":
       
     with fourcol1: 
         wch_colour_box = (77,170,1)
-        fontsize = 14
+        fontsize = 16
         sline = "Geschichte und Geografie"
         i = conv1_pub_900
         
@@ -336,8 +336,8 @@ if visual == "Übersicht":
                         padding-bottom: 18px; 
                         line-height:25px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
-                        </style><BR><span style='font-size: 18px; 
-                        margin-top: 0;'>{i}</style></span></p>"""
+                        </style><BR><span style='font-size: 22px; 
+                        margin-top: 0;'><b>{i}</b></style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
