@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 logo = "logo.svg"
-st.image(logo)
+#st.image(logo)
 st.set_page_config(page_title='DNB - DissVIS', page_icon = logo) # , layout = 'wide')
 
 stats = pd.read_json("data/stats.json")
