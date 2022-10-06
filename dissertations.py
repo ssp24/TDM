@@ -120,7 +120,7 @@ if visual == "Übersicht":
     with col1:
         wch_colour_box = (0,504,102)
         wch_colour_font = (0,0,0)
-        fontsize = 18
+        fontsize = 16
         #valign = "left"
         iconname = "fas fa-asterisk"
         sline = "Allgemeines, Informatik, Informationswissenschaft"
@@ -139,9 +139,9 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height: 20px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
-                        </style><br><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><br><span style='font-size: 20px; 
+                        margin-top: 0;'>{i}</style></span></p>"""
 
         st.markdown(htmlstr, unsafe_allow_html=True)
     
@@ -149,7 +149,7 @@ if visual == "Übersicht":
     with col2: 
         wch_colour_box = (200,504,102)
         wch_colour_font = (0,0,0)
-        fontsize = 18
+        fontsize = 16
         iconname = "fas fa-asterisk"
         sline = "Philosophie und Psychologie"
         i = conv1_pub_100
@@ -162,16 +162,16 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height:25px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
-                        </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><BR><span style='font-size: 20px; 
+                        margin-top: 0;'>{i}</style></span></p>"""
 
         st.markdown(htmlstr, unsafe_allow_html=True)
         
     with col3:
         wch_colour_box = (000,204,602)
         #wch_colour_font = (0,0,0)
-        fontsize = 18
+        fontsize = 16
         #iconname = "fas fa-asterisk"
         sline = "Religion"
         i = conv1_pub_200
@@ -184,9 +184,9 @@ if visual == "Übersicht":
                         padding-top: 18px; 
                         padding-bottom: 18px; 
                         line-height:25px;'>
-                        <i class='{iconname} fa-xs'></i> {i}
-                        </style><BR><span style='font-size: 14px; 
-                        margin-top: 0;'>{sline}</style></span></p>"""
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><BR><span style='font-size: 20px; 
+                        margin-top: 0;'>{i}</style></span></p>"""
 
         st.markdown(htmlstr, unsafe_allow_html=True)
 
