@@ -141,7 +141,7 @@ if visual == "Übersicht":
                         line-height: 20px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
                         </style><br><span style='font-size: 20px; 
-                        margin-top: 10;'>{i}</style></span></p>"""
+                        margin-top: 10; line-height: 30px'>'>{i}</style></span></p>"""
 
         st.markdown(htmlstr, unsafe_allow_html=True)
     
