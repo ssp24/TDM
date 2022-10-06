@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 
-logo = "logo.svg"
+logo = "https://files.dnb.de/DFG-Viewer/DNB-Logo-Viewer.jpg"
 #st.image(logo)
 st.set_page_config(page_title='DNB - DissVIS', page_icon = logo) # , layout = 'wide')
 
