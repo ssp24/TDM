@@ -138,10 +138,10 @@ if visual == "Übersicht":
                         padding-left: 12px; 
                         padding-top: 18px; 
                         padding-bottom: 18px; 
-                        line-height: 20px;'>
+                        line-height: 25px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
                         </style><br><span style='font-size: 20px; 
-                        margin-top: 0;'>{i}</style></span></p>"""
+                        margin-top: 10;'>{i}</style></span></p>"""
 
         st.markdown(htmlstr, unsafe_allow_html=True)
     
