@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 
-st.set_page_config(page_title='DNB - DissVIS')
+st.set_page_config(page_title='DNB - DissVIS', page_icon = "logo.svg", layout = 'wide')
 
 stats = pd.read_json("data/stats.json")
 dissyears2 = pd.read_json("data/dissyears.json")
