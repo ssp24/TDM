@@ -6,13 +6,8 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
-#from arcgis import GIS
-#import geopy
-#from geopy.geocoders import Nominatim
 
-#from arcgis.features import SpatialDataFrame
-#from arcgis.features import GeoAccessor
-#from arcgis.gis import GIS
+st.set_page_config(page_title='DNB - DissVIS')
 
 stats = pd.read_json("data/stats.json")
 dissyears2 = pd.read_json("data/dissyears.json")
