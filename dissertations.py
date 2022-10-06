@@ -323,7 +323,7 @@ if visual == "Übersicht":
       
     with fourcol1: 
         wch_colour_box = (77,170,1)
-        fontsize = 18
+        fontsize = 14
         sline = "Geschichte und Geografie"
         i = conv1_pub_900
         
@@ -336,7 +336,7 @@ if visual == "Übersicht":
                         padding-bottom: 18px; 
                         line-height:25px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
-                        </style><BR><span style='font-size: 14px; 
+                        </style><BR><span style='font-size: 18px; 
                         margin-top: 0;'>{i}</style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
