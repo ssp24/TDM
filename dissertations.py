@@ -270,10 +270,10 @@ if visual == "Übersicht":
                         padding-left: 12px; 
                         padding-top: 18px; 
                         padding-bottom: 18px; 
-                        line-height:30px;'>
+                        line-height:20px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
                         </style><BR><span style='font-size: 22px; 
-                        margin-top: 0;'><b>{i}</b></style></span></p>"""
+                        margin-top: 30;'><b>{i}</b></style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
@@ -292,10 +292,10 @@ if visual == "Übersicht":
                         padding-left: 12px; 
                         padding-top: 18px; 
                         padding-bottom: 18px; 
-                        line-height:30px;'>
+                        line-height:20px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
                         </style><BR><span style='font-size: 22px; 
-                        margin-top: 0;'><b>{i}</b></style></span></p></a>"""
+                        margin-top: 30;'><b>{i}</b></style></span></p></a>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
@@ -312,10 +312,10 @@ if visual == "Übersicht":
                         padding-left: 12px; 
                         padding-top: 18px; 
                         padding-bottom: 18px; 
-                        line-height:30px;'>
+                        line-height:20px;'>
                         <i class='{iconname} fa-xs'></i> {sline}
                         </style><BR><span style='font-size: 22px; 
-                        margin-top: 0;'></b>{i}</b></style></span></p>"""
+                        margin-top: 30;'></b>{i}</b></style></span></p>"""
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
