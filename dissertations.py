@@ -113,7 +113,44 @@ if visual == "Übersicht":
     conv_pub_900 = f'{pub_900:,}'
     conv1_pub_900 = conv_pub_900.replace(',', '.')
     
-    # --- boxes
+
+        
+
+#------ PUBLIKATIONSJAHRE --------------
+
+elif visual == "Publikationsjahre":  
+
+    st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
+
+    dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=catalog=dnb.hss+location=onlinefree+jhr="+dissyears2["years"].astype(str)
+
+    fig2 = px.bar(dissyears2, x="years", y = "count", labels={'years':'Jahr', 'count':'Anzahl'}, color='count', height=500)
+    update = (len(dissyears2["years"]))
+
+    for i in range (0,update):     
+        fig2.add_annotation(      
+                x = dissyears2["years"].values[i],
+                y = dissyears2["count"].values[i],
+                textangle = 90,
+                text = f"""<a href="{dissyears2["url"].values[i]}" target="_blank">{dissyears2["count"].values[i]}</a>""",
+                showarrow=True,
+                arrowhead=1,                        
+            )
+    fig2.update_traces(showlegend=False)
+    st.plotly_chart(fig2, use_container_width=True)
+
+    st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
+    st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " )     
+ 
+
+#_____________________________________________________________
+# --------- DDC -----------------
+
+
+elif visual == "Verteilung nach Fächern":
+    
+    
+        # --- boxes
     
     col1, col2, col3 = st.columns(3)
     
@@ -362,38 +399,10 @@ if visual == "Übersicht":
         st.markdown(htmlstr, unsafe_allow_html=True)
         
         
-        
-
-#------ PUBLIKATIONSJAHRE --------------
-
-elif visual == "Publikationsjahre":  
-
-    st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
-
-    dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=catalog=dnb.hss+location=onlinefree+jhr="+dissyears2["years"].astype(str)
-
-    fig2 = px.bar(dissyears2, x="years", y = "count", labels={'years':'Jahr', 'count':'Anzahl'}, color='count', height=500)
-    update = (len(dissyears2["years"]))
-
-    for i in range (0,update):     
-        fig2.add_annotation(      
-                x = dissyears2["years"].values[i],
-                y = dissyears2["count"].values[i],
-                textangle = 90,
-                text = f"""<a href="{dissyears2["url"].values[i]}" target="_blank">{dissyears2["count"].values[i]}</a>""",
-                showarrow=True,
-                arrowhead=1,                        
-            )
-    fig2.update_traces(showlegend=False)
-    st.plotly_chart(fig2, use_container_width=True)
-
-    st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
-    st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " )     
- 
-
-# --------- DDC -----------------
-
-elif visual == "Verteilung nach Fächern":
+    #____________________________________________________________________________
+    #----------- DISS DCC Teil 2 -----------------------------------------------
+    
+    
     
     dissddc = pd.read_json("data/diss_ddc.json")
     
