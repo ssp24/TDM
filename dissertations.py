@@ -341,7 +341,7 @@ if visual == "Übersicht":
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
-        with fourcol2: 
+    with fourcol2: 
         wch_colour_box = (77,170,1)
         fontsize = 16
         sline = "Ohne Fachgebiet"
