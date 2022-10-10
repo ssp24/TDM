@@ -100,7 +100,7 @@ if visual == "Übersicht":
     st.write("")
 
 
-    all_ofd = 288128
+    all_ofd = 288123
     conv_ofd = f'{all_ofd:,}'
     #test2 = float(test.replace(',', '.'))
     conv1_ofd = conv_ofd.replace(',', '.')
