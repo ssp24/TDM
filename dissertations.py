@@ -21,7 +21,7 @@ with st.sidebar:
     st.subheader("Auswahlmenü")
     visual = st.selectbox(
      'Bitte wählen Sie die Anzeige: ',
-     ('Übersicht', 'Publikationsjahre', 'Verteilung nach Fächern', 'Sprachen', 'Publikationsorte')
+     ('Übersicht', 'Publikationsjahre', 'Fachgebiete', 'Sprachen', 'Publikationsorte')
     )
     st.write('Momentan ausgewählt:',
              visual)
@@ -149,8 +149,9 @@ elif visual == "Publikationsjahre":
 # --------- DDC -----------------
 
 
-elif visual == "Verteilung nach Fächern":
+elif visual == "Fachgebiete":
     
+    st.subheader("Übersicht Fachgebiete")
     # --- Data ---- 
     
     df = pd.read_json("data/diss_06-2022_cleaned.json")
