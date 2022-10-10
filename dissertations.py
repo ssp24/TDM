@@ -341,6 +341,26 @@ if visual == "Übersicht":
      
         st.markdown(htmlstr, unsafe_allow_html=True)
         
+        with fourcol2: 
+        wch_colour_box = (77,170,1)
+        fontsize = 16
+        sline = "Ohne Fachgebiet"
+        i = 852
+        
+        htmlstr = f"""<p style='background-color: rgb({wch_colour_box[450]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
+                        color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
+                        font-size: {fontsize}px; 
+                        border-radius: 7px; 
+                        padding-left: 12px; 
+                        padding-top: 18px; 
+                        padding-bottom: 18px; 
+                        line-height:20px;'>
+                        <i class='{iconname} fa-xs'></i> {sline}
+                        </style><BR><span style='font-size: 22px; 
+                        line-height: 35px;'><b>{i}</b></style></span></p>"""
+     
+        st.markdown(htmlstr, unsafe_allow_html=True)
+        
         
         
 
