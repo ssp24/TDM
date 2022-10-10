@@ -559,11 +559,15 @@ elif visual=="Info":
     st.write("Für die visuelle Darstellung der Daten mussten diese bereinigt und angepasst werden. Im Folgenden wird daher kurz darsgestellt, "
             " welche Anpassungen vorgenommen und welche Daten berücksichtigt wurden, bzw. welche Daten nicht berücksichtigt werden konnten.") 
         
-    st.markdown("#### Übersicht nach Fachgebieten:") 
     st.markdown("Im Datensatz der DNB enthalten sind ingesamt zum aktuellen Stand (siehe Sidebar) 288.677 Datensätze. Von diesen verfügen 288.123 "
             "über einen [Hochschulschriftenvermerk](https://www.dnb.de/DE/Service/Hilfe/HilfeNP/_content/Ablieferung/Monografienn/hochschulschriftenvermerkAblieferung8_akk.html). Bei den 554 Datensätzen ohne Hochschulschriftenvermerk handelt es sich zumeist um übergeordnete "
             "Datensätze monographischer Reihen, in denen entsprechende Hochschulschriften erschienen sind. Diese Datensätze wurden für die weitere "
             "Darstellung des Sets entsprechend nicht berücksichtigt." ) 
+    
+    st.markdown("#### Übersicht nach Fachgebieten:") 
+    st.markdown("Für die Übersicht nach Fachgebieten konnten ingesamt 287.271 für die Darstellung berücksichtigt werden. Bei den restlichen 852 "
+                "Datensätzen fehlt die Zuordnung zu einem Fachgebiet.") 
+    
 
     
     
