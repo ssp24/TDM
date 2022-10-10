@@ -342,12 +342,12 @@ if visual == "Übersicht":
         st.markdown(htmlstr, unsafe_allow_html=True)
         
     with fourcol2: 
-        wch_colour_box = (77,170,1)
+        wch_colour_box = (457,170,1)
         fontsize = 16
         sline = "Ohne Fachgebiet"
         i = 852
         
-        htmlstr = f"""<p style='background-color: rgb({wch_colour_box[450]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
+        htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, {wch_colour_box[1]}, {wch_colour_box[2]}, 0.75); 
                         color: rgb({wch_colour_font[0]}, {wch_colour_font[1]}, {wch_colour_font[2]}, 0.75); 
                         font-size: {fontsize}px; 
                         border-radius: 7px; 
