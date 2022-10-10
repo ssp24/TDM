@@ -41,6 +41,55 @@ st.header('"Freie Online-Hochschulschriften" in der DNB')
 
 # ------- MAIN BOX ----------
 
+### ------DATA -------------
+
+df = pd.read_json("data/diss_06-2022_cleaned.json")
+dissddc = pd.read_json("data/diss_ddc.json")
+    
+zero = dissddc[dissddc["Parent_no"].astype(str).str.startswith('0')]
+first = dissddc[dissddc["Parent_no"].astype(str).str.startswith('1')]
+second = dissddc[dissddc["Parent_no"].astype(str).str.startswith('2')]
+third = dissddc[dissddc["Parent_no"].astype(str).str.startswith('3')]
+fourth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('4')]
+fifth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('5')]
+sixth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('6')]
+seventh = dissddc[dissddc["Parent_no"].astype(str).str.startswith('7')]
+eigth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('8')]
+ninth = dissddc[dissddc["Parent_no"].astype(str).str.startswith('9')]
+    
+    
+pub_000 = zero['count'].sum()
+conv_pub_000 = f'{pub_000:,}'
+conv1_pub_000 = conv_pub_000.replace(',', '.')
+pub_100 = first['count'].sum()
+conv_pub_100 = f'{pub_100:,}'
+conv1_pub_100 = conv_pub_100.replace(',', '.')
+pub_200 = second['count'].sum()
+conv_pub_200 = f'{pub_200:,}'
+conv1_pub_200 = conv_pub_200.replace(',', '.')
+pub_300 = third['count'].sum()
+conv_pub_300 = f'{pub_300:,}'
+conv1_pub_300 = conv_pub_300.replace(',', '.')
+pub_400 = fourth['count'].sum()
+conv_pub_400 = f'{pub_400:,}'
+conv1_pub_400 = conv_pub_400.replace(',', '.')
+pub_500 = fifth['count'].sum()
+conv_pub_500 = f'{pub_500:,}'
+conv1_pub_500 = conv_pub_500.replace(',', '.')
+pub_600 = sixth['count'].sum()
+conv_pub_600 = f'{pub_600:,}'
+conv1_pub_600 = conv_pub_600.replace(',', '.')
+pub_700 = seventh['count'].sum()
+conv_pub_700 = f'{pub_700:,}'
+conv1_pub_700 = conv_pub_700.replace(',', '.')
+pub_800 = eigth['count'].sum()
+conv_pub_800 = f'{pub_800:,}'
+conv1_pub_800 = conv_pub_800.replace(',', '.')
+pub_900 = ninth['count'].sum()
+conv_pub_900 = f'{pub_900:,}'
+conv1_pub_900 = conv_pub_900.replace(',', '.')   
+
+
 if visual == "Übersicht":
 
     st.write("Informationen zur Datengrundlage: "
