@@ -21,7 +21,7 @@ with st.sidebar:
     st.subheader("Auswahlmenü")
     visual = st.selectbox(
      'Bitte wählen Sie die Anzeige: ',
-     ('Übersicht', 'Publikationsjahre', 'Fachgebiete', 'Sprachen', 'Publikationsorte')
+     ('Übersicht', 'Publikationsjahre', 'Fachgebiete', 'Sprachen', 'Publikationsorte', 'Info')
     )
     st.write('Momentan ausgewählt:',
              visual)
@@ -547,9 +547,24 @@ elif visual=="Publikationsorte":
     fig3.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
     fig3.update_traces(marker_sizemin = 5, marker_sizeref = 10)
     st.plotly_chart(fig3, use_container_width=True)
+
+    
+# -------------------- ABOUT ---------------------    
     
         
-       
+elif visual=="Info":
+    
+    st.subheading("Über diese App")
+    
+    st.write("Für die visuelle Darstellung der Daten mussten diese bereinigt und angepasst werden. Im Folgenden wird daher kurz darsgestellt, "
+            " welche Anpassungen vorgenommen und welche Daten berücksichtigt wurden, bzw. welche Daten nicht berücksichtigt werden konnten.") 
+        
+    st.write("Übersicht nach Fachgebieten:") 
+    st.write("Im Datensatz der DNB enthalten sind ingesamt zum aktuellen Stand (siehe Sidebar) 288.677 Datensätze. Von diesen verfügen 288.123 "
+            "über einen Hochschulschriftenvermerk. ") 
+
+    
+    
     
 else: 
     
