@@ -554,7 +554,7 @@ elif visual=="Publikationsorte":
         
 elif visual=="Info":
     
-    st.subheading("Über diese App")
+    st.subheader("Über diese App")
     
     st.write("Für die visuelle Darstellung der Daten mussten diese bereinigt und angepasst werden. Im Folgenden wird daher kurz darsgestellt, "
             " welche Anpassungen vorgenommen und welche Daten berücksichtigt wurden, bzw. welche Daten nicht berücksichtigt werden konnten.") 
