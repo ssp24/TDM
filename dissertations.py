@@ -92,10 +92,10 @@ conv1_pub_900 = conv_pub_900.replace(',', '.')
 
 if visual == "Übersicht":
 
-    st.write("Informationen zur Datengrundlage: "
-         " Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
-         ' "Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 freien Online-Dissertationen '
-         " ohne Zugriffsbeschränkung aus Deutschland enthält. ")
+    st.markdown("Informationen zur Datengrundlage: "
+         " Die hier gezeigten Visualisieurungen basieren auf den Titeldaten der [Deutschen Nationalbibliothek](http://www.dnb.de). Hierfür wurde das Datenset "
+         ' "Freie Online-Hochschulschriften" aus dem [DNBLab](www.dnb.de/dnblabsets) genutzt, welches die Metadaten der gesammelten Online-Hochschulschriften, die  '
+         " ohne Zugriffsbeschränkung aufgerufen werden können, enthält. ")
     st.write(" Das Datenset wird alle 4 Monate aktualisiert."  ) 
     st.write("")
 
