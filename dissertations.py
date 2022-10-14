@@ -17,6 +17,8 @@ dissyears2 = pd.read_json("data/dissyears.json")
 
 # ---- SIDEBAR ----- 
 
+st.subheader('"Freie Online-Hochschulschriften" in der DNB')
+
 with st.sidebar:
     st.subheader("Auswahlmenü")
     visual = st.selectbox(
