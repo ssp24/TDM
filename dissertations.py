@@ -96,7 +96,7 @@ if visual == "Übersicht":
          " Die die erstellten Visualisieurungen basieren auf den Titeldaten der DNB. Hierfür wurde das Datenset "
          ' "Freie Online-Hochschulschriften" der DNB genutzt, welches die Metadaten von mehr als 282.000 freien Online-Dissertationen '
          " ohne Zugriffsbeschränkung aus Deutschland enthält. ")
-    st.write(" Das Datenset wird alle 3 Monate aktualisiert."  ) 
+    st.write(" Das Datenset wird alle 4 Monate aktualisiert."  ) 
     st.write("")
 
 
