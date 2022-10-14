@@ -122,7 +122,7 @@ if visual == "Übersicht":
 
 elif visual == "Publikationsjahre":  
 
-    st.subheader("Anzahl der Online-Hochschulschriften im Bestand nach Jahren: ")
+    st.subheader("Anzahl der Online-Hochschulschriften im Bestand ab 1990: ")
 
     dissyears2["url"] = "https://portal.dnb.de/opac.htm?method=simpleSearch&cqlMode=true&query=catalog=dnb.hss+location=onlinefree+jhr="+dissyears2["years"].astype(str)
 
@@ -142,7 +142,7 @@ elif visual == "Publikationsjahre":
     st.plotly_chart(fig2, use_container_width=True)
 
     st.write("Klicken Sie auf die Anzahl der Dissertationen eines bestimmten Jahres, um diese im Katalog der DNB zu betrachten.")
-    st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " )     
+    #st.info("INFO: Es werden die Daten für die Jahre 1990 bis 2022 (laufend) dargestellt. " )     
  
 
 #_____________________________________________________________
